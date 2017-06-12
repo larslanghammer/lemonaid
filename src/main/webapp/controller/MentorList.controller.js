@@ -92,6 +92,11 @@ sap.ui.define([
             this.getRouter().navTo("Mentor", {
                 Id: event.getSource().getBindingContext().getProperty("Id")
             });
+
+        },
+
+        onAddNewMentor: function(){
+        	this.getRouter().navTo("MentorAddition", null, true);
         },
 
 		/**
@@ -133,7 +138,7 @@ sap.ui.define([
 		/* =========================================================== */
 		/* internal methods                                            */
 		/* =========================================================== */
-		
+
 		_applyFilters: function() {
 			var aFilter = [];
 			if (this.searchFilter)	{ aFilter.push(this.searchFilter); }

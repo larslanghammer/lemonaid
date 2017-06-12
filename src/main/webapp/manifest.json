@@ -118,6 +118,10 @@
 				"name": "Mentor",
 				"target": "mentor"
 			},{
+				"pattern": "MentorAddition",
+				"name": "MentorAddition",
+				"target": "mentorAddition"
+			},{
 				"pattern": "Events/:Id:",
 				"name": "Events",
 				"target": "events"
@@ -175,6 +179,13 @@
 					"viewPath": "com.sap.mentors.lemonaid.view",
 					"viewName": "MentorDetails",
 					"controlId": "Mentor",
+					"controlAggregation": "content"
+				},
+				"mentorAddition": {
+					"parent": "main",
+					"viewPath": "com.sap.mentors.lemonaid.view",
+					"viewName": "MentorAddition",
+					"controlId": "MentorAddition",
 					"controlAggregation": "content"
 				},
 				"events": {
