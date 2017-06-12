@@ -49,7 +49,7 @@ public class QuartzConfig {
 		quartzScheduler.setSchedulerName("lemonaid-scheduler");
 
 		// custom job factory of spring with DI support for @Autowired!
-	/*	JobFactory jobFactory = new JobFactory();
+		JobFactory jobFactory = new JobFactory();
 		jobFactory.setApplicationContext(applicationContext);
 		quartzScheduler.setJobFactory(jobFactory);
 
@@ -60,7 +60,7 @@ public class QuartzConfig {
 				locationTrigger().getObject(),
 				insideTrackTrigger().getObject()
 			};
-		quartzScheduler.setTriggers(triggers);*/
+		quartzScheduler.setTriggers(triggers);
 
 		return quartzScheduler;
 	}
