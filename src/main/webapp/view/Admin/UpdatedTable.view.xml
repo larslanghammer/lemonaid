@@ -1,0 +1,57 @@
+<mvc:View
+	controllerName="com.sap.mentors.lemonaid.controller.Admin.UpdatedTable"
+	xmlns="sap.m"
+	xmlns:layout="com.sap.mentors.lemonaid.controls"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc">
+
+	<l:VerticalLayout
+		width="100%" >
+		<l:content>
+			<Table id="updatedTable"
+				items="{
+			path: '/Mentors',
+			parameters: {
+				select: 'Id,FullName,ShirtNumber,PhotoUrl,UpdatedBy,UpdatedAt',
+				expand: 'MentorStatus,RelationshipToSap'
+			},
+			sorter: {path: 'FullName', descending: false}
+		}">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="Mentors" level="H2"/>
+						<ToolbarSpacer></ToolbarSpacer>
+						<Button tooltip="View Settings" icon="sap-icon://drop-down-list" press="handleViewSettingsDialogButtonPressed" />
+					</Toolbar>
+				</headerToolbar>
+				<infoToolbar>
+					<Toolbar
+						id="vsdFilterBar"
+						active="true"
+						visible="false"
+						press="[handleViewSettingsDialogFilterBarPressed, views.control.tableViewSettingsDialog]">
+						<Label id="vsdFilterLabel" text="?" />
+					</Toolbar>
+				</infoToolbar>
+				<columns>
+					<Column width="12em"><Text text="Full Name" /></Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Picture"><Text text="Dimensions" /></Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Updated By"><Text text="Weight" /></Column>
+					<Column hAlign="Right"><Text text="Last Updated" /></Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<ObjectIdentifier title="{FullName}" text="{ShirtNumber}" class="sapMTableContentMargin" />
+							<Image width="4rem" height="4rem" src="{PhotoUrl}" class="sapMTableContentMargin avatarSmall sapUxAPObjectPageHeaderObjectImage-Circle" />
+							<Text text="{UpdatedBy}" class="sapMTableContentMargin" />
+							<Text text="{UpdatedAt}" class="sapMTableContentMargin" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</l:content>
+	</l:VerticalLayout>
+
+</mvc:View>

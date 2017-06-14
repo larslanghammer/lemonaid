@@ -41,6 +41,8 @@
 			<m:VBox>
 				<m:ObjectStatus title="{i18n>shirtAlias}" text="{ShirtText}"/>
 				<m:ObjectStatus title="{i18n>shirtNumber}" text="{ShirtNumber}"/>
+            	<m:ObjectStatus title="Last Updated At" text="{UpdatedAt}" visible="{= !!${MayEdit}}"/>
+				<m:ObjectStatus title="Last Updated By" text="{UpdatedBy}" visible="{= !!${MayEdit}}"/>
 			</m:VBox>
 			<!--<m:NumericContent value="{ShirtNumber}" size="M" />-->
 			<m:VBox>

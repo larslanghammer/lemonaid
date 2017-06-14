@@ -12,6 +12,7 @@
 		<items>
 			<IconTabFilter id="AdminHealth" icon="sap-icon://stethoscope" text="{i18n>health}" key="Admin-Health" />
 			<IconTabFilter id="AdminTwitter" icon="sap-icon://chain-link" text="{i18n>twitter}" key="Admin-Twitter" />
+            <IconTabFilter id="AdminTable" icon="sap-icon://chain-link" text="Table" key="Admin-Table" />
 		</items>
 	</IconTabBar>
 
