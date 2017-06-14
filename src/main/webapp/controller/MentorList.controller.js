@@ -100,7 +100,7 @@ sap.ui.define([
         },
 
         onAddNewMentor: function () {
-            this.getRouter().navTo("MentorAddition", null, true);
+            this.getRouter().navTo("MentorAddition");
         },
 
         /**
