@@ -216,7 +216,7 @@ sap.ui.define([
 					});
 					delete object.longitude;
 					delete object.latitude;
-					if (object.ShirtNumber) { object.ShirtNumber = that._parseInteger(object.ShirtNumber); } else { delete object.ShirtNumber; }
+					//if (object.ShirtNumber) { object.ShirtNumber = that._parseInteger(object.ShirtNumber); } else { delete object.ShirtNumber; }
 					if (object.HoursAvailable) { object.HoursAvailable = that._parseInteger(object.HoursAvailable); } else { delete object.HoursAvailable; }
 					if (object.InterestInMentorCommunicationStrategy) { object.InterestInMentorCommunicationStrategy = that._parseBoolean(object.InterestInMentorCommunicationStrategy); } else { delete object.InterestInMentorCommunicationStrategy; }
 					if (object.InterestInMentorManagementModel) { object.InterestInMentorManagementModel = that._parseBoolean(object.InterestInMentorManagementModel); } else { delete object.InterestInMentorManagementModel; }
