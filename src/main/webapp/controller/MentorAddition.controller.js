@@ -305,10 +305,10 @@ sap.ui.define([
 				this.objectToUpload["TwitterId"] = object.twitterUrl;
 				this.objectToUpload["XingUrl"] = object.xing;
 			}else if (object.viewName.includes("shirt")) {
-				this.objectToUpload["ShirtMFId"] = object.shirtMF;
-				this.objectToUpload["ShirtNumber"] = this._parseInteger(object.shirtNumber);
-				this.objectToUpload["ShirtSizeId"] = object.shirtSize;
-				this.objectToUpload["ShirtText"] = object.shirtText;
+			//	this.objectToUpload["ShirtMFId"] = object.shirtMF;
+			//	this.objectToUpload["ShirtNumber"] = this._parseInteger(object.shirtNumber);
+			//	this.objectToUpload["ShirtSizeId"] = object.shirtSize;
+			//	this.objectToUpload["ShirtText"] = object.shirtText;
 			} else if (object.viewName.includes("expertise")) {
 				this.objectToUpload["SapExpertise1Id"] = object.expertise1;
 				this.objectToUpload["SapExpertise2Id"] = object.expertise2;
