@@ -35,7 +35,7 @@
 		<Link text="Send PM" href="https://sapmentors.slack.com/messages/{SlackId}/" target="_blank" visible="{= !!${SlackId} &amp;&amp; !${ui>/isEditMode} }" />
 
 		<Label text="{i18n>linkedIn}" visible="{ui>/isEditMode}" />
-		<Input id="input-linedIn" value="{LinkedInUrl}" visible="{ui>/isEditMode}"/>
+		<Input id="input-linkedIn" value="{LinkedInUrl}" visible="{ui>/isEditMode}"/>
 		<Label text="{i18n>linkedIn}" visible="{= !!${LinkedInUrl} }" />
 		<Link text="{LinkedInUrl}" href="{LinkedInUrl}" target="_blank" visible="{= !!${LinkedInUrl} &amp;&amp; !${ui>/isEditMode} }" />
 

@@ -35,7 +35,7 @@
 		<Label text="{i18n>jamLasVegas}" visible="{= !${ui>/isEditMode} &amp;&amp; ${JambandMusician}}" />
 		<Text text="{= ${JambandLasVegas} ? ${i18n>yes} : ${i18n>no}}" visible="{= !${ui>/isEditMode} &amp;&amp; ${JambandMusician}}" />
 		<Label text="{i18n>jamLasVegas}" visible="{= ${ui>/isEditMode} &amp;&amp; ${JambandMusician}}" />
-		<Switch id="switch-jamBandLasVeags" state="{JambandLasVegas}" visible="{= ${ui>/isEditMode} &amp;&amp; ${JambandMusician}}" customTextOn="{i18n>yes}" customTextOff="{i18n>no}" />
+		<Switch id="switch-jamBandLasVegas" state="{JambandLasVegas}" visible="{= ${ui>/isEditMode} &amp;&amp; ${JambandMusician}}" customTextOn="{i18n>yes}" customTextOff="{i18n>no}" />
 
 	</forms:SimpleForm>
 </mvc:View>
