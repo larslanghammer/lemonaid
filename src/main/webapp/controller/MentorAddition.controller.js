@@ -355,7 +355,7 @@ sap.ui.define([
 							}
 							for (var i in that.objectToUpload) {
 								if (that.objectToUpload[i].length === 0) {
-									//delete that.objectToUpload[i];
+									delete that.objectToUpload[i];
 								}
 							}
 							console.log(that.objectToUpload);
