@@ -274,7 +274,7 @@ sap.ui.define([
 				this.objectToUpload["Language1Id"] = object.language1;
 				this.objectToUpload["Language2Id"] = object.language2;
 				this.objectToUpload["Language3Id"] = object.language3;
-			//	this.objectToUpload["Public"] = object.public;
+		    	this.objectToUpload["Public"] = object.public=='true';
 				this.objectToUpload["RegionId"] = object.region;
 				this.objectToUpload["RelationshipToSapId"] = object.relationshipToSap;
 				this.objectToUpload["StatusId"] = object.status;

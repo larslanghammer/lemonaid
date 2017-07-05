@@ -30,7 +30,7 @@ sap.ui.define([
 			this.config    = this.component.getModel("config");
 			this.ui        = new JSONModel({
         		ServiceUrl : this.model.sServiceUrl,
-				isEditMode : true//false
+				isEditMode : false
         	});
         	this.view.setModel(this.ui, "ui");
             this.router.getRoute("Mentor").attachMatched(this.onRouteMatched, this);
