@@ -305,10 +305,10 @@ sap.ui.define([
 				this.objectToUpload["TwitterId"] = object.twitterUrl;
 				this.objectToUpload["XingUrl"] = object.xing;
 			}else if (object.viewName.includes("shirt")) {
-			//	this.objectToUpload["ShirtMFId"] = object.shirtMF;
-			//	this.objectToUpload["ShirtNumber"] = this._parseInteger(object.shirtNumber);
-			//	this.objectToUpload["ShirtSizeId"] = object.shirtSize;
-			//	this.objectToUpload["ShirtText"] = object.shirtText;
+				this.objectToUpload["ShirtMFId"] = object.shirtMF;
+				this.objectToUpload["ShirtNumber"] =object.shirtNumber;
+				this.objectToUpload["ShirtSizeId"] = object.shirtSize;
+				this.objectToUpload["ShirtText"] = object.shirtText;
 			} else if (object.viewName.includes("expertise")) {
 				this.objectToUpload["SapExpertise1Id"] = object.expertise1;
 				this.objectToUpload["SapExpertise2Id"] = object.expertise2;
@@ -329,10 +329,10 @@ sap.ui.define([
 				this.objectToUpload["SoftSkill5Id"] = object.softSkill5;
 				this.objectToUpload["SoftSkill6Id"] = object.softSkill6;
 			} else if (object.viewName.includes("band")) {
-			//	this.objectToUpload["JambandBarcelona"] = this._parseBoolean(object.jamBandBarcelona);
-			//	this.objectToUpload["JambandLasVegas"] = this._parseBoolean(object.jamBandLasVegas);
-			//	this.objectToUpload["JambandInstrument"] = object.jamInstruments;
-			//	this.objectToUpload["JambandMusician"] = this._parseBoolean(object.jamMusician);
+				this.objectToUpload["JambandBarcelona"] = this._parseBoolean(object.jamBandBarcelona);
+				this.objectToUpload["JambandLasVegas"] = this._parseBoolean(object.jamBandLasVegas);
+				this.objectToUpload["JambandInstrument"] = object.jamInstruments;
+				this.objectToUpload["JambandMusician"] = this._parseBoolean(object.jamMusician);
 			}
 
 			checkAccess = false;
@@ -422,18 +422,15 @@ sap.ui.define([
 							this.handleCounteraccessed = false;
 							return false;
 						}
-						break;
 					case "write":
 						this.handleCounter++;
 						console.log(this.handleCounter)
 						this.handleCounteraccessed = false;
 						return true;
-						break;
 					default:
 						this.handleCounteraccessed = false;
 						return false;
 				}
-				this.handleCounteraccessed = false;
 			}
 			return null;
 		},
