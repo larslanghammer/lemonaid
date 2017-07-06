@@ -344,6 +344,7 @@ sap.ui.define([
 					if(checkSum == true){
 						console.log(this.objectToUpload);
 						var that = this;
+                        that.accessHandleCounter("zero")
 						//TEST UPLOAD
 						var requests = [];
 						//var imp = this.ui.getProperty("/import");
@@ -417,6 +418,7 @@ sap.ui.define([
 					case "read":
 						if (this.handleCounter >= 9) {
 							this.handleCounteraccessed = false;
+
 							return true;
 						} else {
 							this.handleCounteraccessed = false;
@@ -427,6 +429,8 @@ sap.ui.define([
 						console.log(this.handleCounter)
 						this.handleCounteraccessed = false;
 						return true;
+                    case "zero":
+                        this.handleCounter=0;
 					default:
 						this.handleCounteraccessed = false;
 						return false;
