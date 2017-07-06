@@ -118,6 +118,7 @@ sap.ui.define([
                                         sap.m.MessageToast.show('Profile deleted!');
         				                dialog.close();
                                         resolve();
+                                        this.getRouter().navTo("Mentors");
 
                                     },
                                     error: function(error) {

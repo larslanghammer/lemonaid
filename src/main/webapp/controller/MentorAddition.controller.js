@@ -364,8 +364,11 @@ sap.ui.define([
 								"/Mentors",
 								that.objectToUpload, {
 									success: function(data) {
-                                        that.objectToUpload = {};
 										resolve();
+                                         this.getRouter().navTo("Mentor", {
+                                            Id: that.objectToUpload.Id
+                                        });
+                                        that.objectToUpload = {};
 									},
 									error: function(error) {
 									/*	imp.errors.push({
