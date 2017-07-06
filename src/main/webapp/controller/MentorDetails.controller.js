@@ -115,8 +115,10 @@ sap.ui.define([
                                 //that.model.oData["Mentors('"+that.sMentorId+"')"],
                                 {
                                     success: function(data) {
-                                        newCount++;
+                                        sap.m.MessageToast.show('Profile deleted!');
+        				                dialog.close();
                                         resolve();
+
                                     },
                                     error: function(error) {
                                         imp.errors.push({
@@ -127,13 +129,12 @@ sap.ui.define([
                                                 error.responseText
         									])
         								});
-                                        errorCount++;
+                                        dialog.close();
                                         resolve();
                                     }
                                 }
                             );
-        				sap.m.MessageToast.show('Profile deleted!');
-        				dialog.close();
+
     				 }
 
 				}),
