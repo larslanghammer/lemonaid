@@ -108,7 +108,7 @@ sap.ui.define([
 				title: 'Delete Profil',
 				type: 'Message',
 				content: new sap.m.Text({ text: 'Are you sure you want to delete this profil?' }),
-				beginButton: new sap.m.Button({
+				endButton: new sap.m.Button({
 					text: 'Delete',
 					type: 'Reject',
 					press: function(){
@@ -124,15 +124,9 @@ sap.ui.define([
 
                                     },
                                     error: function(error) {
-                                        imp.errors.push({
-        									title: that.i18n.getText("importCreateErrorTitle"),
-        									message: that.i18n.getText("importCreateError", [
-        										object.Id,
-        										object.fullName,
-                                                error.responseText
-        									])
-        								});
+                                        sap.m.MessageToast.show('There was an Error while deleting the Profile');
                                         dialog.close();
+
                                     }
                                 }
                             );
@@ -140,7 +134,7 @@ sap.ui.define([
     				 }
 
 				}),
-				endButton: new sap.m.Button({
+				beginButton: new sap.m.Button({
 					text: 'Cancel',
 					press: function () {
 						dialog.close();
