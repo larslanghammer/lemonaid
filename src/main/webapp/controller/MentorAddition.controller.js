@@ -274,7 +274,7 @@ sap.ui.define([
 				this.objectToUpload["Language1Id"] = object.language1;
 				this.objectToUpload["Language2Id"] = object.language2;
 				this.objectToUpload["Language3Id"] = object.language3;
-		    	//this.objectToUpload["Public"] = object.public=='true';
+		    	//this.objectToUpload["Public"] = object.public;
 				this.objectToUpload["RegionId"] = object.region;
 				this.objectToUpload["RelationshipToSapId"] = object.relationshipToSap;
 				this.objectToUpload["StatusId"] = object.status;
@@ -329,10 +329,10 @@ sap.ui.define([
 				this.objectToUpload["SoftSkill5Id"] = object.softSkill5;
 				this.objectToUpload["SoftSkill6Id"] = object.softSkill6;
 			} else if (object.viewName.includes("band")) {
-				this.objectToUpload["JambandBarcelona"] = object.jamBandBarcelona=='true';
-				this.objectToUpload["JambandLasVegas"] = object.jamBandLasVegas=='true';
+				this.objectToUpload["JambandBarcelona"] = object.jamBandBarcelona;
+				this.objectToUpload["JambandLasVegas"] = object.jamBandLasVegas;
 				this.objectToUpload["JambandInstrument"] = object.jamInstruments;
-				this.objectToUpload["JambandMusician"] = object.jamMusician=='true';
+				this.objectToUpload["JambandMusician"] = object.jamMusician;
 			}
 
 			checkAccess = false;
