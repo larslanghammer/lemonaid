@@ -28,7 +28,9 @@ sap.ui.define([
 			this.router    = this.getRouter();
 			this.i18n      = this.component.getModel("i18n").getResourceBundle();
 			this.config    = this.component.getModel("config");
-            this.config.setProperty("/IsProjectMember",this.config.getProperty("/IsProjectMember") == 'true');
+            console.log(this.config.getProperty("/IsProjectMember"));
+            console.log((this.config.getProperty("/IsProjectMember") == 'true'))
+            this.config.setProperty("/IsProjectMember",(this.config.getProperty("/IsProjectMember") == 'true'));
 			this.ui        = new JSONModel({
         		ServiceUrl : this.model.sServiceUrl,
 				isEditMode : false
