@@ -274,7 +274,7 @@ sap.ui.define([
 				this.objectToUpload["Language1Id"] = object.language1;
 				this.objectToUpload["Language2Id"] = object.language2;
 				this.objectToUpload["Language3Id"] = object.language3;
-		    	this.objectToUpload["Public"] = object.public=='true';
+		    	//this.objectToUpload["Public"] = object.public=='true';
 				this.objectToUpload["RegionId"] = object.region;
 				this.objectToUpload["RelationshipToSapId"] = object.relationshipToSap;
 				this.objectToUpload["StatusId"] = object.status;
@@ -363,7 +363,7 @@ sap.ui.define([
 								"/Mentors",
 								that.objectToUpload, {
 									success: function(data) {
-										newCount++;
+                                        that.objectToUpload = {};
 										resolve();
 									},
 									error: function(error) {
@@ -375,13 +375,13 @@ sap.ui.define([
 												error.responseText
 											])
 										});*/
-										errorCount++;
+                                        that.objectToUpload = {};
 										resolve();
 									}
 								}
 							);
 					}));
-					Promise.all(requests).then(function() {
+					/*Promise.all(requests).then(function() {
 						if (errorCount === 0) {
 							imp.errors.push({
 								title: that.i18n.getText("importSuccessTitle"),
@@ -397,7 +397,7 @@ sap.ui.define([
 							that.component._oErrorHandler._requestFailedHandler,
 							that.component._oErrorHandler);
 						that.ui.setProperty("/import", imp);
-					});
+					});*/
 
 
 
