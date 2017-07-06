@@ -30,7 +30,7 @@ sap.ui.define([
 			this.config    = this.component.getModel("config");
             console.log(this.config.getProperty("/IsProjectMember"));
             console.log((this.config.getProperty("/IsProjectMember") == 'true'))
-            this.config.setProperty("/IsProjectMember",(this.config.getProperty("/IsProjectMember") == 'true'));
+            this.config.setProperty("/IsProjectMember",(this.config.getProperty("/IsProjectMember") == true));
 			this.ui        = new JSONModel({
         		ServiceUrl : this.model.sServiceUrl,
 				isEditMode : false
