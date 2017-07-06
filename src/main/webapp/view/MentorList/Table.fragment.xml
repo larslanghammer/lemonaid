@@ -19,7 +19,7 @@
 				    id="searchField"
 				    search="onSearchPressed"
 				    width="90%"/>
-			    <Button icon="sap-icon://add-contact" press="onAddNewMentor" width="10%" visible="{ui>/isEditMode}"/>
+			    <Button icon="sap-icon://add-contact" press="onAddNewMentor" width="10%" visible="{=${config>/IsProjectMember}}"/>
 			</Toolbar>
 		</headerToolbar>
 		<columns>

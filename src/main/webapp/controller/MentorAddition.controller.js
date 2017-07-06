@@ -365,7 +365,7 @@ sap.ui.define([
 								that.objectToUpload, {
 									success: function(data) {
 										resolve();
-                                         this.getRouter().navTo("Mentor", {
+                                         that.getRouter().navTo("Mentor", {
                                             Id: that.objectToUpload.Id
                                         });
                                         that.objectToUpload = {};
