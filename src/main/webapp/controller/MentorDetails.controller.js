@@ -29,7 +29,7 @@ sap.ui.define([
 			this.i18n      = this.component.getModel("i18n").getResourceBundle();
 			this.config    = this.component.getModel("config");
             console.log(this.config.getProperty("/IsProjectMember"));
-            console.log((this.config.getProperty("/IsProjectMember") == 'true'))
+            console.log((this.config.getProperty("/IsProjectMember") == true))
             this.config.setProperty("/IsProjectMember",(this.config.getProperty("/IsProjectMember") == true));
 			this.ui        = new JSONModel({
         		ServiceUrl : this.model.sServiceUrl,
@@ -120,7 +120,6 @@ sap.ui.define([
                                     success: function(data) {
                                         sap.m.MessageToast.show('Profile deleted!');
         				                dialog.close();
-                                        resolve();
                                         that.getRouter().navTo("Mentors");
 
                                     },
@@ -134,7 +133,6 @@ sap.ui.define([
         									])
         								});
                                         dialog.close();
-                                        resolve();
                                     }
                                 }
                             );

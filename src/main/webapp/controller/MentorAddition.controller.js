@@ -350,10 +350,11 @@ sap.ui.define([
 						//var imp = this.ui.getProperty("/import");
 						//imp.errors = [];
 						requests.push(new Promise(function(resolve) {
-
+                            var mentorId;
 							if (!that.objectToUpload.Id) {
 								that.objectToUpload.Id = that.guidGenerator.generateGuid();
 							}
+                            mentorId = that.objectToUpload.Id;
 							for (var i in that.objectToUpload) {
 								if (that.objectToUpload[i].length === 0) {
 									delete that.objectToUpload[i];
@@ -366,7 +367,7 @@ sap.ui.define([
 									success: function(data) {
 										resolve();
                                          that.getRouter().navTo("Mentor", {
-                                            Id: that.objectToUpload.Id
+                                            Id: mentorId
                                         });
                                         that.objectToUpload = {};
 									},
