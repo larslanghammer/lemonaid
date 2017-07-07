@@ -122,6 +122,7 @@ sap.ui.define([
 		handleDoStuff: function(channel, event, data) {
 			var oView = this.getView();
 			var object = data.data;
+            if (object != null) {
 			var checkAccess = false;
 			//Handle Stuff based on View calling it
 
@@ -266,7 +267,7 @@ sap.ui.define([
 					checkAccess = true;
 				}
 			}
-
+        }
 
 		},
 

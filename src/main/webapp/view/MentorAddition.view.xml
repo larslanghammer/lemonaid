@@ -66,10 +66,10 @@
 				<subSections>
 					<ObjectPageSubSection id="PersonalInfo" title="{i18n>personalInfo}">
 						<blocks>
-							<details:BlockBasicData />
-							<details:BlockAddress  />
-							<details:BlockBio />
-							<details:BlockSocialMedia />
+							<details:BlockBasicData id="BasicData_creation"/>
+							<details:BlockAddress  id="Address_creation"/>
+							<details:BlockBio id="Bio_creation"/>
+							<details:BlockSocialMedia id="Media_creation"/>
 						<!--	<details:BlockMap /> -->
 						</blocks>
 					</ObjectPageSubSection>
@@ -80,11 +80,11 @@
 				<subSections>
 					<ObjectPageSubSection title="Mentor details">
 						<blocks>
-							<details:BlockShirt />
-							<details:BlockExpertise />
-							<details:BlockTopics />
-							<details:BlockSoftskills />
-							<details:BlockJamBand />
+							<details:BlockShirt id="Shirt_creation"/>
+							<details:BlockExpertise id="Expertise_creation"/>
+							<details:BlockTopics id="Topics_creation"/>
+							<details:BlockSoftskills id="SoftSkills_creation"/>
+							<details:BlockJamBand id="JamBand_creation"/>
 						</blocks>
 					</ObjectPageSubSection>
 				</subSections>
@@ -94,7 +94,7 @@
 				<subSections>
 					<ObjectPageSubSection title="Media and Documents">
 						<blocks>
-							<details:BlockAttachments />
+							<details:BlockAttachments id="Attachments_creation" />
 						</blocks>
 					</ObjectPageSubSection>
 				</subSections>
