@@ -118,13 +118,13 @@ sap.ui.define([
                                 //that.model.oData["Mentors('"+that.sMentorId+"')"],
                                 {
                                     success: function(data) {
-                                        sap.m.MessageToast.show(this.i18n.getText("profileDeleted"));
+                                        sap.m.MessageToast.show(that.i18n.getText("profileDeleted"));
         				                dialog.close();
                                         that.getRouter().navTo("Mentors");
 
                                     },
                                     error: function(error) {
-                                        sap.m.MessageToast.show(this.i18n.getText("profileDeletedError"));
+                                        sap.m.MessageToast.show(that.i18n.getText("profileDeletedError"));
                                         dialog.close();
 
                                     }

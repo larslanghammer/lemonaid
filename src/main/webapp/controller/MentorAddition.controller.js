@@ -224,7 +224,7 @@ sap.ui.define([
 								"/Mentors",
 								that.objectToUpload, {
 									success: function(data) {
-                                        MessageToast.show(this.i18n.getText("profileSavedSuccesfully"));
+                                        MessageToast.show(that.i18n.getText("profileSavedSuccesfully"));
 										resolve();
                                          that.getRouter().navTo("Mentor", {
                                             Id: mentorId
@@ -233,7 +233,7 @@ sap.ui.define([
                                         that.accessHandleCounter("zero");
 									},
 									error: function(error) {
-                                        MessageToast.show(this.i18n.getText("profileSavedError"));
+                                        MessageToast.show(that.i18n.getText("profileSavedError"));
                                         that.objectToUpload = {};
                                         that.accessHandleCounter("zero");
 										resolve();
