@@ -30,7 +30,7 @@ sap.ui.define([
                     if (controlsId.includes("input")) {
                         oData.push(controlsArray[i].getValue());
                         //if(controlsArray[i-1].sId.includes("label")){
-                        oTest[controlsId.split("-")[5]] = controlsArray[i].getValue();
+                        oTest[controlsId.split("-")[6]] = controlsArray[i].getValue();
                         /*}else{
                         		var label = "label"+notFoundLableCounter;
                         		oTest[label] = controlsArray[i].getValue();
@@ -40,7 +40,7 @@ sap.ui.define([
                     } else if (controlsId.includes("select")) {
                         oData.push(controlsArray[i].getSelectedKey());
                         //	if(controlsArray[i-1].sId.includes("label")){
-                        oTest[controlsId.split("-")[5]] = controlsArray[i].getSelectedKey();
+                        oTest[controlsId.split("-")[6]] = controlsArray[i].getSelectedKey();
                         /*	}else{
                         		var label = "label"+notFoundLableCounter;
                         		oTest[label] =controlsArray[i].getSelectedKey();
@@ -49,7 +49,7 @@ sap.ui.define([
                     } else if (controlsId.includes("switch")) {
                         oData.push(controlsArray[i].getState());
                         //	if(controlsArray[i-1].sId.includes("label")){
-                        oTest[controlsId.split("-")[5]] = controlsArray[i].getState();
+                        oTest[controlsId.split("-")[6]] = controlsArray[i].getState();
                         /*	}else{
                         		var label = "label"+notFoundLableCounter;
                         		oTest[label] =controlsArray[i].getState();
