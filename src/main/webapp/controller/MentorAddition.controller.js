@@ -204,7 +204,6 @@ sap.ui.define([
 					if(checkSum == true){
 						console.log(this.objectToUpload);
 						var that = this;
-                        that.accessHandleCounter("zero")
 						//TEST UPLOAD
 						var requests = [];
 						//var imp = this.ui.getProperty("/import");
@@ -231,10 +230,12 @@ sap.ui.define([
                                             Id: mentorId
                                         });
                                         that.objectToUpload = {};
+                                        that.accessHandleCounter("zero");
 									},
 									error: function(error) {
                                         MessageToast.show(this.i18n.getText("profileSavedError"));
                                         that.objectToUpload = {};
+                                        that.accessHandleCounter("zero");
 										resolve();
 									}
 								}
