@@ -131,7 +131,7 @@ sap.ui.define([
 					checkAccess = true;
 				}
 			}
-			if (object.viewName.includes("data")) {
+			if (object.viewName.includes("BasicData")) {
 				this.objectToUpload["Language1Id"] = object.language1;
 				this.objectToUpload["Language2Id"] = object.language2;
 				this.objectToUpload["Language3Id"] = object.language3;
@@ -139,7 +139,7 @@ sap.ui.define([
 				this.objectToUpload["RegionId"] = object.region;
 				this.objectToUpload["RelationshipToSapId"] = object.relationshipToSap;
 				this.objectToUpload["StatusId"] = object.status;
-			} else if (object.viewName.includes("address")) {
+			} else if (object.viewName.includes("Address")) {
 				this.objectToUpload["Address1"] = object.address1;
 				this.objectToUpload["Address2"] = object.address2;
 				this.objectToUpload["City"] = object.city;
@@ -150,13 +150,13 @@ sap.ui.define([
 				this.objectToUpload["Phone"] = object.phone;
 				this.objectToUpload["State"] = object.state;
 				this.objectToUpload["Zip"] = object.zip;
-			} else if (object.viewName.includes("bio")) {
+			} else if (object.viewName.includes("Bio")) {
 				this.objectToUpload["Bio"] = object.bio;
 				this.objectToUpload["Industry1Id"] = object.industry1;
 				this.objectToUpload["Industry2Id"] = object.industry2;
 				this.objectToUpload["Industry3Id"] = object.industry3;
 				this.objectToUpload["MentorSince"] = object.mentorSince;
-			} else if (object.viewName.includes("media")) {
+			} else if (object.viewName.includes("Media")) {
 				this.objectToUpload["Email1"] = object.email1;
 				this.objectToUpload["Email2"] = object.email2;
 				this.objectToUpload["FacebookUrl"] = object.facebook;
@@ -165,31 +165,31 @@ sap.ui.define([
 				this.objectToUpload["SlackId"] = object.slackUrl;
 				this.objectToUpload["TwitterId"] = object.twitterUrl;
 				this.objectToUpload["XingUrl"] = object.xing;
-			}else if (object.viewName.includes("shirt")) {
+			}else if (object.viewName.includes("Shirt")) {
 				this.objectToUpload["ShirtMFId"] = object.shirtMF;
 				this.objectToUpload["ShirtNumber"] =object.shirtNumber;
 				this.objectToUpload["ShirtSizeId"] = object.shirtSize;
 				this.objectToUpload["ShirtText"] = object.shirtText;
-			} else if (object.viewName.includes("expertise")) {
+			} else if (object.viewName.includes("Expertise")) {
 				this.objectToUpload["SapExpertise1Id"] = object.expertise1;
 				this.objectToUpload["SapExpertise2Id"] = object.expertise2;
 				this.objectToUpload["SapExpertise3Id"] = object.expertise3;
 				this.objectToUpload["SapExpertise1LevelId"] = object.expertiseLevel1;
 				this.objectToUpload["SapExpertise2LevelId"] = object.expertiseLevel2;
 				this.objectToUpload["SapExpertise3LevelId"] = object.expertiseLevel3;
-			} else if (object.viewName.includes("topics")) {
+			} else if (object.viewName.includes("Topics")) {
 				this.objectToUpload["Topic1Id"] = object.topic1;
 				this.objectToUpload["Topic2Id"] = object.topic2;
 				this.objectToUpload["Topic3Id"] = object.topic3;
 				this.objectToUpload["Topic4Id"] = object.topic4;
-			} else if (object.viewName.includes("softskills")) {
+			} else if (object.viewName.includes("SoftSkills")) {
 				this.objectToUpload["SoftSkill1Id"] = object.softSkill1;
 				this.objectToUpload["SoftSkill2Id"] = object.softSkill2;
 				this.objectToUpload["SoftSkill3Id"] = object.softSkill3;
 				this.objectToUpload["SoftSkill4Id"] = object.softSkill4;
 				this.objectToUpload["SoftSkill5Id"] = object.softSkill5;
 				this.objectToUpload["SoftSkill6Id"] = object.softSkill6;
-			} else if (object.viewName.includes("band")) {
+			} else if (object.viewName.includes("JamBand")) {
 				this.objectToUpload["JambandBarcelona"] = object.jamBandBarcelona;
 				this.objectToUpload["JambandLasVegas"] = object.jamBandLasVegas;
 				this.objectToUpload["JambandInstrument"] = object.jamInstruments;
