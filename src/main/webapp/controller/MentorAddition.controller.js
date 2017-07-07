@@ -118,146 +118,6 @@ sap.ui.define([
 
 		},
 
-		onUpload: function(event) {
-			var that = this,
-				imp = this.ui.getProperty("/import"),
-				errorCount = 0,
-				updateCount = 0,
-				newCount = 0,
-				requests = [];
-			imp.errors = [];
-			that.view.byId("btnUpload").setEnabled(false);
-			this.model.detachRequestFailed(
-				this.component._oErrorHandler._requestFailedHandler,
-				this.component._oErrorHandler);
-			jQuery.each(imp.data, function(rowIdx, row) {
-				if (!row.__skip) {
-					var object = {};
-					jQuery.each(row, function(fieldName, field) {
-						fieldName = fieldName.replace(/\s+/g, "");
-						if (that._isValidField(fieldName)) {
-							object[fieldName] = field;
-						}
-					});
-					delete object.longitude;
-					delete object.latitude;
-					if (object.ShirtNumber) {
-						object.ShirtNumber = that._parseInteger(object.ShirtNumber);
-					} else {
-						delete object.ShirtNumber;
-					}
-					if (object.HoursAvailable) {
-						object.HoursAvailable = that._parseInteger(object.HoursAvailable);
-					} else {
-						delete object.HoursAvailable;
-					}
-					if (object.InterestInMentorCommunicationStrategy) {
-						object.InterestInMentorCommunicationStrategy = that._parseBoolean(object.InterestInMentorCommunicationStrategy);
-					} else {
-						delete object.InterestInMentorCommunicationStrategy;
-					}
-					if (object.InterestInMentorManagementModel) {
-						object.InterestInMentorManagementModel = that._parseBoolean(object.InterestInMentorManagementModel);
-					} else {
-						delete object.InterestInMentorManagementModel;
-					}
-					if (object.InterestInMentorMix) {
-						object.InterestInMentorMix = that._parseBoolean(object.InterestInMentorMix);
-					} else {
-						delete object.InterestInMentorMix;
-					}
-					if (object.InterestInOtherIdeas) {
-						object.InterestInOtherIdeas = that._parseBoolean(object.InterestInOtherIdeas);
-					} else {
-						delete object.InterestInOtherIdeas;
-					}
-					if (object.TopicLeadInterest) {
-						object.TopicLeadInterest = that._parseBoolean(object.TopicLeadInterest);
-					} else {
-						delete object.TopicLeadInterest;
-					}
-					if (object.HoursAvailable) {
-						object.HoursAvailable = that._parseInteger(object.HoursAvailable);
-					} else {
-						delete object.HoursAvailable;
-					}
-					requests.push(new Promise(function(resolve) {
-						if (row.__new) {
-							if (!object.Id) {
-								object.Id = that.guidGenerator.generateGuid();
-							}
-							for (var i in object) {
-								if (object[i].length === 0) {
-									delete object[i];
-								}
-							}
-							that.model.create(
-								"/Mentors",
-								object, {
-									success: function(data) {
-										newCount++;
-										resolve();
-									},
-									error: function(error) {
-										imp.errors.push({
-											title: that.i18n.getText("importCreateErrorTitle"),
-											message: that.i18n.getText("importCreateError", [
-												object.Id,
-												object.fullName,
-												error.responseText
-											])
-										});
-										errorCount++;
-										resolve();
-									}
-								}
-							);
-						} else {
-							that.model.update(
-								that.model.createKey("/Mentors", {
-									Id: object.Id
-								}),
-								object, {
-									success: function(data) {
-										updateCount++;
-										resolve();
-									},
-									error: function(error) {
-										imp.errors.push({
-											title: that.i18n.getText("importUpdateErrorTitle"),
-											message: that.i18n.getText("importUpdateError", [
-												object.Id,
-												object.fullName,
-												error.responseText
-											])
-										});
-										errorCount++;
-										resolve();
-									}
-								}
-							);
-						}
-					}));
-					Promise.all(requests).then(function() {
-						if (errorCount === 0) {
-							imp.errors.push({
-								title: that.i18n.getText("importSuccessTitle"),
-								picture: jQuery.sap.getModulePath("com.sap.mentors.lemonaid.images") + "/heart.png",
-								message: that.i18n.getText("importSuccess", [
-									imp.data.length,
-									newCount,
-									updateCount
-								])
-							});
-						}
-						that.model.attachRequestFailed(
-							that.component._oErrorHandler._requestFailedHandler,
-							that.component._oErrorHandler);
-						that.ui.setProperty("/import", imp);
-					});
-				}
-			});
-		},
 
 		handleDoStuff: function(channel, event, data) {
 			var oView = this.getView();
@@ -365,6 +225,7 @@ sap.ui.define([
 								"/Mentors",
 								that.objectToUpload, {
 									success: function(data) {
+                                        MessageToast.show(this.i18n.getText("profileSavedSuccesfully"));
 										resolve();
                                          that.getRouter().navTo("Mentor", {
                                             Id: mentorId
@@ -372,14 +233,7 @@ sap.ui.define([
                                         that.objectToUpload = {};
 									},
 									error: function(error) {
-									/*	imp.errors.push({
-											title: that.i18n.getText("importCreateErrorTitle"),
-											message: that.i18n.getText("importCreateError", [
-												this.objectToUpload.Id,
-												othis.objectToUpload.FullName,
-												error.responseText
-											])
-										});*/
+                                        MessageToast.show(this.i18n.getText("profileSavedError"));
                                         that.objectToUpload = {};
 										resolve();
 									}
