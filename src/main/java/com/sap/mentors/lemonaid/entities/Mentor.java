@@ -147,7 +147,7 @@ public class Mentor {
     {
     	this.id = id;
         this.fullName = fullName;
-        this.statusId = new MentorStatus(status.getId());
+        this.statusId = status;
 
         this.jobTitle = jobTitle;
         this.company = company;
