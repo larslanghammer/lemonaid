@@ -136,10 +136,10 @@ sap.ui.define([
 				this.objectToUpload["Language2Id"] = object.language2;
 				this.objectToUpload["Language3Id"] = object.language3;
 		    	//this.objectToUpload["Public"] = object.public;
-				this.objectToUpload["RegionId"] = object.region;
+				this.objectToUpload["RegionId"] = object.reg‚ion;
 				this.objectToUpload["RelationshipToSapId"] = object.relationshipToSap;
-                status = {};
-                status.__ref = this.model.oData["MentorStatuses('"+object.status+"')"];
+                statusHelper = {};
+                statusHelper[__ref] = this.model.oData["MentorStatuses('"+object.status+"')"];
 				this.objectToUpload["MentorStatus"] = status;
 			} else if (object.viewName.includes("Address")) {
 				this.objectToUpload["Address1"] = object.address1;
