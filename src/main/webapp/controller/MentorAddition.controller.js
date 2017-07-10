@@ -233,6 +233,7 @@ sap.ui.define([
                                             var createdId = that.objectToUpload.Id;
                                             //delete that.objectToUpload.Id;
                                             that.model.oData["Mentors('" + createdId + "')"] = that.objectToUpload
+                                            console.log(that.model.oData["Mentors('" + createdId + "')"]);
                                             that.model.submitChanges({
                                                 success: function (oData) {
                                                     sap.m.MessageToast.show(this.i18n.getText("profileSavedSuccesfully"));
