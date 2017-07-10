@@ -138,8 +138,8 @@ sap.ui.define([
 		    	//this.objectToUpload["Public"] = object.public;
 				this.objectToUpload["RegionId"] = object.region;
 				this.objectToUpload["RelationshipToSapId"] = object.relationshipToSap;
-                var statusHelper = {};
-                statusHelper["__ref"] ="MentorStatuses('"+object.status+"')"// this.model.oData["MentorStatuses('"+object.status+"')"];
+               // var statusHelper = {};
+                //statusHelper["__ref"] ="MentorStatuses('"+object.status+"')"// this.model.oData["MentorStatuses('"+object.status+"')"];
 				this.objectToUpload["MentorStatus"] = statusHelper;
                 this.objectToUpload["StatusId"] = object.status;
 			} else if (object.viewName.includes("Address")) {
