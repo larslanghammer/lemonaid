@@ -140,7 +140,7 @@ sap.ui.define([
 				this.objectToUpload["RelationshipToSapId"] = object.relationshipToSap;
                // var statusHelper = {};
                 //statusHelper["__ref"] ="MentorStatuses('"+object.status+"')"// this.model.oData["MentorStatuses('"+object.status+"')"];
-				this.objectToUpload["MentorStatus"] = statusHelper;
+				//this.objectToUpload["MentorStatus"] = statusHelper;
                 this.objectToUpload["StatusId"] = object.status;
 			} else if (object.viewName.includes("Address")) {
 				this.objectToUpload["Address1"] = object.address1;
