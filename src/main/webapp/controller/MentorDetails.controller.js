@@ -71,7 +71,7 @@ sap.ui.define([
          */
         onSave: function (oEvent) {
             console.log(this.model);
-            console.log(this.model.oData["Mentors('" + this.sMentorId + "')")
+            console.log(this.model.oData["Mentors('" + this.sMentorId + "')"]);
             this.model.submitChanges({
                 success: function (oData) {
                     sap.m.MessageToast.show(this.i18n.getText("profileSavedSuccesfully"));
