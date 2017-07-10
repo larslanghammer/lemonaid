@@ -230,10 +230,12 @@ sap.ui.define([
                                         success: function (data) {
                                             MessageToast.show(that.i18n.getText("profileSavedSuccesfully"));
                                             resolve();
+                                            var createdId = that.objectToUpload.Id;
+                                            //delete that.objectToUpload.Id;
+                                            that.model.oData["Mentors('" + createdId + "')"] = that.objectToUpload
                                             that.model.submitChanges({
                                                 success: function (oData) {
                                                     sap.m.MessageToast.show(this.i18n.getText("profileSavedSuccesfully"));
-                                                    this.ui.setProperty("/isEditMode", false);
                                                 }.bind(this),
                                                 error: function (oError) {
                                                     sap.m.MessageToast.show(this.i18n.getText("profileSavedError"));
