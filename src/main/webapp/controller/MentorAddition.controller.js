@@ -138,7 +138,9 @@ sap.ui.define([
 		    	//this.objectToUpload["Public"] = object.public;
 				this.objectToUpload["RegionId"] = object.region;
 				this.objectToUpload["RelationshipToSapId"] = object.relationshipToSap;
-				this.objectToUpload["StatusId"] = object.status;
+                status = {};
+                status.__ref = "MentorStatuses('"+object.status+"')";
+				this.objectToUpload["MentorStatus"] = status;
 			} else if (object.viewName.includes("Address")) {
 				this.objectToUpload["Address1"] = object.address1;
 				this.objectToUpload["Address2"] = object.address2;
