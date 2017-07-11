@@ -127,7 +127,7 @@ public class Mentor {
     public Mentor() {}
 
     public Mentor(
-    		String id, String fullName, String status,
+    		String id, String fullName, MentorStatus status,
     		String jobTitle, String company, RelationshipToSap relationshipToSap,
     		LineOfBusiness lineOfBusiness1Id, LineOfBusiness lineOfBusiness2Id, LineOfBusiness lineOfBusiness3Id,
     		Industry industry1Id, Industry industry2Id, Industry industry3Id,
@@ -147,7 +147,7 @@ public class Mentor {
     {
     	this.id = id;
         this.fullName = fullName;
-        this.statusId = new MentorStatus(status);
+        this.statusId = status;
 
         this.jobTitle = jobTitle;
         this.company = company;
