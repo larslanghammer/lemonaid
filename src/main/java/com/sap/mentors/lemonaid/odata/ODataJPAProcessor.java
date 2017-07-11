@@ -171,7 +171,7 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 			final String requestContentType, final String contentType) throws ODataException {
 		authorization.check(CREATE, uriParserResultView);
 		ODataResponse oDataResponse = null;
-		/*try {
+		try {
 			if (uriParserResultView.getTargetEntitySet().getEntityType().hasStream()) {
 				Object createdJpaEntity = mediaProcessor.process(uriParserResultView, content, requestContentType);
 				createdJpaEntity = enrichEntity(uriParserResultView, createdJpaEntity);
@@ -184,7 +184,7 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 			}
 		} finally {
 			close();
-		}*/
+		}
 		return oDataResponse;
 	}
 
