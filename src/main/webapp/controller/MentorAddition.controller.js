@@ -228,7 +228,7 @@ sap.ui.define([
                                     "/Mentors",
                                     that.objectToUpload, {
                                         success: function (data) {
-                                            consoel.log(data);
+                                            console.log(data);
                                             MessageToast.show(that.i18n.getText("profileSavedSuccesfully"));
                                             resolve();
                                             var createdId = that.objectToUpload.Id;
