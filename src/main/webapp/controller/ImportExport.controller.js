@@ -351,7 +351,9 @@ sap.ui.define([
                                 object.Id = that.guidGenerator.generateGuid();
                             }
                             for (var i in object) {
-                                if (object[i].length === 0) {
+                                if(object[i] == undefined){
+                                    delete object[i];
+                                }else if (object[i].length === 0) {
                                     delete object[i];
                                 }
                             }
