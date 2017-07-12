@@ -263,7 +263,7 @@ sap.ui.define([
                         delete object.HoursAvailable;
                     }
                     //Add Objects of JoinColum Entities
-                  /*  if(object.Language1Id){
+                    if(object.Language1Id){
                         object["Language1"] = that.model.oData["Languages('"+object.Language1Id+"')"];
                     }
                     if(object.Language2Id){
@@ -343,7 +343,7 @@ sap.ui.define([
                     }
                     if(object.SoftSkill6Id){
                         object["SoftSkill6"] = that.model.oData["SoftSkills('"+object.SoftSkill6Id+"')"];
-                    }*/
+                    }
                     console.log(object);
                     requests.push(new Promise(function (resolve) {
                         if (row.__new) {
