@@ -262,6 +262,89 @@ sap.ui.define([
                     } else {
                         delete object.HoursAvailable;
                     }
+                    //Add Objects of JoinColum Entities
+                    if(object.Language1Id){
+                        object.Language1 = that.model.oData["Languages('"+object.Language1Id+"')"];
+                    }
+                    if(object.Language2Id){
+                        object.Language2 = that.model.oData["Languages('"+object.Language2Id+"')"];
+                    }
+                    if(object.Language3Id){
+                        object.Language3 = that.model.oData["Languages('"+object.Language3Id+"')"];
+                    }
+                    if(object.RegionId){
+                        object.Region = that.model.oData["Regions('"+object.RegionId+"')"];
+                    }
+                    if(object.RelationshipToSapId){
+                        object.RelationshipToSap = that.model.oData["RelationshipsToSap('"+object.RelationshipToSapId+"')"];
+                    }
+                    if(object.StatusId){
+                         object.MentorStatus = that.model.oData["MentorStatuses('"+object.StatusId+"')"];
+                    }
+                    if(object.CountryId){
+                         object.Country = that.model.oData["Countries('"+object.CountryId+"')"];
+                    }
+                    if(object.Industry1Id){
+                         object.Industry1 = that.model.oData["Industries('"+object.Industry1Id+"')"];
+                    }
+                    if(object.Industry2Id){
+                        object.Industry2 = that.model.oData["Industries('"+object.Industry2Id+"')"];
+                    }
+                    if(object.Industry3Id){
+                        object.Industry3 = that.model.oData["Industries('"+object.Industry3Id+"')"];
+                    }
+                    if(object.ShirtMFId){
+                        object.ShirtMF = that.model.oData["Genders('"+object.shirtMF+"')"];
+                    }
+                    if(object.ShirtSizeId){
+                        object.ShirtSize = that.model.oData["Sizes('"+object.ShirtSizeId+"')"];
+                    }
+                    if(object.SapExpertise1Id){
+                        object.SapExpertise1 = that.model.oData["SapSoftwareSolutions('"+object.SapExpertise1Id+"')"];
+                    }
+                    if(object.SapExpertise2Id){
+                        object.SapExpertise2 = that.model.oData["SapSoftwareSolutions('"+object.SapExpertise2Id+"')"];
+                    }
+                    if(object.SapExpertise3Id){
+                        object.SapExpertise3 = that.model.oData["SapSoftwareSolutions('"+object.SapExpertise3Id+"')"];
+                    }
+                    if(object.SapExpertiseLevel1Id){
+                        object.SapExpertiseLevel1 = that.model.oData["ExpertiseLevels('"+object.SapExpertiseLevel1Id+"')"];
+                    }
+                    if(object.SapExpertiseLevel2Id){
+                        object.SapExpertiseLevel2 = that.model.oData["ExpertiseLevels('"+object.SapExpertiseLevel2Id+"')"];
+                    }
+                    if(object.SapExpertiseLevel3Id){
+                        object.SapExpertiseLevel3 = that.model.oData["ExpertiseLevels('"+object.SapExpertiseLevel3Id+"')"];
+                    }
+                    if(object.Topic1Id){
+                         object.Topic1 = that.model.oData["Topics('"+object.Topic1Id+"')"];
+                    }
+                    if(object.Topic2Id){
+                        object.Topic2 = that.model.oData["Topics('"+object.Topic2Id+"')"];
+                    }
+                    if(object.Topic3Id){
+                        object.Topic3 = that.model.oData["Topics('"+object.Topic3Id+"')"];
+                    }
+                    if(object.SoftSkill1Id){
+                        object.SoftSkill1 = that.model.oData["SoftSkills('"+object.SoftSkill1Id+"')"];
+                    }
+                    if(object.SoftSkill2Id){
+                        object.SoftSkill2 = that.model.oData["SoftSkills('"+object.SoftSkill2Id+"')"];
+                    }
+                    if(object.SoftSkill3Id){
+                        object.SoftSkill3 = that.model.oData["SoftSkills('"+object.SoftSkill3Id+"')"];
+                    }
+                    if(object.SoftSkill4Id){
+                        object.SoftSkill4 = that.model.oData["SoftSkills('"+object.SoftSkill4Id+"')"];
+                    }
+                    if(object.SoftSkill5Id){
+                        object.SoftSkill5 = that.model.oData["SoftSkills('"+object.SoftSkill5Id+"')"];
+                    }
+                    if(object.SoftSkill6Id){
+                        object.SoftSkill6 = that.model.oData["SoftSkills('"+object.SoftSkill6Id+"')"];
+                    }
+
                     requests.push(new Promise(function (resolve) {
                         if (row.__new) {
                             if (!object.Id) {
