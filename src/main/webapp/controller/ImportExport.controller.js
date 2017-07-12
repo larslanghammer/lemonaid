@@ -308,13 +308,13 @@ sap.ui.define([
                     if(object.SapExpertise3Id){
                         object.SapExpertise3 = that.model.oData["SapSoftwareSolutions('"+object.SapExpertise3Id+"')"];
                     }
-                    if(object.SapExpertise1Level1Id){
+                    if(object.SapExpertise1LevelId){
                         object.SapExpertise1Level = that.model.oData["ExpertiseLevels('"+object.SapExpertise1LevelId+"')"];
                     }
-                    if(object.SapExpertise2Level2Id){
+                    if(object.SapExpertise2LevelId){
                         object.SapExpertise2Level = that.model.oData["ExpertiseLevels('"+object.SapExpertise2LevelId+"')"];
                     }
-                    if(object.SapExpertise3Level3Id){
+                    if(object.SapExpertise3LevelId){
                         object.SapExpertise3Level = that.model.oData["ExpertiseLevels('"+object.SapExpertise3LevelId+"')"];
                     }
                     if(object.Topic1Id){
@@ -344,7 +344,7 @@ sap.ui.define([
                     if(object.SoftSkill6Id){
                         object.SoftSkill6 = that.model.oData["SoftSkills('"+object.SoftSkill6Id+"')"];
                     }
-
+                    console.log(object);
                     requests.push(new Promise(function (resolve) {
                         if (row.__new) {
                             if (!object.Id) {
