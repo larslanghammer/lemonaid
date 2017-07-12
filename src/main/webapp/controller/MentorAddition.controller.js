@@ -23,7 +23,7 @@ sap.ui.define([
          */
         onInit: function () {
             var oEventBus = sap.ui.getCore().getEventBus();
-            oEventBus.subscribe("MyChannelAddition", "doStuff", this.handleDoStuff, this);
+            oEventBus.subscribe("MyChannelAddition", "notifyMentorAdditionHandler", this.handleBlockCallback, this);
 
             this.view = this.getView();
             this.component = this.getComponent();
@@ -32,12 +32,9 @@ sap.ui.define([
             this.i18n = this.component.getModel("i18n").getResourceBundle();
             this.config = this.component.getModel("config");
             this.ui = new JSONModel({
-                //ServiceUrl : this.model.sServiceUrl,
                 isEditMode: true,
-                FullName: "Lars"
             });
             this.view.setModel(this.ui, "ui");
-            //console.log(this.getModel("ui"));
             this.router.getRoute("MentorAddition").attachMatched(this.onRouteMatched, this);
 
             // Remove sections/blocks that are not meant for a general audience
@@ -58,7 +55,6 @@ sap.ui.define([
         /* =========================================================== */
 
         onRouteMatched: function (oEvent) {
-            // this.sMentorId = oEvent.getParameter("arguments").Id;
             this.model.metadataLoaded().then(this.bindView.bind(this));
         },
 
@@ -76,19 +72,7 @@ sap.ui.define([
          */
         onSave: function (oEvent) {
             var oEventBus = sap.ui.getCore().getEventBus();
-            oEventBus.publish("MyChannel", "doStuff");
-            //	console.log(this.model);
-            //	console.log(this.ui);
-            //	console.log(this.view);
-            /*	this.model.submitChanges({
-            		success: function(oData) {
-            			MessageToast.show(this.i18n.getText("profileSavedSuccesfully"));
-            			this.ui.setProperty("/isEditMode", false);
-            		}.bind(this),
-            		error: function(oError) {
-            			MessageToast.show(this.i18n.getText("profileSavedError"));
-            		}.bind(this)
-            	});*/
+            oEventBus.publish("BlockChannel", "removeDataBinding");
         },
 
         /**
@@ -102,24 +86,12 @@ sap.ui.define([
 
         bindView: function () {
             var oEventBus = sap.ui.getCore().getEventBus();
-            oEventBus.publish("MyChannel", "doStuff2");
-            /*	this.sMentorId = "fba652ed-32d6-46ff-a53d-1103dde715f8";
-			console.log(this.getModel().createKey("/Mentors", { Id: this.sMentorId }));
-            this.view.bindElement({
-                path: this.getModel().createKey("/Mentors", { Id: this.sMentorId }),
-                parameters: {
-                    expand: this.component.metadata._getEntityTypeByName("Mentor").navigationProperty.map(function(navigationProperty) {
-                        return navigationProperty.name;
-                    }).join() 	// Expand all navigation properties
-                }
-            });
-            this.ui.setProperty("/UploadUrl", this.model.sServiceUrl + "/" + this.model.createKey("Mentors", {Id: this.sMentorId}) + "/Attachments");
-            var oView = this.getView();*/
+            oEventBus.publish("BlockChannel", "readBlockContent");
 
         },
 
 
-        handleDoStuff: function (channel, event, data) {
+        handleBlockCallback: function (channel, event, data) {
             var oView = this.getView();
             var object = data.data;
             if (object != null) {
@@ -143,8 +115,6 @@ sap.ui.define([
                     this.objectToUpload["RegionId"] = object.region;
                     this.objectToUpload["RelationshipToSap"] = this.model.oData["RelationshipsToSap('"+object.relationshipToSap+"')"];
                     this.objectToUpload["RelationshipToSapId"] = object.relationshipToSap;
-                    //var statusHelper = {};
-                    //statusHelper = this.model.oData["MentorStatuses('"+object.status+"')"];
                     this.objectToUpload["MentorStatus"] = this.model.oData["MentorStatuses('"+object.status+"')"];
                     this.objectToUpload["StatusId"] = object.status;
                 } else if (object.viewName.includes("Address")) {
@@ -231,14 +201,10 @@ sap.ui.define([
                 while (checkAccess == false) {
                     checkSum = this.accessHandleCounter("read")
                     if (checkSum != null) {
-                        console.log(checkSum);
                         if (checkSum == true) {
-                            console.log(this.objectToUpload);
                             var that = this;
                             //TEST UPLOAD
                             var requests = [];
-                            //var imp = this.ui.getProperty("/import");
-                            //imp.errors = [];
                             requests.push(new Promise(function (resolve) {
                                 var mentorId;
                                 if (!that.objectToUpload.Id) {
@@ -250,16 +216,13 @@ sap.ui.define([
                                         delete that.objectToUpload[i];
                                     }else if(that.objectToUpload[i].length === 0){delete that.objectToUpload[i];}
                                 }
-                                console.log(that.objectToUpload);
                                 that.model.create(
                                     "/Mentors",
                                     that.objectToUpload, {
                                         success: function (data) {
-                                            console.log(data);
                                             MessageToast.show(that.i18n.getText("profileSavedSuccesfully"));
                                             resolve();
                                             var createdId = that.objectToUpload.Id;
-                                            //delete that.objectToUpload.Id;
                                             that.model.oData["Mentors('" + createdId + "')"] = that.objectToUpload
                                             console.log(that.model.oData["Mentors('" + createdId + "')"]);
                                             that.model.submitChanges({
@@ -287,26 +250,6 @@ sap.ui.define([
                                     }
                                 );
                             }));
-                            /*Promise.all(requests).then(function() {
-                            	if (errorCount === 0) {
-                            		imp.errors.push({
-                            			title: that.i18n.getText("importSuccessTitle"),
-                            			picture: jQuery.sap.getModulePath("com.sap.mentors.lemonaid.images") + "/heart.png",
-                            			message: that.i18n.getText("importSuccess", [
-                            				imp.data.length,
-                            				newCount,
-                            				updateCount
-                            			])
-                            		});
-                            	}
-                            	that.model.attachRequestFailed(
-                            		that.component._oErrorHandler._requestFailedHandler,
-                            		that.component._oErrorHandler);
-                            	that.ui.setProperty("/import", imp);
-                            });*/
-
-
-
                             this.objectToUpload = {};
                         }
                         checkAccess = true;

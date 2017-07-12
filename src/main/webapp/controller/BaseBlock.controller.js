@@ -11,11 +11,11 @@ sap.ui.define([
         formatters: formatters,
         onInit: function () {
             var oEventBus = sap.ui.getCore().getEventBus();
-            oEventBus.subscribe("MyChannel", "doStuff", this.handleDoStuff, this);
-            oEventBus.subscribe("MyChannel", "doStuff2", this.handleDoStuff2, this);
+            oEventBus.subscribe("BlockChannel", "readBlockContent", this.handleReadBlockContent, this);
+            oEventBus.subscribe("BlockChannel", "removeDataBinding", this.handleRemoveDataBinding, this);
         },
 
-        handleDoStuff: function (channel, event, data) {
+        handleReadBlockContent: function (channel, event, data) {
             var oEventBus = sap.ui.getCore().getEventBus();
             var oView = this.getView();
             var controlsArray = oView.getContent()[0]._aElements;
@@ -24,53 +24,34 @@ sap.ui.define([
             if (oView.sId.includes("creation")) {
                 oTest["viewName"] = oView.getId()
                 var notFoundLableCounter = 0;
-                //console.log(oView.getContent()[0]._aElements);
                 for (var i in controlsArray) {
                     var controlsId = controlsArray[i].sId;
                     if (controlsId.includes("input")) {
                         oData.push(controlsArray[i].getValue());
-                        //if(controlsArray[i-1].sId.includes("label")){
                         oTest[controlsId.split("-")[6]] = controlsArray[i].getValue();
-                        /*}else{
-                        		var label = "label"+notFoundLableCounter;
-                        		oTest[label] = controlsArray[i].getValue();
-                        		notFoundLableCounter++;
 
-                        }*/
                     } else if (controlsId.includes("select")) {
                         oData.push(controlsArray[i].getSelectedKey());
-                        //	if(controlsArray[i-1].sId.includes("label")){
                         oTest[controlsId.split("-")[6]] = controlsArray[i].getSelectedKey();
-                        /*	}else{
-                        		var label = "label"+notFoundLableCounter;
-                        		oTest[label] =controlsArray[i].getSelectedKey();
-                        		notFoundLableCounter++;
-                        	}*/
+
                     } else if (controlsId.includes("switch")) {
                         oData.push(controlsArray[i].getState());
-                        //	if(controlsArray[i-1].sId.includes("label")){
                         oTest[controlsId.split("-")[6]] = controlsArray[i].getState();
-                        /*	}else{
-                        		var label = "label"+notFoundLableCounter;
-                        		oTest[label] =controlsArray[i].getState();
-                        		notFoundLableCounter++;
-                        	}*/
                     }
                 }
             } else {
                 oTest = null;
             }
-            oEventBus.publish("MyChannelAddition", "doStuff", {
+            oEventBus.publish("MyChannelAddition", "notifyCMentorAdditionHandler", {
                 data: oTest
             });
 
         },
 
-        handleDoStuff2: function (channel, event, data) {
+        handleRemoveDataBinding: function (channel, event, data) {
             var oView = this.getView();
             if (oView.sId.includes("creation")) {
                 var controlsArray = oView.getContent()[0]._aElements;
-                //console.log(oView.getContent()[0]._aElements);
                 for (var i in controlsArray) {
                     var controlsId = controlsArray[i].sId;
                     if (controlsId.includes("input")) {
@@ -81,11 +62,6 @@ sap.ui.define([
                         controlsArray[i].unbindAggregation("state", true)
                     }
                 }
-                /*	var input = oView.byId("FullName")
-                	if( input != undefined){
-                		oView.byId("FullName").unbindAggregation("value",true);
-                		oView.unbindAggregation("model",true);
-                   }*/
             }
         },
 
