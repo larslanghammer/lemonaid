@@ -309,13 +309,13 @@ sap.ui.define([
                         object.SapExpertise3 = that.model.oData["SapSoftwareSolutions('"+object.SapExpertise3Id+"')"];
                     }
                     if(object.SapExpertise1Level1Id){
-                        object.SapExpertiseLevel = that.model.oData["ExpertiseLevels('"+object.SapExpertiseLevel1Id+"')"];
+                        object.SapExpertise1Level = that.model.oData["ExpertiseLevels('"+object.SapExpertise1LevelId+"')"];
                     }
                     if(object.SapExpertise2Level2Id){
-                        object.SapExpertiseLevel = that.model.oData["ExpertiseLevels('"+object.SapExpertiseLevel2Id+"')"];
+                        object.SapExpertise2Level = that.model.oData["ExpertiseLevels('"+object.SapExpertise2LevelId+"')"];
                     }
                     if(object.SapExpertise3Level3Id){
-                        object.SapExpertiseLevel = that.model.oData["ExpertiseLevels('"+object.SapExpertiseLevel3Id+"')"];
+                        object.SapExpertise3Level = that.model.oData["ExpertiseLevels('"+object.SapExpertise3LevelId+"')"];
                     }
                     if(object.Topic1Id){
                          object.Topic1 = that.model.oData["Topics('"+object.Topic1Id+"')"];
