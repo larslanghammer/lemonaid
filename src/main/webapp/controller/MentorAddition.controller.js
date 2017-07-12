@@ -246,7 +246,7 @@ sap.ui.define([
                                 }
                                 mentorId = that.objectToUpload.Id;
                                 for (var i in that.objectToUpload) {
-                                    if (that.objectToUpload[i].length === 0) {
+                                    if (that.objectToUpload[i]==undefined || that.objectToUpload[i].length === 0) {
                                         delete that.objectToUpload[i];
                                     }
                                 }
