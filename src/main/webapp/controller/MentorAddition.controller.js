@@ -246,9 +246,9 @@ sap.ui.define([
                                 }
                                 mentorId = that.objectToUpload.Id;
                                 for (var i in that.objectToUpload) {
-                                    if (that.objectToUpload[i]==undefined || that.objectToUpload[i].length === 0) {
+                                    if (that.objectToUpload[i]==undefined  ) {
                                         delete that.objectToUpload[i];
-                                    }
+                                    }else if(that.objectToUpload[i].length === 0){delete that.objectToUpload[i];}
                                 }
                                 console.log(that.objectToUpload);
                                 that.model.create(
