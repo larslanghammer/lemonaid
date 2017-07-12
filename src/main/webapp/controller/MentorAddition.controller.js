@@ -191,8 +191,8 @@ sap.ui.define([
                     this.objectToUpload["SapExpertise2Id"] = object.expertise2;
                     this.objectToUpload["SapExpertise3"] = this.model.oData["SapSoftwareSolutions('"+object.expertise3+"')"];
                     this.objectToUpload["SapExpertise3Id"] = object.expertise3;
-                    this.objectToUpload["SapExpertiseLevel1"] = this.model.oData["ExpertiseLevels('"+object.expertiseLevel1+"')"];
-                    this.objectToUpload["SapExpertise1Level1Id"] = object.expertiseLevel1;
+                    this.objectToUpload["SapExpertise1Level"] = this.model.oData["ExpertiseLevels('"+object.expertiseLevel1+"')"];
+                    this.objectToUpload["SapExpertise1LevelId"] = object.expertiseLevel1;
                     this.objectToUpload["SapExpertiseLevel2"] = this.model.oData["ExpertiseLevels('"+object.expertiseLevel2+"')"];
                     this.objectToUpload["SapExpertise2LevelId"] = object.expertiseLevel2;
                     this.objectToUpload["SapExpertiseLevel3"] = this.model.oData["ExpertiseLevels('"+object.expertiseLevel3+"')"];
