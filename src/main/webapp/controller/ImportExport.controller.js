@@ -262,6 +262,16 @@ sap.ui.define([
                     } else {
                         delete object.HoursAvailable;
                     }
+                    //Convert Jamsband Stuff to boolean!
+                    if(object.JambandBarcelona != undefined){
+                        object.JambandBarcelona = that._parseBoolean(object.JambandBarcelona);
+                    }
+                    if(object.JambandLasVegas != undefined){
+                        object.JambandLasVegas = that._parseBoolean(object.JambandLasVegas);
+                    }
+                    if(object.JambandMusician != undefined){
+                        object.JambandMusician = that._parseBoolean(object.JambandMusician);
+                    }
                     //Add Objects of JoinColum Entities
                     if(object.Language1Id){
                         object["Language1"] = that.model.oData["Languages('"+object.Language1Id+"')"];
