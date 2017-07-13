@@ -224,7 +224,6 @@ sap.ui.define([
                                             resolve();
                                             var createdId = that.objectToUpload.Id;
                                             that.model.oData["Mentors('" + createdId + "')"] = that.objectToUpload
-                                            console.log(that.model.oData["Mentors('" + createdId + "')"]);
                                             that.model.submitChanges({
                                                 success: function (oData) {
                                                     sap.m.MessageToast.show(this.i18n.getText("profileSavedSuccesfully"));
@@ -241,7 +240,6 @@ sap.ui.define([
 
                                         },
                                         error: function (error) {
-                                            console.log(data);
                                             MessageToast.show(that.i18n.getText("profileSavedError"));
                                             that.objectToUpload = {};
                                             that.accessHandleCounter("zero");
@@ -274,7 +272,6 @@ sap.ui.define([
                         }
                     case "write":
                         this.handleCounter++;
-                        console.log(this.handleCounter)
                         this.handleCounteraccessed = false;
                         return true;
                     case "zero":
