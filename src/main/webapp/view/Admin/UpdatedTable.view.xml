@@ -16,7 +16,7 @@
 				select: 'Id,FullName,ShirtNumber,PhotoUrl,UpdatedBy,UpdatedAt',
 				expand: 'MentorStatus,RelationshipToSap'
 			},
-			sorter: {path: 'UpdatedAt', descending: true}
+			sorter: {path: 'UpdatedAt', descending: false}
 		}">
 				<headerToolbar>
 					<Toolbar>
@@ -36,8 +36,8 @@
 				</infoToolbar>
 				<columns>
 					<Column width="12em"><Text text="Full Name" /></Column>
-					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Picture"><Text text="Dimensions" /></Column>
-					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Updated By"><Text text="Weight" /></Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" ><Text text="Picture" /></Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" ><Text text="Updated By" /></Column>
 					<Column hAlign="Right"><Text text="Last Updated" /></Column>
 				</columns>
 				<items>
