@@ -49,6 +49,7 @@ sap.ui.define([
         },
 
         handleRemoveDataBinding: function (channel, event, data) {
+            console.log("Test")
             var oView = this.getView();
             if (oView.sId.includes("creation")) {
                 var controlsArray = oView.getContent()[0]._aElements;
