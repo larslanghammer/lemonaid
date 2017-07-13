@@ -72,7 +72,7 @@ sap.ui.define([
          */
         onSave: function (oEvent) {
             var oEventBus = sap.ui.getCore().getEventBus();
-            oEventBus.publish("BlockChannel", "removeDataBinding");
+            oEventBus.publish("BlockChannel", "readBlockContent");
         },
 
         /**
@@ -86,7 +86,7 @@ sap.ui.define([
 
         bindView: function () {
             var oEventBus = sap.ui.getCore().getEventBus();
-            oEventBus.publish("BlockChannel", "readBlockContent");
+            oEventBus.publish("BlockChannel", "removeDataBinding");
 
         },
 
