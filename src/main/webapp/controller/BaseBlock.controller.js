@@ -42,7 +42,7 @@ sap.ui.define([
             } else {
                 oTest = null;
             }
-            oEventBus.publish("MyChannelAddition", "notifyCMentorAdditionHandler", {
+            oEventBus.publish("MyChannelAddition", "notifyMentorAdditionHandler", {
                 data: oTest
             });
 
