@@ -354,7 +354,6 @@ sap.ui.define([
                     if(object.SoftSkill6Id){
                         object["SoftSkill6"] = that.model.oData["SoftSkills('"+object.SoftSkill6Id+"')"];
                     }
-                    console.log(object);
                     requests.push(new Promise(function (resolve) {
                         if (row.__new) {
                             if (!object.Id) {
@@ -367,7 +366,6 @@ sap.ui.define([
                                     delete object[i];
                                 }
                             }
-                            console.log(object);
                             that.model.create(
                                 "/Mentors",
                                 object, {

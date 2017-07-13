@@ -110,7 +110,7 @@ sap.ui.define([
                     this.objectToUpload["Language2Id"] = object.language2;
                     this.objectToUpload["Language3"] = this.model.oData["Languages('"+object.language3+"')"];
                     this.objectToUpload["Language3Id"] = object.language3;
-                    //this.objectToUpload["Public"] = object.public;
+                    this.objectToUpload["PublicProfile"] = object.public;
                     this.objectToUpload["Region"] = this.model.oData["Regions('"+object.region+"')"];
                     this.objectToUpload["RegionId"] = object.region;
                     this.objectToUpload["RelationshipToSap"] = this.model.oData["RelationshipsToSap('"+object.relationshipToSap+"')"];
