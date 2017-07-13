@@ -85,6 +85,7 @@ sap.ui.define([
         },
 
         bindView: function () {
+            console.log("HELLO????")
             var oEventBus = sap.ui.getCore().getEventBus();
             oEventBus.publish("BlockChannel", "removeDataBinding");
 
