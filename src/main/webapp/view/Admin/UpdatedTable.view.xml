@@ -37,8 +37,8 @@
 				<columns>
 			        <Column width="5rem"><Text text="" /> </Column>
 			        <Column > <Text text="{i18n>fullName}"  /> </Column>
-					<Column minScreenWidth="Tablet" demandPopin="true" ><Text text="Updated By" /></Column>
-					<Column hAlign="Right"><Text text="Last Updated" /></Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" ><Text text="{i18n>lastUpdatedBy}" /></Column>
+					<Column hAlign="Right"><Text text="{i18n>lastUpdatedTime}" /></Column>
 				</columns>
 				<items>
 					<ColumnListItem>
