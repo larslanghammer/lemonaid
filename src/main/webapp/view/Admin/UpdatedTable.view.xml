@@ -36,10 +36,10 @@
 				</infoToolbar>
 				<columns>
 			        <Column id="photo" width="5rem">
-				        <Text text="" visible="{= !${device>/system/phone} }" />
+				        <Text text="" />
 			        </Column>
 			        <Column id="shirtNumber">
-				        <Text text="{i18n>fullName}" visible="{= !${device>/system/phone} }" />
+				        <Text text="{i18n>fullName}"  />
 			        </Column>
 					<Column minScreenWidth="Tablet" demandPopin="true" ><Text text="Updated By" /></Column>
 					<Column hAlign="Right"><Text text="Last Updated" /></Column>
