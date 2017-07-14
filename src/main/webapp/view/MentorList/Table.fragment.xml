@@ -7,7 +7,7 @@
 		items="{
 			path: '/Mentors',
 			parameters: {
-				select: 'Id,FullName,ShirtNumber,PhotoUrl,RelationshipToSap/Name,MentorStatus/Name,PublicProfile,JambandBarcelone,JambandLasVegas',
+				select: 'Id,FullName,ShirtNumber,PhotoUrl,RelationshipToSap/Name,MentorStatus/Name,PublicProfile,JambandBarcelona,JambandLasVegas',
 				expand: 'MentorStatus,RelationshipToSap'
 			},
 			sorter: {path: 'FullName', descending: false}
