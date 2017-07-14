@@ -35,15 +35,19 @@
 					</Toolbar>
 				</infoToolbar>
 				<columns>
-                    <Column minScreenWidth="Tablet" demandPopin="true" ><Text text="Picture" /></Column>
-					<Column width="12em"><Text text="Full Name" /></Column>
+			        <Column id="photo" width="5rem">
+				        <Text text="" visible="{= !${device>/system/phone} }" />
+			        </Column>
+			        <Column id="shirtNumber">
+				        <Text text="{i18n>fullName}" visible="{= !${device>/system/phone} }" />
+			        </Column>
 					<Column minScreenWidth="Tablet" demandPopin="true" ><Text text="Updated By" /></Column>
 					<Column hAlign="Right"><Text text="Last Updated" /></Column>
 				</columns>
 				<items>
 					<ColumnListItem>
 						<cells>
-                        	<Image width="4rem" height="4rem" src="{PhotoUrl}" class="sapMTableContentMargin avatarSmall sapUxAPObjectPageHeaderObjectImage-Circle" />
+                        	<Image=" width="4rem" height4rem" src="{PhotoUrl}" class="sapMTableContentMargin avatarSmall sapUxAPObjectPageHeaderObjectImage-Circle" />
 							<ObjectIdentifier title="{FullName}" text="{ShirtNumber}" class="sapMTableContentMargin" />
 							<Text text="{UpdatedBy}" class="sapMTableContentMargin" />
 							<Text text="{path:'UpdatedAt', type:'sap.ui.model.type.DateTime', formatOptions: { pattern: 'dd MMMM yyyy'}}" class="sapMTableContentMargin" />
