@@ -50,6 +50,13 @@
 				iconColor="Default"
 				count="{ui>/bandBcn}"
 				text="{i18n>bandBcn}"/>
+                <IconTabFilter
+ 				key="notpublic"
+ 				icon="sap-icon://private"
+ 				iconColor="Negative"
+ 				count="{ui>/notpublic}"
+ 				text="{i18n>notpublic}"
+ 				visible="{= ${config>/IsMentor} || ${config>/IsProjectMember} }"/>
 		</items>
 		<content>
 			<l:ResponsiveSplitter defaultPane="default">
