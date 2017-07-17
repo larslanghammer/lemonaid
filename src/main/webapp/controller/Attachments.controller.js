@@ -38,6 +38,7 @@ sap.ui.define([
 			if (result.status >= 400) {
 				var i18n = this.getView().getModel("i18n").getResourceBundle();
                 var component = this.getComponent(this.getView());
+                console.log("Hallo?");
                 console.log(component);
 				MessageBox.error(
 						i18n.getText("errorDuringUpload", [ result.status, result.responseRaw]), {
