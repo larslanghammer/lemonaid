@@ -42,7 +42,7 @@ sap.ui.define([
                 console.log(component);
 				MessageBox.error(
 						i18n.getText("errorDuringUpload", [ result.status, result.responseRaw]), {
-						styleClass: component ? component.getContentDensityClass() : ""
+					//	styleClass: component ? component.getContentDensityClass() : ""
 				     });
 			}
 			this.getView().getModel().read(this.getView().getBindingContext().getPath() + "/Attachments");
