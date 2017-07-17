@@ -34,7 +34,8 @@ sap.ui.define([
 		},
 
 		onUploadComplete: function(event) {
-			var result = event.getParameter("mParameters");
+            var result = event.getParameter("mParameters");
+            console.log(this.getView())
 			if (result.status >= 400) {
 				var i18n = this.getView().getModel("i18n").getResourceBundle();
                 var component = this.getComponent(this.getView());
