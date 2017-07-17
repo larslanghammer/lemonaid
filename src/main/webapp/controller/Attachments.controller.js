@@ -56,9 +56,10 @@ sap.ui.define([
 		},
 
 		onDownloadItems: function(oEvent){
-			var oUploadCollection = this.getView().byId("UploadCollection");
-			var aSelectedItems = oUploadCollection.getSelectedItems();
-			if (aSelectedItems){
+            var oUploadCollection = this.getView().byId("UploadCollection");
+            var aSelectedItems = oUploadCollection.getSelectedItems();
+                        console.log(aSelectedItems)
+			if (aSelectedItems!= undefined){
                 console.log("test")
 				for (var i = 0; i < aSelectedItems.length; i++){
 					oUploadCollection.downloadItem(aSelectedItems[i], true);
