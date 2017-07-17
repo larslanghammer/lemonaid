@@ -37,7 +37,8 @@ sap.ui.define([
 			var result = event.getParameter("mParameters");
 			if (result.status >= 400) {
 				var i18n = this.getView().getModel("i18n").getResourceBundle();
-				var component = this.getComponent(this.getView());
+                var component = this.getComponent(this.getView());
+                console.log(component);
 				MessageBox.error(
 						i18n.getText("errorDuringUpload", [ result.status, result.responseRaw]), {
 						styleClass: component ? component.getContentDensityClass() : ""
