@@ -59,10 +59,12 @@ sap.ui.define([
 			var oUploadCollection = this.getView().byId("UploadCollection");
 			var aSelectedItems = oUploadCollection.getSelectedItems();
 			if (aSelectedItems){
+                console.log("test")
 				for (var i = 0; i < aSelectedItems.length; i++){
 					oUploadCollection.downloadItem(aSelectedItems[i], true);
 				}
 			} else {
+                console.log("test2")
 				var i18n = this.getView().getModel("i18n").getResourceBundle();
 				var component = this.getComponent(this.getView());
 				MessageBox.information(
