@@ -39,8 +39,6 @@ sap.ui.define([
 			if (result.status >= 400) {
 				var i18n = this.getView().getModel("i18n").getResourceBundle();
                 var component = this.getComponent(this.getView());
-                console.log("Hallo?");
-                console.log(component);
 				MessageBox.error(
 						i18n.getText("errorDuringUpload", [ result.status, result.responseRaw]), {
 					//	styleClass: component ? component.getContentDensityClass() : ""
@@ -58,16 +56,14 @@ sap.ui.define([
 		onDownloadItems: function(oEvent){
             var oUploadCollection = this.getView().byId("UploadCollection");
             var aSelectedItems = oUploadCollection.getSelectedItems();
-                        console.log(aSelectedItems)
-			if (aSelectedItems!= undefined){
-                console.log("test")
+			if (aSelectedItems.length> 0){
 				for (var i = 0; i < aSelectedItems.length; i++){
 					oUploadCollection.downloadItem(aSelectedItems[i], true);
 				}
 			} else {
-                console.log("test2")
 				var i18n = this.getView().getModel("i18n").getResourceBundle();
-				var component = this.getComponent(this.getView());
+                var component = this.getComponent(this.getView());
+                console.log(component)
 				MessageBox.information(
 						i18n.getText("selectAttachmentsFirst"), {
 						styleClass: component ? component.getContentDensityClass() : ""
