@@ -40,6 +40,7 @@ sap.ui.define([
 
                     } else if(controlsId.includes("date")) {
                         console.log("TEST");
+                        console.log(controlsArray[i]);
                         console.log(controlsArray[i].getDateValue())
                         oData.push(controlsArray[i].getDateValue());
                         oTest[controlsId.split("-")[6]] = controlsArray[i].getDateValue();
