@@ -68,6 +68,8 @@ sap.ui.define([
                         controlsArray[i].unbindAggregation("selectedKey", true)
                     } else if (controlsId.includes("switch")) {
                         controlsArray[i].unbindAggregation("state", true)
+                    } else if (controlsId.includes("date")) {
+                        controlsArray[i].unbindAggregation("value", true)
                     }
                 }
             }
