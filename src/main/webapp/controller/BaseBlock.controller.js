@@ -37,12 +37,15 @@ sap.ui.define([
                     } else if (controlsId.includes("switch")) {
                         oData.push(controlsArray[i].getState());
                         oTest[controlsId.split("-")[6]] = controlsArray[i].getState();
+
+                    } else if(controlsId.includes("date")) {
+                        oData.push(controlsArray[i].getDateValue());
+                        oTest[controlsId.split("-")[6]] = controlsArray[i].getState();
                     }
                 }
             } else {
                 oTest = null;
             }
-            console.log(oTest);
             oEventBus.publish("MyChannelAddition", "notifyMentorAdditionHandler", {
                 data: oTest
             });
