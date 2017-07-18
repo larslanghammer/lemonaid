@@ -66,7 +66,7 @@ sap.ui.define([
                 console.log(component)
 				MessageBox.information(
 						i18n.getText("selectAttachmentsFirst"), {
-						styleClass: component ? component.getContentDensityClass() : ""
+						//styleClass: component ? component.getContentDensityClass() : ""
 				     });
 			}
 		}
