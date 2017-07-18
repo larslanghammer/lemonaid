@@ -40,7 +40,7 @@ sap.ui.define([
 
                     } else if(controlsId.includes("date")) {
                         oData.push(controlsArray[i].getDateValue());
-                        oTest[controlsId.split("-")[6]] = controlsArray[i].getState();
+                        oTest[controlsId.split("-")[6]] = controlsArray[i].getDateValue();
                     }
                 }
             } else {
