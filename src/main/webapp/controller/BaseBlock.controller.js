@@ -46,6 +46,7 @@ sap.ui.define([
             } else {
                 oTest = null;
             }
+            console.log(oTest);
             oEventBus.publish("MyChannelAddition", "notifyMentorAdditionHandler", {
                 data: oTest
             });
