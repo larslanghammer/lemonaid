@@ -43,7 +43,8 @@ sap.ui.define([
                         console.log(controlsArray[i]);
                         console.log(controlsArray[i].getDateValue())
                         var date = controlsArray[i].getDateValue();
-                        var newDate = date.toDateString();
+                        date = date.toDateString();
+                        var newDate = new Date(date+' GMT+0000 (UTC)')
                         console.log("ACHTUNG DATE");
                         console.log(newDate)
                         oData.push(newDate);
