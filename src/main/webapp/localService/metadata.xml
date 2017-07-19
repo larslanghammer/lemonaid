@@ -49,6 +49,7 @@
                 <Property Name="InterestInMentorMix" Type="Edm.Boolean" />
                 <Property Name="InterestInOtherIdeas" Type="Edm.Boolean" />
                 <Property Name="JobTitle" Type="Edm.String" />
+                 <Property Name="JobTitlePublic" Type="Edm.Boolean" />
                 <Property Name="LinkedInUrl" Type="Edm.String" />
                 <Property Name="Phone" Type="Edm.String" />
                 <Property Name="PreferredEmail" Type="Edm.Int32" />
