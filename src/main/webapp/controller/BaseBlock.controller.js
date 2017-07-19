@@ -42,10 +42,10 @@ sap.ui.define([
                         console.log("TEST");
                         console.log(controlsArray[i]);
                         console.log(controlsArray[i].getDateValue())
-                        var date = controlsArray[i].getDateValue()
+                        var date = controlsArray[i].getDateValue();
                         var newDate = new Date(date);
-                        newDate.toDateString()
-                        oData.push(new Date(newDate);
+                        newDate.toDateString();
+                        oData.push(new Date(newDate));
                         oTest[controlsId.split("-")[6]] = new Date(newDate);
                         //oData.push(controlsArray[i].getDateValue());
                         //oTest[controlsId.split("-")[6]] = controlsArray[i].getDateValue();
