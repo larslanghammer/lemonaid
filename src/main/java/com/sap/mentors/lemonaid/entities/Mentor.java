@@ -151,7 +151,7 @@ public class Mentor {
         this.statusId = status;
 
         this.jobTitle = jobTitle;
-        this.jobTitlePublic = jobTitlePublic;
+        //this.jobTitlePublic = jobTitlePublic;
         this.company = company;
         this.relationshipToSapId = relationshipToSap;
 
