@@ -45,6 +45,8 @@ sap.ui.define([
                         var date = controlsArray[i].getDateValue();
                         var newDate = new Date(date);
                         newDate.toDateString();
+                        console.log("ACHTUNG DATE");
+                        console.log(newDate)
                         oData.push(new Date(newDate));
                         oTest[controlsId.split("-")[6]] = new Date(newDate);
                         //oData.push(controlsArray[i].getDateValue());
