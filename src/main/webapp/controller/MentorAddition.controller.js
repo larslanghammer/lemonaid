@@ -126,6 +126,7 @@ sap.ui.define([
                     this.objectToUpload["CountryId"] = object.country;
                     this.objectToUpload["FullName"] = object.fullName;
                     this.objectToUpload["JobTitle"] = object.jobTitle;
+                    this.objectToUpload["JobTitlePublic"] = object.jobTitlePublic;
                     this.objectToUpload["Phone"] = object.phone;
                     this.objectToUpload["State"] = object.state;
                     this.objectToUpload["Zip"] = object.zip;

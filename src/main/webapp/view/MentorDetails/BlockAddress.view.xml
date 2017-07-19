@@ -36,6 +36,7 @@
 
 		<Label text="{i18n>jobTitle}" />
 		<Input id="input-jobTitle" value="{JobTitle}" visible="{ui>/isEditMode}"/>
+        <Switch id="switch-jobTitlePublic" state="{jobTitlePublic}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>yes}" customTextOff="{i18n>no}"/>
 
 		<Label text="{i18n>company}" />
 		<Input id="input-company" value="{Company}" visible="{ui>/isEditMode}"/>
