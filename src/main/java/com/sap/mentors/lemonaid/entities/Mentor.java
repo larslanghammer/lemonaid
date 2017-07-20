@@ -37,7 +37,7 @@ public class Mentor {
 
     @SAP(fieldGroup="BasicInfo") private String jobTitle;
     //@SAP(fieldGroup="BasicInfo")
-    private boolean jobTitlePublic;
+    private boolean jobTitlePublic = false;
 	@SAP(fieldGroup="BasicInfo") private String company;
 	@SAP(fieldGroup="BasicInfo") @JoinColumn(name="relationshipToSapId") @ManyToOne private RelationshipToSap relationshipToSapId;
 
