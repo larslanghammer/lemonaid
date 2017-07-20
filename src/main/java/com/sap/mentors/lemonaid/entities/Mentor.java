@@ -36,7 +36,7 @@ public class Mentor {
 	@SAP(fieldGroup="BasicInfo") @Temporal(TemporalType.DATE) private Calendar mentorSince;
 
     @SAP(fieldGroup="BasicInfo") private String jobTitle;
-    @SAP(fieldGroup="BasicInfo")  @Column(nullable = true) private Boolean jobTitlePublic;
+    @SAP(fieldGroup="BasicInfo")  @Column(nullable = false ) private boolean jobTitlePublic = false;
 	@SAP(fieldGroup="BasicInfo") private String company;
 	@SAP(fieldGroup="BasicInfo") @JoinColumn(name="relationshipToSapId") @ManyToOne private RelationshipToSap relationshipToSapId;
 
@@ -878,11 +878,11 @@ public class Mentor {
 		this.updatedBy = updatedBy;
     }
 
-    public Boolean getJobTitlePublic(){
+    public boolean getJobTitlePublic(){
         return jobTitlePublic;
     }
 
-    public void setJobTitlePublic(Boolean jobTitlePublic){
+    public void setJobTitlePublic(boolean jobTitlePublic){
         this.jobTitlePublic = jobTitlePublic;
     }
 	@PrePersist
