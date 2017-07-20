@@ -38,7 +38,7 @@
                 <Property Name="Bio" Type="Edm.String" />
                 <Property Name="City" Type="Edm.String" />
                 <Property Name="Company" Type="Edm.String" />
-               <!-- <Property Name="CompanyPublic" Type="Edm.Boolean" /> -->
+                <Property Name="CompanyPublic" Type="Edm.Boolean" />
                 <Property Name="Email1" Type="Edm.String" />
                 <Property Name="Email2" Type="Edm.String" />
                 <Property Name="FacebookUrl" Type="Edm.String" />
