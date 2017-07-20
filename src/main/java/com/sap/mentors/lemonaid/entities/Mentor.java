@@ -36,8 +36,9 @@ public class Mentor {
 	@SAP(fieldGroup="BasicInfo") @Temporal(TemporalType.DATE) private Calendar mentorSince;
 
     @SAP(fieldGroup="BasicInfo") private String jobTitle;
-    @SAP(fieldGroup="BasicInfo")  @Column(nullable = false ) private boolean jobTitlePublic = false;
-	@SAP(fieldGroup="BasicInfo") private String company;
+    @SAP(fieldGroup="BasicInfo")  @Column(nullable = false ) private Boolean jobTitlePublic = false;
+    @SAP(fieldGroup="BasicInfo") private String company;
+     @SAP(fieldGroup="BasicInfo")  @Column(nullable = false ) private boolean companyPublic = false;
 	@SAP(fieldGroup="BasicInfo") @JoinColumn(name="relationshipToSapId") @ManyToOne private RelationshipToSap relationshipToSapId;
 
 	@SAP(fieldGroup="BasicInfo") @Column(length = 5000) private String bio;
@@ -144,7 +145,7 @@ public class Mentor {
     		boolean interestInMentorCommunicationStrategy, boolean interestInMentorManagementModel, boolean interestInMentorMix, boolean interestInOtherIdeas, int hoursAvailable,
     		Region topicLeadRegionId, Topic topic1Id, String topic1Executive, Topic topic2Id, String topic2Executive, Topic topic3Id, String topic3Executive, Topic topic4Id, String topic4Executive, boolean topicLeadInterest, Topic topicInterestId,
     		boolean jambandMusician, boolean jambandLasVegas, boolean jambandBarcelona, String jambandInstrument,
-    		boolean publicProfile, Boolean jobTitlePublic)
+    		boolean publicProfile, Boolean jobTitlePublic, boolean companyPublic)
     {
     	this.id = id;
         this.fullName = fullName;
@@ -153,6 +154,7 @@ public class Mentor {
         this.jobTitle = jobTitle;
         this.jobTitlePublic = jobTitlePublic;
         this.company = company;
+        this.companyPublic = companyPublic;
         this.relationshipToSapId = relationshipToSap;
 
         this.lineOfBusiness1Id = lineOfBusiness1Id;
@@ -878,12 +880,20 @@ public class Mentor {
 		this.updatedBy = updatedBy;
     }
 
-    public boolean getJobTitlePublic(){
+    public Boolean getJobTitlePublic(){
         return jobTitlePublic;
     }
 
-    public void setJobTitlePublic(boolean jobTitlePublic){
+    public void setJobTitlePublic(Boolean jobTitlePublic){
         this.jobTitlePublic = jobTitlePublic;
+    }
+
+        public boolean getCompanyPublic(){
+        return companyPublic;
+    }
+
+    public void setCompanyPublic(boolean companyPublic){
+        this.companyPublic = companyPublic;
     }
 	@PrePersist
 	private void persist() {
