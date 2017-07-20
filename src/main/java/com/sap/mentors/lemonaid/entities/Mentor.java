@@ -36,8 +36,7 @@ public class Mentor {
 	@SAP(fieldGroup="BasicInfo") @Temporal(TemporalType.DATE) private Calendar mentorSince;
 
     @SAP(fieldGroup="BasicInfo") private String jobTitle;
-    //@SAP(fieldGroup="BasicInfo")
-    private boolean jobTitlePublic = false;
+    @SAP(fieldGroup="BasicInfo")  @Column(nullable = true, columnDefinition = "boolean default false") private boolean jobTitlePublic;
 	@SAP(fieldGroup="BasicInfo") private String company;
 	@SAP(fieldGroup="BasicInfo") @JoinColumn(name="relationshipToSapId") @ManyToOne private RelationshipToSap relationshipToSapId;
 
