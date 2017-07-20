@@ -144,7 +144,7 @@ public class Mentor {
     		boolean interestInMentorCommunicationStrategy, boolean interestInMentorManagementModel, boolean interestInMentorMix, boolean interestInOtherIdeas, int hoursAvailable,
     		Region topicLeadRegionId, Topic topic1Id, String topic1Executive, Topic topic2Id, String topic2Executive, Topic topic3Id, String topic3Executive, Topic topic4Id, String topic4Executive, boolean topicLeadInterest, Topic topicInterestId,
     		boolean jambandMusician, boolean jambandLasVegas, boolean jambandBarcelona, String jambandInstrument,
-    		boolean publicProfile, boolean jobTitlePublic)
+    		boolean publicProfile, Boolean jobTitlePublic)
     {
     	this.id = id;
         this.fullName = fullName;
@@ -878,11 +878,11 @@ public class Mentor {
 		this.updatedBy = updatedBy;
     }
 
-    public boolean getJobTitlePublic(){
+    public Boolean getJobTitlePublic(){
         return jobTitlePublic;
     }
 
-    public void setJobTitlePublic(boolean jobTitlePublic){
+    public void setJobTitlePublic(Boolean jobTitlePublic){
         this.jobTitlePublic = jobTitlePublic;
     }
 	@PrePersist
