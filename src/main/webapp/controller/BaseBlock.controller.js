@@ -40,8 +40,13 @@ sap.ui.define([
 
                     } else if(controlsId.includes("date")) {
                         var date = controlsArray[i].getDateValue();
+                        var newDate;
+                        if(date != null){
                         date = date.toDateString();
-                        var newDate = new Date(date+' GMT+0000 (UTC)')
+                         newDate = new Date(date+' GMT+0000 (UTC)')
+                        }else{
+                            newDate = null;
+                        }
                         oData.push(newDate);
                         oTest[controlsId.split("-")[6]] = newDate;
                         //oData.push(controlsArray[i].getDateValue());
