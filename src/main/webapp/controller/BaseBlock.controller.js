@@ -39,14 +39,9 @@ sap.ui.define([
                         oTest[controlsId.split("-")[6]] = controlsArray[i].getState();
 
                     } else if(controlsId.includes("date")) {
-                        console.log("TEST");
-                        console.log(controlsArray[i]);
-                        console.log(controlsArray[i].getDateValue())
                         var date = controlsArray[i].getDateValue();
                         date = date.toDateString();
                         var newDate = new Date(date+' GMT+0000 (UTC)')
-                        console.log("ACHTUNG DATE");
-                        console.log(newDate)
                         oData.push(newDate);
                         oTest[controlsId.split("-")[6]] = newDate;
                         //oData.push(controlsArray[i].getDateValue());

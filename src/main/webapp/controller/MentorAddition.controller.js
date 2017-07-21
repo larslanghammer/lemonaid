@@ -213,11 +213,13 @@ sap.ui.define([
                                     that.objectToUpload.Id = that.guidGenerator.generateGuid();
                                 }
                                 mentorId = that.objectToUpload.Id;
+                                console.log(that.objectToUpload);
                                 for (var i in that.objectToUpload) {
                                     if (that.objectToUpload[i]==undefined  ) {
                                         delete that.objectToUpload[i];
                                     }else if(that.objectToUpload[i].length === 0){delete that.objectToUpload[i];}
                                 }
+                                console.log(that.objectToUpload);
                                 that.model.create(
                                     "/Mentors",
                                     that.objectToUpload, {
