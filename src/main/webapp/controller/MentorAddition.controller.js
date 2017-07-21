@@ -122,6 +122,7 @@ sap.ui.define([
                     this.objectToUpload["Address2"] = object.address2;
                     this.objectToUpload["City"] = object.city;
                     this.objectToUpload["Company"] = object.company;
+                    this.objectToUpload["CompanyPublic"] = object.companyPublic;
                     this.objectToUpload["Country"] = this.model.oData["Countries('"+object.country+"')"];
                     this.objectToUpload["CountryId"] = object.country;
                     this.objectToUpload["FullName"] = object.fullName;
