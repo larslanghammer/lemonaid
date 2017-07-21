@@ -36,11 +36,11 @@
 
 		<Label text="{i18n>jobTitle}" />
 		<Input id="input-jobTitle" value="{JobTitle}" visible="{ui>/isEditMode}"/>
-        <Switch id="switch-jobTitlePublic" state="{jobTitlePublic}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>yes}" customTextOff="{i18n>no}"/>
+        <Switch id="switch-jobTitlePublic" state="{JobTitlePublic}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>yes}" customTextOff="{i18n>no}"/>
 
 		<Label text="{i18n>company}" />
 		<Input id="input-company" value="{Company}" visible="{ui>/isEditMode}"/>
-        <Switch id="switch-companyPublic" state="{companyPublic}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>yes}" customTextOff="{i18n>no}"/>
+        <Switch id="switch-companyPublic" state="{CompanyPublic}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>yes}" customTextOff="{i18n>no}"/>
 
 		<Label text="{i18n>address} 1" />
 		<Input id="input-address1" value="{Address1}" visible="{ui>/isEditMode}"/>
