@@ -120,7 +120,9 @@ sap.ui.define([
                     this.objectToUpload["StatusId"] = object.status;
                 } else if (object.viewName.includes("Address")) {
                     this.objectToUpload["Address1"] = object.address1;
+                    this.objectToUpload["Address1Public"] = object.address1Public;
                     this.objectToUpload["Address2"] = object.address2;
+                    this.objectToUpload["Address2Public"] = object.address2Public;
                     this.objectToUpload["City"] = object.city;
                     this.objectToUpload["Company"] = object.company;
                     this.objectToUpload["CompanyPublic"] = object.companyPublic;

@@ -35,6 +35,8 @@
                     <PropertyRef Name="Id" />
                 </Key>
                 <Property Name="Address" Type="Edm.String" />
+                <Property Name="Address1Public" Type="Edm.Boolean" />
+                <Property Name="Address2Public" Type="Edm.Boolean" />
                 <Property Name="Bio" Type="Edm.String" />
                 <Property Name="City" Type="Edm.String" />
                 <Property Name="Company" Type="Edm.String" />
