@@ -125,7 +125,7 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 						throw new ODataNotFoundException(ODataNotFoundException.ENTITY);
                     }
                     //Set non public values to null!
-                    if ((!((Mentor) jpaEntity).getCompanyPublic()) {
+                    if ((!((Mentor) jpaEntity).getCompanyPublic())) {
 						((Mentor) jpaEntity).setCompany(null);
                     }
                     if (!((Mentor) jpaEntity).getJobTitlePublic()) {
