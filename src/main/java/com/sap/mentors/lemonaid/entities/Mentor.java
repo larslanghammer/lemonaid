@@ -69,9 +69,9 @@ public class Mentor {
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="softSkill6Id") @ManyToOne private SoftSkill softSkill6Id;
 
     @SAP(fieldGroup="Address") private String address1;
-      @SAP(fieldGroup="Address")  @Column(nullable = false ) private boolean address1Public = false;
+      @SAP(fieldGroup="Address")  @Column(nullable = true ) private Boolean address1Public = false;
     @SAP(fieldGroup="Address") private String address2;
-    @SAP(fieldGroup="Address")  @Column(nullable = false ) private boolean address2Public = false;
+    @SAP(fieldGroup="Address")  @Column(nullable = true ) private Boolean address2Public = false;
     @SAP(fieldGroup="Address") private String city;
     @SAP(fieldGroup="Address") private String state;
     @SAP(fieldGroup="Address") private String zip;
@@ -147,7 +147,7 @@ public class Mentor {
     		boolean interestInMentorCommunicationStrategy, boolean interestInMentorManagementModel, boolean interestInMentorMix, boolean interestInOtherIdeas, int hoursAvailable,
     		Region topicLeadRegionId, Topic topic1Id, String topic1Executive, Topic topic2Id, String topic2Executive, Topic topic3Id, String topic3Executive, Topic topic4Id, String topic4Executive, boolean topicLeadInterest, Topic topicInterestId,
     		boolean jambandMusician, boolean jambandLasVegas, boolean jambandBarcelona, String jambandInstrument,
-    		boolean publicProfile, boolean jobTitlePublic, boolean companyPublic, boolean address1Public, boolean address2Public)
+    		boolean publicProfile, boolean jobTitlePublic, boolean companyPublic, Boolean address1Public, Boolean address2Public)
     {
     	this.id = id;
         this.fullName = fullName;
@@ -899,18 +899,18 @@ public class Mentor {
     public void setCompanyPublic(boolean companyPublic){
         this.companyPublic = companyPublic;
     }
-    public boolean getAddress1Public(){
+    public Boolean getAddress1Public(){
         return address1Public;
     }
 
-    public void setAddress1Public(boolean address1Public){
+    public void setAddress1Public(Boolean address1Public){
         this.address1Public = address1Public;
     }
-    public boolean getAddress2Public(){
+    public Boolean getAddress2Public(){
         return address2Public;
     }
 
-    public void setAddress2Public(boolean address2Public){
+    public void setAddress2Public(Boolean address2Public){
         this.address2Public = address2Public;
     }
 
