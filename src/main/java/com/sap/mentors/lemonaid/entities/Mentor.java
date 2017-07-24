@@ -36,9 +36,9 @@ public class Mentor {
 	@SAP(fieldGroup="BasicInfo") @Temporal(TemporalType.DATE) private Calendar mentorSince;
 
     @SAP(fieldGroup="BasicInfo") private String jobTitle;
-    @SAP(fieldGroup="BasicInfo")  @Column(nullable = false ) private boolean jobTitlePublic = false;
+    @SAP(fieldGroup="BasicInfo")  @Column(nullable = true ) private Boolean jobTitlePublic = false;
     @SAP(fieldGroup="BasicInfo") private String company;
-     @SAP(fieldGroup="BasicInfo")  @Column(nullable = false ) private boolean companyPublic = false;
+     @SAP(fieldGroup="BasicInfo")  @Column(nullable = true ) private Boolean companyPublic = false;
 	@SAP(fieldGroup="BasicInfo") @JoinColumn(name="relationshipToSapId") @ManyToOne private RelationshipToSap relationshipToSapId;
 
 	@SAP(fieldGroup="BasicInfo") @Column(length = 5000) private String bio;
@@ -895,6 +895,9 @@ public class Mentor {
     }
 
     public boolean getJobTitlePublic(){
+        if(jobTitlePublic == null){
+            jobTitlePublic = false;
+        }
         return jobTitlePublic;
     }
 
@@ -903,6 +906,9 @@ public class Mentor {
     }
 
         public boolean getCompanyPublic(){
+        if(companyPublic == null){
+            companyPublic = false;
+        }
         return companyPublic;
     }
 
@@ -910,6 +916,9 @@ public class Mentor {
         this.companyPublic = companyPublic;
     }
     public Boolean getAddress1Public(){
+         if(address1Public == null){
+            address1Public = false;
+        }
         return address1Public;
     }
 
@@ -917,6 +926,9 @@ public class Mentor {
         this.address1Public = address1Public;
     }
     public Boolean getAddress2Public(){
+        if(address2Public == null){
+            address2Public = false;
+        }
         return address2Public;
     }
 
@@ -925,6 +937,9 @@ public class Mentor {
     }
 
         public Boolean getCityPublic(){
+         if(cityPublic == null){
+            cityPublic = false;
+        }
         return cityPublic;
     }
 
@@ -933,6 +948,9 @@ public class Mentor {
     }
 
         public Boolean getStatePublic(){
+        if(statePublic == null){
+            statePublic = false;
+        }
         return statePublic;
     }
 
@@ -941,6 +959,9 @@ public class Mentor {
     }
 
         public Boolean getZipPublic(){
+        if(zipPublic == null){
+            zipPublic = false;
+        }
         return zipPublic;
     }
 
@@ -949,6 +970,9 @@ public class Mentor {
     }
 
         public Boolean getCountryPublic(){
+         if(countryPublic == null){
+            countryPublic = false;
+        }
         return countryPublic;
     }
 
@@ -957,6 +981,9 @@ public class Mentor {
     }
 
         public Boolean getPhonePublic(){
+        if(phonePublic == null){
+            phonePublic = false;
+        }
         return phonePublic;
     }
 

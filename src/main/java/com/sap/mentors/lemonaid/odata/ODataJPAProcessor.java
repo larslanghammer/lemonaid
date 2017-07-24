@@ -125,31 +125,31 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 						throw new ODataNotFoundException(ODataNotFoundException.ENTITY);
                     }
                     //Set non public values to null!
-                    if (!((Mentor) jpaEntity).getCompanyPublic()) {
+                    if ((!((Mentor) jpaEntity).getCompanyPublic()) {
 						((Mentor) jpaEntity).setCompany(null);
                     }
                     if (!((Mentor) jpaEntity).getJobTitlePublic()) {
 						((Mentor) jpaEntity).setJobTitle(null);
                     }
-                    if (((Mentor) jpaEntity).getAddress1Public() != null ||!((Mentor) jpaEntity).getAddress1Public()) {
+                    if (!((Mentor) jpaEntity).getAddress1Public()) {
 						((Mentor) jpaEntity).setAddress1(null);
                     }
-                    if (((Mentor) jpaEntity).getAddress2Public() != null ||!((Mentor) jpaEntity).getAddress2Public()) {
+                    if (!((Mentor) jpaEntity).getAddress2Public()) {
 						((Mentor) jpaEntity).setAddress2(null);
                     }
-                    if (((Mentor) jpaEntity).getZip() != null ||!((Mentor) jpaEntity).getCityPublic()) {
+                    if (!((Mentor) jpaEntity).getCityPublic()) {
 						((Mentor) jpaEntity).setCity(null);
                     }
-                    if (((Mentor) jpaEntity).getZipPublic() != null ||!((Mentor) jpaEntity).getZipPublic()) {
+                    if (!((Mentor) jpaEntity).getZipPublic()) {
 						((Mentor) jpaEntity).setZip(null);
                     }
-                    if (((Mentor) jpaEntity).getStatePublic() != null ||!((Mentor) jpaEntity).getStatePublic()) {
+                    if (!((Mentor) jpaEntity).getStatePublic()) {
 						((Mentor) jpaEntity).setState(null);
                     }
-                     if (((Mentor) jpaEntity).getCountryPublic() != null ||!((Mentor) jpaEntity).getCountryPublic()) {
+                     if (!((Mentor) jpaEntity).getCountryPublic()) {
 						((Mentor) jpaEntity).setCountryId(null);;
                     }
-                    if (((Mentor) jpaEntity).getPhonePublic() != null ||!((Mentor) jpaEntity).getPhonePublic()) {
+                    if (!((Mentor) jpaEntity).getPhonePublic()) {
 						((Mentor) jpaEntity).setPhone(null);
                     }
 
