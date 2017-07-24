@@ -123,6 +123,11 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 				if (!authorization.isMentor() && !authorization.isProjectMember()) {
 					if (!((Mentor) jpaEntity).isPublicProfile()) {
 						throw new ODataNotFoundException(ODataNotFoundException.ENTITY);
+                    }
+
+					if (!((Mentor) jpaEntity).getJobTitlePublic()) {
+						((Mentor) jpaEntity).setJobTitle(null);
+						//throw new ODataNotFoundException(ODataNotFoundException.ENTITY);
 					}
 				}
 			}

@@ -45,6 +45,8 @@ sap.ui.define([
                     this.byId("PersonalInfo").removeBlock(this.view.getId() + "--BlockAddress");
                 }
             }.bind(this));
+            console.log(this.model.oData["Mentors('" + this.sMentorId + "')"]);
+            console.log(this.ui);
 
         },
 
