@@ -48,15 +48,15 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 			+ "Bio|"
             + "JambandLasVegas|JambandBarcelona|JambandMusician|JambandInstrument|"
             //The ones that are evaluated for each mentor
-            +"JobTitle"
-            +"Company"
-            +"Address1"
-            +"Address2"
-            +"City"
-            +"Zip"
-            +"State"
-            +"Country"
-            +"Phone"
+            +"JobTitle|"
+            +"Company|"
+            +"Address1|"
+            +"Address2|"
+            +"City|"
+            +"Zip|"
+            +"State|"
+            +"Country|"
+            +"Phone|"
 			+ "Longitude|Latitude";
 	public static final String PUBLIC_NAVPROPERTIES =
 			"MentorStatus|RelationshipToSap|Region|Country";
