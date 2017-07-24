@@ -42,7 +42,7 @@ sap.ui.define([
             this.config._loaded.then(function () {
                 if (!this.config.getProperty("/IsProjectMember") && !this.config.getProperty("/IsMentor")) {
                     this.byId("ObjectPageLayout").removeSection(this.view.getId() + "--Media");
-                    this.byId("PersonalInfo").removeBlock(this.view.getId() + "--BlockAddress");
+                //    this.byId("PersonalInfo").removeBlock(this.view.getId() + "--BlockAddress");
                 }
             }.bind(this));
 
