@@ -152,7 +152,7 @@ public class Mentor {
     		boolean interestInMentorCommunicationStrategy, boolean interestInMentorManagementModel, boolean interestInMentorMix, boolean interestInOtherIdeas, int hoursAvailable,
     		Region topicLeadRegionId, Topic topic1Id, String topic1Executive, Topic topic2Id, String topic2Executive, Topic topic3Id, String topic3Executive, Topic topic4Id, String topic4Executive, boolean topicLeadInterest, Topic topicInterestId,
     		boolean jambandMusician, boolean jambandLasVegas, boolean jambandBarcelona, String jambandInstrument,
-    		boolean publicProfile, boolean jobTitlePublic, boolean companyPublic, Boolean address1Public, Boolean address2Public, Boolean cityPublic, Boolean statePublic, Boolean zipPublic, Boolean countryPublic,Boolean phonePublic )
+    		boolean publicProfile, Boolean jobTitlePublic, Boolean companyPublic, Boolean address1Public, Boolean address2Public, Boolean cityPublic, Boolean statePublic, Boolean zipPublic, Boolean countryPublic,Boolean phonePublic )
     {
     	this.id = id;
         this.fullName = fullName;
@@ -901,7 +901,7 @@ public class Mentor {
         return jobTitlePublic;
     }
 
-    public void setJobTitlePublic(boolean jobTitlePublic){
+    public void setJobTitlePublic(Boolean jobTitlePublic){
         this.jobTitlePublic = jobTitlePublic;
     }
 
@@ -912,7 +912,7 @@ public class Mentor {
         return companyPublic;
     }
 
-    public void setCompanyPublic(boolean companyPublic){
+    public void setCompanyPublic(Boolean companyPublic){
         this.companyPublic = companyPublic;
     }
     public Boolean getAddress1Public(){
