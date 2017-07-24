@@ -116,7 +116,7 @@ sap.ui.define([
                 title: 'Delete Profil',
                 type: 'Message',
                 content: new sap.m.Text({
-                    text: 'Are you sure you want to delete this profil?'
+                    text: that.i18n.getText("profileDeletionQuestion")
                 }),
                 endButton: new sap.m.Button({
                     text: 'Delete',
