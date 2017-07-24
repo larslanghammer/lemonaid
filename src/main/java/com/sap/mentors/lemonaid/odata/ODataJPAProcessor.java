@@ -131,25 +131,25 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
                     if (!((Mentor) jpaEntity).getJobTitlePublic()) {
 						((Mentor) jpaEntity).setJobTitle(null);
                     }
-                    if (!((Mentor) jpaEntity).getAddress1Public()) {
+                    if (((Mentor) jpaEntity).getAddress1Public() != null ||!((Mentor) jpaEntity).getAddress1Public()) {
 						((Mentor) jpaEntity).setAddress1(null);
                     }
-                    if (!((Mentor) jpaEntity).getAddress2Public()) {
+                    if (((Mentor) jpaEntity).getAddress2Public() != null ||!((Mentor) jpaEntity).getAddress2Public()) {
 						((Mentor) jpaEntity).setAddress2(null);
                     }
-                    if (!((Mentor) jpaEntity).getCityPublic()) {
+                    if (((Mentor) jpaEntity).getZip() != null ||!((Mentor) jpaEntity).getCityPublic()) {
 						((Mentor) jpaEntity).setCity(null);
                     }
-                    if (!((Mentor) jpaEntity).getZipPublic()) {
+                    if (((Mentor) jpaEntity).getZipPublic() != null ||!((Mentor) jpaEntity).getZipPublic()) {
 						((Mentor) jpaEntity).setZip(null);
                     }
-                    if (!((Mentor) jpaEntity).getStatePublic()) {
+                    if (((Mentor) jpaEntity).getStatePublic() != null ||!((Mentor) jpaEntity).getStatePublic()) {
 						((Mentor) jpaEntity).setState(null);
                     }
-                     if (!((Mentor) jpaEntity).getCountryPublic()) {
+                     if (((Mentor) jpaEntity).getCountryPublic() != null ||!((Mentor) jpaEntity).getCountryPublic()) {
 						((Mentor) jpaEntity).setCountryId(null);;
                     }
-                    if (!((Mentor) jpaEntity).getPhonePublic()) {
+                    if (((Mentor) jpaEntity).getPhonePublic() != null ||!((Mentor) jpaEntity).getPhonePublic()) {
 						((Mentor) jpaEntity).setPhone(null);
                     }
 
