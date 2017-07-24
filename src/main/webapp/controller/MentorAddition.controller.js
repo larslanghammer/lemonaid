@@ -124,16 +124,21 @@ sap.ui.define([
                     this.objectToUpload["Address2"] = object.address2;
                     this.objectToUpload["Address2Public"] = object.address2Public;
                     this.objectToUpload["City"] = object.city;
+                    this.objectToUpload["CityPublic"] = object.cityPublic;
                     this.objectToUpload["Company"] = object.company;
                     this.objectToUpload["CompanyPublic"] = object.companyPublic;
                     this.objectToUpload["Country"] = this.model.oData["Countries('"+object.country+"')"];
                     this.objectToUpload["CountryId"] = object.country;
+                    this.objectToUpload["CountryPublic"] = object.countryPublic;
                     this.objectToUpload["FullName"] = object.fullName;
                     this.objectToUpload["JobTitle"] = object.jobTitle;
                     this.objectToUpload["JobTitlePublic"] = object.jobTitlePublic;
                     this.objectToUpload["Phone"] = object.phone;
+                    this.objectToUpload["PhonePublic"] = object.phonePublic;
                     this.objectToUpload["State"] = object.state;
+                    this.objectToUpload["StatePublic"] = object.statePublic;
                     this.objectToUpload["Zip"] = object.zip;
+                    this.objectToUpload["ZipPublic"] = object.zipPublic;
                 } else if (object.viewName.includes("Bio")) {
                     this.objectToUpload["Bio"] = object.bio;
                     this.objectToUpload["Industry1"] = this.model.oData["Industries('"+object.industry1+"')"];

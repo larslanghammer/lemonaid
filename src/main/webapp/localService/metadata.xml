@@ -39,6 +39,7 @@
                 <Property Name="Address2Public" Type="Edm.Boolean" />
                 <Property Name="Bio" Type="Edm.String" />
                 <Property Name="City" Type="Edm.String" />
+                <Property Name="CityPublic" Type="Edm.Boolean" />
                 <Property Name="Company" Type="Edm.String" />
                 <Property Name="CompanyPublic" Type="Edm.Boolean" />
                 <Property Name="Email1" Type="Edm.String" />
@@ -55,11 +56,13 @@
                 <Property Name="JobTitlePublic" Type="Edm.Boolean" />
                 <Property Name="LinkedInUrl" Type="Edm.String" />
                 <Property Name="Phone" Type="Edm.String" />
+                <Property Name="PhonePublic" Type="Edm.Boolean" />
                 <Property Name="PreferredEmail" Type="Edm.Int32" />
                 <Property Name="ScnUrl" Type="Edm.String" />
                 <Property Name="ShirtNumber" Type="Edm.Int32" />
                 <Property Name="ShirtText" Type="Edm.String" />
                 <Property Name="State" Type="Edm.String" />
+                <Property Name="StatePublic" Type="Edm.Boolean" />
                 <Property Name="Topic1Executive" Type="Edm.String" />
                 <Property Name="Topic2Executive" Type="Edm.String" />
                 <Property Name="Topic3Executive" Type="Edm.String" />
@@ -68,7 +71,9 @@
                 <Property Name="TwitterId" Type="Edm.String" />
                 <Property Name="XingUrl" Type="Edm.String" />
                 <Property Name="Zip" Type="Edm.String" />
+                <Property Name="ZipPublic" Type="Edm.Boolean" />
                 <NavigationProperty Name="Country" Relationship="Model.Mentor_Country_Many_One0" FromRole="Mentor" ToRole="Country" />
+                <Property Name="CountryPublic" Type="Edm.Boolean" />
                 <NavigationProperty Name="Industry1" Relationship="Model.Mentor_Industry_Many_One0" FromRole="Mentor" ToRole="Industry" />
                 <NavigationProperty Name="Industry2" Relationship="Model.Mentor_Industry_Many_One1" FromRole="Mentor" ToRole="Industry" />
                 <NavigationProperty Name="Industry3" Relationship="Model.Mentor_Industry_Many_One2" FromRole="Mentor" ToRole="Industry" />

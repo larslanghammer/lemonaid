@@ -69,14 +69,19 @@ public class Mentor {
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="softSkill6Id") @ManyToOne private SoftSkill softSkill6Id;
 
     @SAP(fieldGroup="Address") private String address1;
-      @SAP(fieldGroup="Address")  @Column(nullable = true ) private Boolean address1Public = false;
+    @SAP(fieldGroup="Address")  @Column(nullable = true ) private Boolean address1Public = false;
     @SAP(fieldGroup="Address") private String address2;
     @SAP(fieldGroup="Address")  @Column(nullable = true ) private Boolean address2Public = false;
     @SAP(fieldGroup="Address") private String city;
+    @SAP(fieldGroup="Address")  @Column(nullable = true ) private Boolean cityPublic = false;
     @SAP(fieldGroup="Address") private String state;
+    @SAP(fieldGroup="Address")  @Column(nullable = true ) private Boolean statePublic = false;
     @SAP(fieldGroup="Address") private String zip;
+    @SAP(fieldGroup="Address")  @Column(nullable = true ) private Boolean zipPublic = false;
     @SAP(fieldGroup="Address") @JoinColumn(name="countryId") @ManyToOne() private Country countryId;
+    @SAP(fieldGroup="Address")  @Column(nullable = true ) private Boolean countryPublic = false;
     @SAP(fieldGroup="Address") private String phone;
+    @SAP(fieldGroup="Address")  @Column(nullable = true ) private Boolean phonePublic = false;
     @SAP(fieldGroup="Address") private Double latitude;
     @SAP(fieldGroup="Address") private Double longitude;
 
@@ -147,7 +152,7 @@ public class Mentor {
     		boolean interestInMentorCommunicationStrategy, boolean interestInMentorManagementModel, boolean interestInMentorMix, boolean interestInOtherIdeas, int hoursAvailable,
     		Region topicLeadRegionId, Topic topic1Id, String topic1Executive, Topic topic2Id, String topic2Executive, Topic topic3Id, String topic3Executive, Topic topic4Id, String topic4Executive, boolean topicLeadInterest, Topic topicInterestId,
     		boolean jambandMusician, boolean jambandLasVegas, boolean jambandBarcelona, String jambandInstrument,
-    		boolean publicProfile, boolean jobTitlePublic, boolean companyPublic, Boolean address1Public, Boolean address2Public)
+    		boolean publicProfile, boolean jobTitlePublic, boolean companyPublic, Boolean address1Public, Boolean address2Public, Boolean cityPublic, Boolean statePublic, Boolean zipPublic, Boolean countryPublic,Boolean phonePublic )
     {
     	this.id = id;
         this.fullName = fullName;
@@ -186,10 +191,15 @@ public class Mentor {
         this.address1Public = address1Public;
         this.address2Public = address2Public;
         this.city = city;
+        this.cityPublic = cityPublic;
         this.state = state;
+        this.statePublic = statePublic;
         this.zip = zip;
+        this.zipPublic = zipPublic;
         this.countryId = countryId;
+        this.countryPublic = countryPublic;
         this.phone = phone;
+        this.phonePublic = phonePublic;
 
         this.latitude = latitude;
         this.longitude = longitude;
@@ -912,6 +922,46 @@ public class Mentor {
 
     public void setAddress2Public(Boolean address2Public){
         this.address2Public = address2Public;
+    }
+
+        public Boolean getCityPublic(){
+        return cityPublic;
+    }
+
+    public void setCityPublic(Boolean cityPublic){
+        this.cityPublic =  cityPublic;
+    }
+
+        public Boolean getStatePublic(){
+        return statePublic;
+    }
+
+    public void setStatePublic(Boolean statePublic){
+        this.statePublic = statePublic;
+    }
+
+        public Boolean getZipPublic(){
+        return zipPublic;
+    }
+
+    public void setZipPublic(Boolean zipPublic){
+        this.zipPublic = zipPublic;
+    }
+
+        public Boolean getCountryPublic(){
+        return countryPublic;
+    }
+
+    public void setCountryPublic(Boolean countryPublic){
+        this.countryPublic = countryPublic;
+    }
+
+        public Boolean getPhonePublic(){
+        return phonePublic;
+    }
+
+    public void setPhonePublic(Boolean phonePublic){
+        this.phonePublic = phonePublic;
     }
 
 	@PrePersist
