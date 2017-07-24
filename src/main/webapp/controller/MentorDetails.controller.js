@@ -45,8 +45,6 @@ sap.ui.define([
                     this.byId("PersonalInfo").removeBlock(this.view.getId() + "--BlockAddress");
                 }
             }.bind(this));
-            console.log(this.model.oData["Mentors('" + this.sMentorId + "')"]);
-            console.log(this.ui);
 
         },
 
@@ -57,6 +55,8 @@ sap.ui.define([
         onRouteMatched: function (oEvent) {
             this.sMentorId = oEvent.getParameter("arguments").Id;
             this.model.metadataLoaded().then(this.bindView.bind(this));
+                        console.log(this.model.oData);
+            console.log(this.model.oData["Mentors('" + this.sMentorId + "')"]);
         },
 
         /**
