@@ -41,22 +41,32 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 	public static final String SAP_NAMESPACE = "http://www.sap.com/Protocols/SAPData";
 	public static final String SAP_PREFIX = "sap";
 	public static final String LABEL = "label";
-	
-	public static final String PUBLIC_PROPERTIES = 
+
+	public static final String PUBLIC_PROPERTIES =
 			"Id|FullName|PublicProfile|ShirtNumber|PhotoUrl|"
 			+ "StatusId|RelationshipToSap|RegionId|CountryId|"
 			+ "Bio|"
-			+ "JambandLasVegas|JambandBarcelona|JambandMusician|JambandInstrument|"
+            + "JambandLasVegas|JambandBarcelona|JambandMusician|JambandInstrument|"
+            //The ones that are evaluated for each mentor
+            +"JobTitle"
+            +"Company"
+            +"Address1"
+            +"Address2"
+            +"City"
+            +"Zip"
+            +"State"
+            +"Country"
+            +"Phone"
 			+ "Longitude|Latitude";
-	public static final String PUBLIC_NAVPROPERTIES = 
+	public static final String PUBLIC_NAVPROPERTIES =
 			"MentorStatus|RelationshipToSap|Region|Country";
-	
+
 	private ODataAuthorization authorization = null;
 
 	public JPAEdmExtension() {
 		this.authorization = (ODataAuthorization) SpringContextsUtil.getBean("ODataAuthorization");
 	}
-	
+
 	@Override
 	public void extendWithOperation(JPAEdmSchemaView view) {
 	}
@@ -65,9 +75,9 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 	public void extendJPAEdmSchema(JPAEdmSchemaView view) {
 		ResourceBundle i18n = ODataContextUtil.getResourceBundle("i18n");
 		final Schema edmSchema = view.getEdmSchema();
-		
+
 		for (EntityType entityType : edmSchema.getEntityTypes()) {
-			
+
 			// Add property annotations
 			for (Property property : entityType.getProperties()) {
 				String label = null;
@@ -80,13 +90,13 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 							.setName(LABEL).setText(label));
 				}
 				annotationAttributeList.addAll(getSapPropertyAnnotations(entityType, property));
-				property.setAnnotationAttributes(annotationAttributeList); 
+				property.setAnnotationAttributes(annotationAttributeList);
 			}
 
 			if (entityType.getName().equals("Mentor")) {
 
 				if (authorization.isMentor() || authorization.isProjectMember()) {
-			
+
 					// Add transient properties
 					JPAEdmMappingImpl mapping = new JPAEdmMappingImpl();
 					mapping.setJPAType(boolean.class);
@@ -109,11 +119,11 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 							publicNavigationProperties.add(navigationProperty);
 						}
 					}
-					entityType.setNavigationProperties(publicNavigationProperties);					
+					entityType.setNavigationProperties(publicNavigationProperties);
 				}
-					
+
 			}
-			
+
 			// Turn entity 'Attachments' into a media entity (with a stream) and hide the data property
 			if (entityType.getName().equals("Attachment")) {
 				entityType.setHasStream(true);
@@ -126,7 +136,7 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 			}
 
 		}
-		
+
 		// Add smart annotations
 		addSmartAnnotations(edmSchema);
 
@@ -176,7 +186,7 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 			for (final EntityContainer container : edmSchema.getEntityContainers()) {
 				for (final EntitySet entitySet : container.getEntitySets()) {
 					EntityType entityType = getEntityType(edmSchema, entitySet.getEntityType());
-					final LinkedHashMap<String, ArrayList<String>> fieldGroups = new LinkedHashMap<String, ArrayList<String>>(); 
+					final LinkedHashMap<String, ArrayList<String>> fieldGroups = new LinkedHashMap<String, ArrayList<String>>();
 					for (Field field : ((JPAEdmMappingImpl)entityType.getMapping()).getJPAType().getDeclaredFields()) {
 						String propertyName = null;
 						for (Property property : entityType.getProperties()) {
@@ -192,7 +202,7 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 										propertyName = propertyName.substring(0, 1).toUpperCase() + propertyName.substring(1);
 									} else {
 										propertyName = property.getName();
-									} 
+									}
 								}
 							}
 						}
@@ -223,7 +233,7 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 									add(new AnnotationElement()
 										.setName("Annotation")
 										.setAttributes(
-											new ArrayList<AnnotationAttribute>() {{ 
+											new ArrayList<AnnotationAttribute>() {{
 												add(new AnnotationAttribute()
 														.setName("Term")
 														.setText("UI.FieldGroup"));
@@ -231,11 +241,11 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 														.setName("Qualifier")
 														.setText(fieldGroup.getKey()));
 									}})
-									.setChildElements(new ArrayList<AnnotationElement>() {{ 
+									.setChildElements(new ArrayList<AnnotationElement>() {{
 										add(new AnnotationElement()
 											.setName("Record")
 											.setAttributes(
-												new ArrayList<AnnotationAttribute>() {{ 
+												new ArrayList<AnnotationAttribute>() {{
 													add(new AnnotationAttribute()
 													.setName("Type")
 													.setText("UI.FieldGroupType"));
@@ -244,10 +254,10 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 											add(new AnnotationElement()
 												.setName("PropertyValue")
 												.setAttributes(
-													new ArrayList<AnnotationAttribute>() {{ 
+													new ArrayList<AnnotationAttribute>() {{
 														add(new AnnotationAttribute()
 															.setName("Property")
-															.setText("Data"));				
+															.setText("Data"));
 											}})
 											.setChildElements(new ArrayList<AnnotationElement>() {{
 												add(new AnnotationElement()
@@ -257,19 +267,19 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 															add(new AnnotationElement()
 																.setName("Record")
 																.setAttributes(
-																	new ArrayList<AnnotationAttribute>() {{ 
+																	new ArrayList<AnnotationAttribute>() {{
 																		add(new AnnotationAttribute()
 																			.setName("Type")
-																			.setText("UI.DataField"));				
+																			.setText("UI.DataField"));
 																}})
 																.setChildElements(new ArrayList<AnnotationElement>() {{
 																		add(new AnnotationElement()
 																			.setName("PropertyValue")
 																			.setAttributes(
-																				new ArrayList<AnnotationAttribute>() {{ 
+																				new ArrayList<AnnotationAttribute>() {{
 																					add(new AnnotationAttribute()
 																						.setName("Property")
-																						.setText("Value"));				
+																						.setText("Value"));
 																					add(new AnnotationAttribute()
 																						.setName("Path")
 																						.setText(field));
