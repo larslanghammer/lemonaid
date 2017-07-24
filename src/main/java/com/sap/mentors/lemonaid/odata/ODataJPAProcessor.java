@@ -124,9 +124,35 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 					if (!((Mentor) jpaEntity).isPublicProfile()) {
 						throw new ODataNotFoundException(ODataNotFoundException.ENTITY);
                     }
+                    //Set non public values to null!
                     if (!((Mentor) jpaEntity).getCompanyPublic()) {
 						((Mentor) jpaEntity).setCompany(null);
-					}
+                    }
+                    if (!((Mentor) jpaEntity).getJobTitlePublic()) {
+						((Mentor) jpaEntity).setJobTitle(null);
+                    }
+                    if (!((Mentor) jpaEntity).getAddress1Public()) {
+						((Mentor) jpaEntity).setAddress1(null);
+                    }
+                    if (!((Mentor) jpaEntity).getAddress2Public()) {
+						((Mentor) jpaEntity).setAddress2(null);
+                    }
+                    if (!((Mentor) jpaEntity).getCityPublic()) {
+						((Mentor) jpaEntity).setCity(null);
+                    }
+                    if (!((Mentor) jpaEntity).getZipPublic()) {
+						((Mentor) jpaEntity).setZip(null);
+                    }
+                    if (!((Mentor) jpaEntity).getStatePublic()) {
+						((Mentor) jpaEntity).setState(null);
+                    }
+                     if (!((Mentor) jpaEntity).getCountryPublic()) {
+						((Mentor) jpaEntity).setCountryId(null);;
+                    }
+                    if (!((Mentor) jpaEntity).getPhonePublic()) {
+						((Mentor) jpaEntity).setPhone(null);
+                    }
+
 				}
 			}
 			oDataResponse = responseBuilder.build(uriParserResultView, jpaEntity, contentType);
