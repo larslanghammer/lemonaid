@@ -152,6 +152,12 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
                     if (!((Mentor) jpaEntity).getPhonePublic()) {
 						((Mentor) jpaEntity).setPhone(null);
                     }
+                    if (!((Mentor) jpaEntity).getEmail1Public()) {
+						((Mentor) jpaEntity).setEmail1(null);
+                    }
+                    if (!((Mentor) jpaEntity).getEmail2Public()) {
+						((Mentor) jpaEntity).setEmail2(null);
+                    }
 
 				}
 			}

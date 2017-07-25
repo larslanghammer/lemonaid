@@ -42,8 +42,10 @@ public class Mentor {
 	@SAP(fieldGroup="BasicInfo") @JoinColumn(name="relationshipToSapId") @ManyToOne private RelationshipToSap relationshipToSapId;
 
 	@SAP(fieldGroup="BasicInfo") @Column(length = 5000) private String bio;
-	@SAP(fieldGroup="BasicInfo") private String email1;
-	@SAP(fieldGroup="BasicInfo") private String email2;
+    @SAP(fieldGroup="BasicInfo") private String email1;
+        @SAP(fieldGroup="BasicInfo")  @Column(nullable = true ) private Boolean email1Public = false;
+    @SAP(fieldGroup="BasicInfo") private String email2;
+        @SAP(fieldGroup="BasicInfo")  @Column(nullable = true ) private Boolean email2Public = false;
 
 	@SAP(fieldGroup="BasicInfo") @JoinColumn(name="Language1Id") @ManyToOne private Language language1Id;
 	@SAP(fieldGroup="BasicInfo") @JoinColumn(name="Language2Id") @ManyToOne private Language language2Id;
@@ -152,7 +154,7 @@ public class Mentor {
     		boolean interestInMentorCommunicationStrategy, boolean interestInMentorManagementModel, boolean interestInMentorMix, boolean interestInOtherIdeas, int hoursAvailable,
     		Region topicLeadRegionId, Topic topic1Id, String topic1Executive, Topic topic2Id, String topic2Executive, Topic topic3Id, String topic3Executive, Topic topic4Id, String topic4Executive, boolean topicLeadInterest, Topic topicInterestId,
     		boolean jambandMusician, boolean jambandLasVegas, boolean jambandBarcelona, String jambandInstrument,
-    		boolean publicProfile, Boolean jobTitlePublic, Boolean companyPublic, Boolean address1Public, Boolean address2Public, Boolean cityPublic, Boolean statePublic, Boolean zipPublic, Boolean countryPublic,Boolean phonePublic )
+    		boolean publicProfile, Boolean jobTitlePublic, Boolean companyPublic, Boolean address1Public, Boolean address2Public, Boolean cityPublic, Boolean statePublic, Boolean zipPublic, Boolean countryPublic,Boolean phonePublic, Boolean email1Public, Boolean email2Public )
     {
     	this.id = id;
         this.fullName = fullName;
@@ -185,7 +187,9 @@ public class Mentor {
 
         this.bio = bio;
         this.email1 = email1;
+        this.email1Public = email1Public;
         this.email2 = email2;
+        this.email2Public = email2Public;
 
         this.address1 = address;
         this.address1Public = address1Public;
@@ -989,6 +993,28 @@ public class Mentor {
 
     public void setPhonePublic(Boolean phonePublic){
         this.phonePublic = phonePublic;
+    }
+
+            public Boolean getEmail1Public(){
+        if(email1Public == null){
+            email1Public = false;
+        }
+        return email1Public;
+    }
+
+    public void setEmail1Public(Boolean email1Public){
+        this.email1Public = email1Public;
+    }
+
+            public Boolean getEmail2Public(){
+        if(email2Public == null){
+            email2Public = false;
+        }
+        return email2Public;
+    }
+
+    public void setEmail2Public(Boolean email2Public){
+        this.email2Public = email2Public;
     }
 
 	@PrePersist

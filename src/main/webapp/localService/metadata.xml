@@ -43,7 +43,9 @@
                 <Property Name="Company" Type="Edm.String" />
                 <Property Name="CompanyPublic" Type="Edm.Boolean" />
                 <Property Name="Email1" Type="Edm.String" />
+                <Property Name="Email1Public" Type="Edm.Boolean" />
                 <Property Name="Email2" Type="Edm.String" />
+                <Property Name="Email2Public" Type="Edm.Boolean" />
                 <Property Name="FacebookUrl" Type="Edm.String" />
                 <Property Name="FullName" Type="Edm.String" sap:label="Name" xmlns:sap="http://www.sap.com/Protocols/SAPData" />
                 <Property Name="HoursAvailable" Type="Edm.Int32" />

@@ -150,7 +150,9 @@ sap.ui.define([
                     this.objectToUpload["MentorSince"] = object.mentorSince;
                 } else if (object.viewName.includes("Media")) {
                     this.objectToUpload["Email1"] = object.email1;
+                    this.objectToUpload["Email1Public"] = object.email1Public;
                     this.objectToUpload["Email2"] = object.email2;
+                    this.objectToUpload["Email2Public"] = object.email2Public;
                     this.objectToUpload["FacebookUrl"] = object.facebook;
                     this.objectToUpload["LinkedInUrl"] = object.linkedIn;
                     this.objectToUpload["ScnUrl"] = object.scnUrl;
