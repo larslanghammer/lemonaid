@@ -189,6 +189,7 @@ sap.ui.define([
                     this.objectToUpload["Topic4"] = this.model.oData["Topics('"+object.topic4+"')"];
                     this.objectToUpload["Topic4Id"] = object.topic4;
                 } else if (object.viewName.includes("SoftSkills")) {
+                    this.objectToUpload["SoftSkillsPublic"] = object.softSkillPublic;
                     this.objectToUpload["SoftSkill1"] = this.model.oData["SoftSkills('"+object.softSkill1+"')"];
                     this.objectToUpload["SoftSkill1Id"] = object.softSkill1;
                     this.objectToUpload["SoftSkill2"] = this.model.oData["SoftSkills('"+object.softSkill2+"')"];

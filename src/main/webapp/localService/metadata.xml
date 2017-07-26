@@ -92,6 +92,8 @@
                 <NavigationProperty Name="SapExpertise3Level" Relationship="Model.Mentor_ExpertiseLevel_Many_One2" FromRole="Mentor" ToRole="ExpertiseLevel" />
                 <NavigationProperty Name="ShirtMF" Relationship="Model.Mentor_Gender_Many_One0" FromRole="Mentor" ToRole="Gender" />
                 <NavigationProperty Name="ShirtSize" Relationship="Model.Mentor_Size_Many_One0" FromRole="Mentor" ToRole="Size" />
+                <Property Name="AttachmentsPublic" Type="Edm.Boolean"/>
+                <Property Name="SoftSkillsPublic" Type="Edm.Boolean"/>
                 <NavigationProperty Name="SoftSkill1" Relationship="Model.Mentor_SoftSkill_Many_One0" FromRole="Mentor" ToRole="SoftSkill" />
                 <NavigationProperty Name="SoftSkill2" Relationship="Model.Mentor_SoftSkill_Many_One1" FromRole="Mentor" ToRole="SoftSkill" />
                 <NavigationProperty Name="SoftSkill3" Relationship="Model.Mentor_SoftSkill_Many_One2" FromRole="Mentor" ToRole="SoftSkill" />

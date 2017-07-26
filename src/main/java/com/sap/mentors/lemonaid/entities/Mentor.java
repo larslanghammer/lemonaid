@@ -62,7 +62,8 @@ public class Mentor {
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="sapExpertise2Id") @ManyToOne private SapSoftwareSolution sapExpertise2Id;
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="sapExpertise2LevelId") @ManyToOne private ExpertiseLevel sapExpertise2LevelId;
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="sapExpertise3Id") @ManyToOne private SapSoftwareSolution sapExpertise3Id;
-	@SAP(fieldGroup="Expertise") @JoinColumn(name="sapExpertise3LevelId") @ManyToOne private ExpertiseLevel sapExpertise3LevelId;
+    @SAP(fieldGroup="Expertise") @JoinColumn(name="sapExpertise3LevelId") @ManyToOne private ExpertiseLevel sapExpertise3LevelId;
+     @SAP(fieldGroup="Expertise")  @Column(nullable = true ) private Boolean softSkillsPublic = false;
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="softSkill1Id") @ManyToOne private SoftSkill softSkill1Id;
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="softSkill2Id") @ManyToOne private SoftSkill softSkill2Id;
 	@SAP(fieldGroup="Expertise") @JoinColumn(name="softSkill3Id") @ManyToOne private SoftSkill softSkill3Id;
@@ -129,6 +130,7 @@ public class Mentor {
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="mentorId")
     private List<Attachment> attachments;
+     @Column(nullable = true ) private Boolean attachmentsPublic= false;
 
 	@Temporal(TemporalType.TIMESTAMP) private Calendar createdAt;
 	private String createdBy;
@@ -154,7 +156,8 @@ public class Mentor {
     		boolean interestInMentorCommunicationStrategy, boolean interestInMentorManagementModel, boolean interestInMentorMix, boolean interestInOtherIdeas, int hoursAvailable,
     		Region topicLeadRegionId, Topic topic1Id, String topic1Executive, Topic topic2Id, String topic2Executive, Topic topic3Id, String topic3Executive, Topic topic4Id, String topic4Executive, boolean topicLeadInterest, Topic topicInterestId,
     		boolean jambandMusician, boolean jambandLasVegas, boolean jambandBarcelona, String jambandInstrument,
-    		boolean publicProfile, Boolean jobTitlePublic, Boolean companyPublic, Boolean address1Public, Boolean address2Public, Boolean cityPublic, Boolean statePublic, Boolean zipPublic, Boolean countryPublic,Boolean phonePublic, Boolean email1Public, Boolean email2Public )
+            boolean publicProfile, Boolean jobTitlePublic, Boolean companyPublic, Boolean address1Public, Boolean address2Public, Boolean cityPublic, Boolean statePublic, Boolean zipPublic, Boolean countryPublic,Boolean phonePublic, Boolean email1Public,
+            Boolean email2Public, Boolean attachmentsPublic, Boolean softSkillsPublic )
     {
     	this.id = id;
         this.fullName = fullName;
@@ -246,6 +249,9 @@ public class Mentor {
 		this.jambandInstrument = jambandInstrument;
 
         this.publicProfile = publicProfile;
+
+        this.attachmentsPublic = attachmentsPublic;
+        this.softSkillsPublic = softSkillsPublic;
     }
 
     @Override
@@ -1015,6 +1021,26 @@ public class Mentor {
 
     public void setEmail2Public(Boolean email2Public){
         this.email2Public = email2Public;
+    }
+            public Boolean getAttachmentsPublic(){
+        if(attachmentsPublic == null){
+            attachmentsPublic = false;
+        }
+        return attachmentsPublic;
+    }
+
+    public void setAttachmentsPublic(Boolean attachmentsPublic){
+        this.attachmentsPublic = attachmentsPublic;
+    }
+            public Boolean getSoftSkillsPublic(){
+        if(softSkillsPublic == null){
+            softSkillsPublic = false;
+        }
+        return softSkillsPublic;
+    }
+
+    public void setSoftSkillsPublic(Boolean softSkillsPublic){
+        this.softSkillsPublic = softSkillsPublic;
     }
 
 	@PrePersist
