@@ -1,8 +1,8 @@
-<mvc:View 
-	controllerName="com.sap.mentors.lemonaid.controller.Attachments" 
-	xmlns:mvc="sap.ui.core.mvc" 
+<mvc:View
+	controllerName="com.sap.mentors.lemonaid.controller.Attachments"
+	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m">
-	
+
 	<UploadCollection
 			id="UploadCollection"
 			beforeUploadStarts="onBeforeUploadStarts"
@@ -17,6 +17,8 @@
 		<toolbar>
 			<OverflowToolbar id="UploadCollectionTools" >
 				<Title id="attachmentTitle"/>
+                <Text text="Make Attachments Public"/>
+				<Switch id="switch-attachmentsPublic" state="{JambandLasVegas}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>yes}" customTextOff="{i18n>no}" />
 				<ToolbarSpacer/>
 				<Button id="downloadButton" text="Download" press="onDownloadItems" type="Transparent"></Button>
 				<UploadCollectionToolbarPlaceholder></UploadCollectionToolbarPlaceholder>
@@ -49,5 +51,5 @@
 			</UploadCollectionItem>
 		</items>
 	</UploadCollection>
-    
+
 </mvc:View>

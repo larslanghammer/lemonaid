@@ -56,7 +56,7 @@
 		</VBox>
 		<Label text="{i18n>email} 1" visible="{ui>/isEditMode}" />
 		<Input id="input-email1" value="{Email1}" visible="{ui>/isEditMode}"/>
-        <Switch id="switch-email1Public" state="{Email1Public}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>see}" customTextOff="{i18>hide}"/>
+        <Switch id="switch-email1Public" state="{Email1Public}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>see}" customTextOff="{i18n>hide}"/>
 		<Label text="{i18n>email} 2" visible="{ui>/isEditMode}" />
 		<Input id="input-email2" value="{Email2}" visible="{ui>/isEditMode}"/>
         <Switch id="switch-email2Public" state="{Email2Public}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>see}" customTextOff="{i18n>hide}"/>
