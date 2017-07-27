@@ -40,7 +40,7 @@ sap.ui.define([
 
             // Remove sections/blocks that are not meant for a general audience
             this.config._loaded.then(function () {
-                if (!this.config.getProperty("/IsProjectMember") && !this.config.getProperty("/IsMentor")) {
+                if (!this.config.getProperty("/IsProjectMember") && !this.config.getProperty("/IsMentor") && this.model.oData["Mentors('" + this.sMentorId + "')"].attachmentsPublc) {
                     this.byId("ObjectPageLayout").removeSection(this.view.getId() + "--Media");
                 //    this.byId("PersonalInfo").removeBlock(this.view.getId() + "--BlockAddress");
                 }

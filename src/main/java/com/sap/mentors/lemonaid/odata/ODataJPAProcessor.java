@@ -158,7 +158,14 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
                     if (!((Mentor) jpaEntity).getEmail2Public()) {
 						((Mentor) jpaEntity).setEmail2(null);
                     }
-
+                    if (!((Mentor) jpaEntity).getSoftSkillsPublic()) {
+                        ((Mentor) jpaEntity).setSoftSkill1Id(null);
+                        ((Mentor) jpaEntity).setSoftSkill2Id(null);
+                        ((Mentor) jpaEntity).setSoftSkill3Id(null);
+                        ((Mentor) jpaEntity).setSoftSkill4Id(null);
+                        ((Mentor) jpaEntity).setSoftSkill5Id(null);
+                        ((Mentor) jpaEntity).setSoftSkill6Id(null);
+                    }
 				}
 			}
 			oDataResponse = responseBuilder.build(uriParserResultView, jpaEntity, contentType);
