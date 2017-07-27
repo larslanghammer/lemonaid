@@ -16,7 +16,7 @@
 			width="100%">
 
 		<core:Title text="{i18n>softSkills}" />
-        <Text text="Make Soft Skills public:"/>
+        <Text text="Make Soft Skills public:" visible="{= ${ui>/isEditMode}/>
 		<Switch id="switch-softSkillsPublic" state="{SoftSkillsPublic}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>yes}" customTextOff="{i18n>no}" />
 		<Label text="" visible="{= !${SoftSkill1Id}  &amp;&amp; !${ui>/isEditMode}}" />
 		<Text text="{i18n>nodata}" visible="{= !${SoftSkill1Id}  &amp;&amp; !${ui>/isEditMode}}" />
