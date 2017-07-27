@@ -71,7 +71,7 @@
 			items="{ path: '/Countries', sorter: { path: 'Name' } }">
 			<core:Item key="{Id}" text="{Name}" />
 		</Select>
-        <Switch id="switch-countryPublic" state="{CountryPublic}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>see}" customTextOff="{i18n>no}" />
+        <Switch id="switch-countryPublic" state="{CountryPublic}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>see}" customTextOff="{i18n>hide}" />
 
 		<Label text="{i18n>phone}" visible="{ui>/isEditMode}" />
 		<Input id="input-phone" value="{Phone}" visible="{ui>/isEditMode}"/>
