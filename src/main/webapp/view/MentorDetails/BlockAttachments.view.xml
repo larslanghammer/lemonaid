@@ -17,7 +17,7 @@
 		<toolbar>
 			<OverflowToolbar id="UploadCollectionTools" >
 				<Title id="attachmentTitle"/>
-                <Text text="Make Attachments Public" visible="{= ${ui>/isEditMode}/>
+                <Text text="Make Attachments Public" visible="{= ${ui>/isEditMode}"/>
 				<Switch id="switch-attachmentsPublic" state="{AttachmentsPublic}" visible="{= ${ui>/isEditMode} }" customTextOn="{i18n>yes}" customTextOff="{i18n>no}" />
 				<ToolbarSpacer/>
 				<Button id="downloadButton" text="Download" press="onDownloadItems" type="Transparent"></Button>
