@@ -59,7 +59,7 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
             +"Phone|"
             +"Email1|"
             +"Email2|"
-            +"SoftSkill1|SoftSkill2|SoftSkill3|SoftSkill4|SoftSkill5|SoftSkill6|"
+            +"SoftSkill1Id|SoftSkill2Id|SoftSkill3Id|SoftSkill4Id|SoftSkill5Id|SoftSkill6Id|"
             +"AttachmentsPublic|"
             +"Attachments|"
 			+ "Longitude|Latitude";
