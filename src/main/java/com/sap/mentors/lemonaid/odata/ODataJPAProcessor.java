@@ -166,6 +166,9 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
                         ((Mentor) jpaEntity).setSoftSkill5Id(null);
                         ((Mentor) jpaEntity).setSoftSkill6Id(null);
                     }
+                    if(!((Mentor) jpaEntity).getAttachmentsPublic()) {
+						((Mentor) jpaEntity).setAttachments(null);
+                    }
 				}
 			}
 			oDataResponse = responseBuilder.build(uriParserResultView, jpaEntity, contentType);
