@@ -62,11 +62,12 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
             +"SoftSkill1Id|SoftSkill2Id|SoftSkill3Id|SoftSkill4Id|SoftSkill5Id|SoftSkill6Id|"
             +"SoftSkill1|SoftSkill2|SoftSkill3|SoftSkill4|SoftSkill5|SoftSkill6|"
             +"AttachmentsPublic|"
-            +"Attachments|"
+
 			+ "Longitude|Latitude";
 	public static final String PUBLIC_NAVPROPERTIES =
-			"MentorStatus|RelationshipToSap|Region|Country|SoftSkill1";
-
+            "MentorStatus|RelationshipToSap|Region|Country|"
+            +"SoftSkill1|SoftSkill2|SoftSkill3|SoftSkill|"
+            +"Attachments";
 	private ODataAuthorization authorization = null;
 
 	public JPAEdmExtension() {
