@@ -147,7 +147,7 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 						((Mentor) jpaEntity).setState(null);
                     }
                      if (!((Mentor) jpaEntity).getCountryPublic()) {
-						((Mentor) jpaEntity).setCountryId(null);;
+                       ((Mentor) jpaEntity).setCountryId(null);
                     }
                     if (!((Mentor) jpaEntity).getPhonePublic()) {
 						((Mentor) jpaEntity).setPhone(null);
