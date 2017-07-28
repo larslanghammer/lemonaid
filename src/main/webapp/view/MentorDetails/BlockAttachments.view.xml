@@ -10,7 +10,7 @@
 			fileDeleted="onFileDeleted"
 			items="{Attachments}"
 			uploadEnabled="{MayEdit}"
-            uploadButtonInvisible="{MayEdit}"
+            uploadButtonInvisible="{!MayEdit}"
 			showSeparators="All"
 			multiple="true"
 			mode="MultiSelect"
