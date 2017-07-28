@@ -105,9 +105,11 @@ sap.ui.define([
                     }).join() // Expand all navigation properties
                 }
             });
+            if(this.config.getProperty("/IsProjectMember") || this.config.getProperty("/IsMentor") || !this.model.oData["Mentors('" + this.sMentorId + "')"].attachmentsPublic){
             this.ui.setProperty("/UploadUrl", this.model.sServiceUrl + "/" + this.model.createKey("Mentors", {
                 Id: this.sMentorId
             }) + "/Attachments");
+            }
         },
 
         onDelete: function () {
