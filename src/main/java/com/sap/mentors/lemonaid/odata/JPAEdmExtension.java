@@ -65,7 +65,7 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
             +"Attachments|"
 			+ "Longitude|Latitude";
 	public static final String PUBLIC_NAVPROPERTIES =
-			"MentorStatus|RelationshipToSap|Region|Country";
+			"MentorStatus|RelationshipToSap|Region|Country|SoftSkill1";
 
 	private ODataAuthorization authorization = null;
 
