@@ -107,8 +107,8 @@ sap.ui.define([
             });
             console.log(this.config.getProperty("/IsProjectMember"));
             console.log( this.config.getProperty("/IsMentor"));
-            console.log(this.model.oData["Mentors('" + this.sMentorId + "')"].attachmentsPublic);
-            if(this.config.getProperty("/IsProjectMember") || this.config.getProperty("/IsMentor") || this.model.oData["Mentors('" + this.sMentorId + "')"].attachmentsPublic){
+            console.log(this.model.oData["Mentors('" + this.sMentorId + "')"].AttachmentsPublic);
+            if(this.config.getProperty("/IsProjectMember") || this.config.getProperty("/IsMentor") || this.model.oData["Mentors('" + this.sMentorId + "')"].AttachmentsPublic){
             this.ui.setProperty("/UploadUrl", this.model.sServiceUrl + "/" + this.model.createKey("Mentors", {
                 Id: this.sMentorId
             }) + "/Attachments");
