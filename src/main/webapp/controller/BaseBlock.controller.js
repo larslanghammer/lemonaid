@@ -69,6 +69,7 @@ sap.ui.define([
                             console.log(oView.sId)
                 var controlsArray = oView.getContent()[0]._aElements;
                 for (var i in controlsArray) {
+                                            console.log(controlsArray[i].sId)
                     var controlsId = controlsArray[i].sId;
                     if (controlsId.includes("input")) {
                         controlsArray[i].unbindAggregation("value", true)
@@ -76,7 +77,6 @@ sap.ui.define([
                         controlsArray[i].unbindAggregation("selectedKey", true)
                     } else if (controlsId.includes("switch")) {
                         controlsArray[i].unbindAggregation("state", true)
-                        console.log(controlsArray[i])
                     } else if (controlsId.includes("date")) {
                         controlsArray[i].unbindAggregation("value", true)
                     }
