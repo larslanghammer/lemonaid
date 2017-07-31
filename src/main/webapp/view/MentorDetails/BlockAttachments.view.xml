@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName="com.sap.mentors.lemonaid.controller.Attachments"
+	controllerName="com.sap.mentors.lemonaid.controller.BaseBlock"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m">
 
