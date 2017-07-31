@@ -66,10 +66,8 @@ sap.ui.define([
         handleRemoveDataBinding: function (channel, event, data) {
             var oView = this.getView();
             if (oView.sId.includes("creation")) {
-                            console.log(oView.sId)
                 var controlsArray = oView.getContent()[0]._aElements;
                 for (var i in controlsArray) {
-                                            console.log(controlsArray[i].sId)
                     var controlsId = controlsArray[i].sId;
                     if (controlsId.includes("input")) {
                         controlsArray[i].unbindAggregation("value", true)
