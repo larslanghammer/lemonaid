@@ -269,7 +269,7 @@ sap.ui.define([
                             }
                             checkAccess = true;
                         } else {
-                            MessageToast.show(that.i18n.getText("requiredFieldError"));
+                            MessageToast.show(this.i18n.getText("requiredFieldError"));
                             that.objectToUpload = {};
                             that.accessHandleCounter("zero");
                         }
