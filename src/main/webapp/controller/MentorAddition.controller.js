@@ -208,7 +208,7 @@ sap.ui.define([
                     this.objectToUpload["JambandInstrument"] = object.jamInstruments;
                     this.objectToUpload["JambandMusician"] = object.jamMusician;
                 }
-
+                if(object.fullName != null){
                 checkAccess = false;
                 var checkSum = false
                 while (checkAccess == false) {
@@ -268,6 +268,9 @@ sap.ui.define([
                         checkAccess = true;
                     }
                 }
+            }else{
+                console.log("NAME NOT FILLED IN")
+            }
             }
 
         },
