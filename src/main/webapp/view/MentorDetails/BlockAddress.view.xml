@@ -31,8 +31,8 @@
 				formatter: '.formatters.formatAddress'
 			}" visible="{= !${ui>/isEditMode} }" />
 
-		<Label text="{i18n>fullName}" />
-		<Input id="input-fullName" value="{FullName}" visible="{ui>/isEditMode}" /> <!-- unbindAggregation("value",true) -->
+		<Label text="{i18n>fullName}" labelFor="input-fullName"/>
+		<Input id="input-fullName" value="{FullName}" visible="{ui>/isEditMode}" required="true"/> <!-- unbindAggregation("value",true) -->
 
 		<Label text="{i18n>jobTitle}" />
 		<Input id="input-jobTitle" value="{JobTitle}" visible="{ui>/isEditMode}"/>
