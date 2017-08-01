@@ -130,7 +130,7 @@ sap.ui.define([
                     this.objectToUpload["Country"] = this.model.oData["Countries('" + object.country + "')"];
                     this.objectToUpload["CountryId"] = object.country;
                     this.objectToUpload["CountryPublic"] = object.countryPublic;
-                    this.objectToUpload["FullName"] = object.fullName;
+                    this.objectToUpload["FullName"] = object.fullName.trim();
                     this.objectToUpload["JobTitle"] = object.jobTitle;
                     this.objectToUpload["JobTitlePublic"] = object.jobTitlePublic;
                     this.objectToUpload["Phone"] = object.phone;
@@ -218,7 +218,7 @@ sap.ui.define([
                         if (checkSum == true) {
                             console.log(this.objectToUpload);
                             console.log(this.objectToUpload.FullName)
-                            if (this.objectToUpload.FullName.trim().length()>0) {
+                            if (this.objectToUpload.FullName.length() >0) {
                                 var that = this;
                                 //TEST UPLOAD
                                 var requests = [];
