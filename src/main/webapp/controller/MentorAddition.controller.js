@@ -217,7 +217,8 @@ sap.ui.define([
                 while (checkAccess == false) {
                     checkSum = this.accessHandleCounter("read")
                     if (checkSum != null) {
-                        if (object.fullName != null) {
+                        console.log()
+                        if (this.objectToUpload.fullName != null) {
                             if (checkSum == true) {
                                 var that = this;
                                 //TEST UPLOAD
