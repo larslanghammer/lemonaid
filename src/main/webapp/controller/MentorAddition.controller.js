@@ -219,7 +219,7 @@ sap.ui.define([
                     if (checkSum != null) {
                         console.log(this.objectToUpload);
                         console.log(this.objectToUpload.FullName)
-                        if (this.objectToUpload.FullName != null) {
+                        if (this.objectToUpload.FullName.length() > 0) {
                             if (checkSum == true) {
                                 var that = this;
                                 //TEST UPLOAD
