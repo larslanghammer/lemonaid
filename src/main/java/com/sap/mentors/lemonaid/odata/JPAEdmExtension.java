@@ -55,7 +55,6 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
             +"City|"
             +"Zip|"
             +"State|"
-            +"Country|"
             +"Phone|"
             +"Email1|"
             +"Email2|"
@@ -64,6 +63,7 @@ public class JPAEdmExtension implements org.apache.olingo.odata2.jpa.processor.a
 	public static final String PUBLIC_NAVPROPERTIES =
             "MentorStatus|RelationshipToSap|Region|Country|"
              +"SoftSkill1|SoftSkill2|SoftSkill3|SoftSkill4|SoftSkill5|SoftSkill6|"
+             +"SapExpertise1|SapExpertise1Level|SapExpertise2|SapExpertise2Level|SapExpertise3|SapExpertise3Level|"
             +"Attachments";
 	private ODataAuthorization authorization = null;
 
