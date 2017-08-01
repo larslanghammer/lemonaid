@@ -87,6 +87,8 @@ public class Mentor {
     @SAP(fieldGroup="Address")  @Column(nullable = true ) private Boolean phonePublic = false;
     @SAP(fieldGroup="Address") private Double latitude;
     @SAP(fieldGroup="Address") private Double longitude;
+    @SAP(fieldGroup="Address") private Double publicLatitude;
+    @SAP(fieldGroup="Address") private Double publicLongitude;
 
     @SAP(fieldGroup="Address") @JoinColumn(name="regionId") @ManyToOne private Region regionId;
 
@@ -149,7 +151,7 @@ public class Mentor {
     		String bio,
     		String email1, String email2,
     		String address, String city, String state, String zip, Country countryId, String phone,
-    		Double latitude, Double longitude,
+    		Double latitude, Double longitude, Double publicLatitude, Double publicLongitude,
     		Region regionId,
     		String shirtNumber, String shirtText, Size shirtSizeId, Gender shirtMFId,
     		String scnUrl, String twitterId, String linkedInUrl, String xingUrl, String facebookUrl, String slackId,
@@ -210,6 +212,9 @@ public class Mentor {
 
         this.latitude = latitude;
         this.longitude = longitude;
+
+        this.publicLatitude = publicLatitude;
+        this.publicLongitude = publicLongitude;
 
         this.regionId = regionId;
 
@@ -868,6 +873,17 @@ public class Mentor {
 		} else {
 			this.latitude = location.getLatitude();
 			this.longitude = location.getLongitude();
+		}
+
+    }
+
+    	public void setPublicLocation(Point location) {
+		if (location == null) {
+			this.publicLatitude = null;
+			this.publicLongitude = null;
+		} else {
+			this.publicLatitude = location.getLatitude();
+			this.publicLongitude = location.getLongitude();
 		}
 
 	}
