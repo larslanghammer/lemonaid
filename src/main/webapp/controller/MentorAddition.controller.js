@@ -207,10 +207,6 @@ sap.ui.define([
                     this.objectToUpload["JambandLasVegas"] = object.jamBandLasVegas;
                     this.objectToUpload["JambandInstrument"] = object.jamInstruments;
                     this.objectToUpload["JambandMusician"] = object.jamMusician;
-
-                    //Test
-                    this.objectToUpload["PublicLatitude"] = 15.8606285;
-                    this.objectToUpload["PublicLongitude"] = 48.8536989;
                 }
                 checkAccess = false;
                 var checkSum = false
@@ -222,7 +218,7 @@ sap.ui.define([
                         if (checkSum == true) {
                             console.log(this.objectToUpload);
                             console.log(this.objectToUpload.FullName)
-                            if (this.objectToUpload.FullName != null) {
+                            if (this.objectToUpload.FullName.trim().length()>0) {
                                 var that = this;
                                 //TEST UPLOAD
                                 var requests = [];
