@@ -149,7 +149,7 @@ sap.ui.define([
                     this.objectToUpload["Industry3Id"] = object.industry3;
                     this.objectToUpload["MentorSince"] = object.mentorSince;
                 } else if (object.viewName.includes("Media")) {
-                    this.objectToUpload["Email1"] = object.email1;
+                    this.objectToUpload["Email1"] = object.email1.trim();
                     this.objectToUpload["Email1Public"] = object.email1Public;
                     this.objectToUpload["Email2"] = object.email2;
                     this.objectToUpload["Email2Public"] = object.email2Public;
@@ -218,7 +218,7 @@ sap.ui.define([
                         if (checkSum == true) {
                             console.log(this.objectToUpload);
                             console.log(this.objectToUpload.FullName)
-                            if (this.objectToUpload.FullName.length >0) {
+                            if (this.objectToUpload.FullName.length >0&&this.objectToUpload.Email1.length>0) {
                                 var that = this;
                                 //TEST UPLOAD
                                 var requests = [];
