@@ -190,7 +190,18 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 		try {
 			oDataJPAContext.setODataContext(getContext());
 			List<Object> jpaEntities = jpaProcessor.process(uriParserResultView);
-			jpaEntities = enrichEntities(uriParserResultView, jpaEntities);
+            jpaEntities = enrichEntities(uriParserResultView, jpaEntities);
+            for(Object jpaEntity : jpaEntities){
+                if (jpaEntity instanceof Mentor) {
+				    if (!authorization.isMentor() && !authorization.isProjectMember()) {
+
+                    }else{
+                        ((Mentor) jpaEntity).setPublicLongitude(((Mentor) jpaEntity).getLongitude());
+                        ((Mentor) jpaEntity).setPublicLatitude(((Mentor) jpaEntity).getLatitude());
+                    }
+
+                }
+            }
 			oDataResponse = responseBuilder.build(uriParserResultView, jpaEntities, contentType);
 		} finally {
 			close();
