@@ -218,7 +218,7 @@ sap.ui.define([
                         if (checkSum == true) {
                             console.log(this.objectToUpload);
                             console.log(this.objectToUpload.FullName)
-                            if (this.objectToUpload.FullName.length() >0) {
+                            if (this.objectToUpload.FullName.length >0) {
                                 var that = this;
                                 //TEST UPLOAD
                                 var requests = [];
