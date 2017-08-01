@@ -11,7 +11,7 @@
     	markers="{
 			path: '/Mentors',
 			parameters: {
-				select: 'Id,FullName,ShirtNumber,PhotoUrl,Latitude,Longitude,MentorStatus/Id',
+				select: 'Id,FullName,ShirtNumber,PhotoUrl,PublicLatitude,PublicLongitude,MentorStatus/Id',
 				expand: 'MentorStatus'
 			}
 		}">
