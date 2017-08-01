@@ -276,6 +276,7 @@ sap.ui.define([
                             MessageToast.show(this.i18n.getText("requiredFieldError"));
                             this.objectToUpload = {};
                             this.accessHandleCounter("zero");
+                            checkAccess = true;
                         }
                     }
                 }
