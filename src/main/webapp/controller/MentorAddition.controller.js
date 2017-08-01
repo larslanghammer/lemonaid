@@ -217,10 +217,12 @@ sap.ui.define([
                 while (checkAccess == false) {
                     checkSum = this.accessHandleCounter("read")
                     if (checkSum != null) {
-                        console.log(this.objectToUpload);
-                        console.log(this.objectToUpload.FullName)
-                        if (this.objectToUpload.FullName.length() > 0) {
-                            if (checkSum == true) {
+
+
+                        if (checkSum == true) {
+                            console.log(this.objectToUpload);
+                            console.log(this.objectToUpload.FullName)
+                            if (this.objectToUpload.FullName != null) {
                                 var that = this;
                                 //TEST UPLOAD
                                 var requests = [];
@@ -272,14 +274,14 @@ sap.ui.define([
                                     );
                                 }));
                                 this.objectToUpload = {};
+                            } else {
+                                MessageToast.show(this.i18n.getText("requiredFieldError"));
+                                this.objectToUpload = {};
+                                this.accessHandleCounter("zero");
+                                checkAccess = true;
                             }
-                            checkAccess = true;
-                        } else {
-                            MessageToast.show(this.i18n.getText("requiredFieldError"));
-                            this.objectToUpload = {};
-                            this.accessHandleCounter("zero");
-                            checkAccess = true;
                         }
+                        checkAccess = true;
                     }
                 }
             }
