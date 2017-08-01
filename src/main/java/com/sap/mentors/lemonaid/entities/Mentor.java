@@ -592,6 +592,22 @@ public class Mentor {
 
 	public void setLongitude(Double longitude) {
 		this.longitude = longitude;
+    }
+
+    	public Double getPublicLatitude() {
+		return publicLatitude;
+	}
+
+	public void setPublicLatitude(Double publicLatitude) {
+		this.publicLatitude = publicLatitude;
+	}
+
+	public Double getPublicLongitude() {
+		return publicLongitude;
+	}
+
+	public void setPublicLongitude(Double publicLongitude) {
+		this.publicLongitude = publicLongitude;
 	}
 
 	public Region getRegionId() {

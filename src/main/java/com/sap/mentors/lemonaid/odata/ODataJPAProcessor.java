@@ -169,7 +169,12 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
                     if(!((Mentor) jpaEntity).getAttachmentsPublic()) {
 						((Mentor) jpaEntity).setAttachments(null);
                     }
-				}
+				}else{
+                    if(!(((Mentor) jpaEntity).getLongitude() == ((Mentor) jpaEntity).getPublicLongitude()) || !(((Mentor) jpaEntity).getLatitude() == ((Mentor) jpaEntity).getPublicLatitude())){
+                        ((Mentor) jpaEntity).setPublicLongitude(((Mentor) jpaEntity).getLongitude());
+                        ((Mentor) jpaEntity).setPublicLatitude(((Mentor) jpaEntity).getLatitude());
+                    }
+                }
 			}
 			oDataResponse = responseBuilder.build(uriParserResultView, jpaEntity, contentType);
 		} finally {
