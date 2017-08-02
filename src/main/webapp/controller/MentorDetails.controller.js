@@ -74,7 +74,9 @@ sap.ui.define([
         onSave: function (oEvent) {
             console.log(this.model);
             console.log(this.model.oData["Mentors('" + this.sMentorId + "')"]);
-            this.model.submitChanges({
+            console.log(this.model.getPendingChanges())
+            console.log(this.model.getChangeGroups())
+            /*this.model.submitChanges({
                 success: function (oData) {
                     sap.m.MessageToast.show(this.i18n.getText("profileSavedSuccesfully"));
                     this.ui.setProperty("/isEditMode", false);
@@ -82,7 +84,7 @@ sap.ui.define([
                 error: function (oError) {
                     sap.m.MessageToast.show(this.i18n.getText("profileSavedError"));
                 }.bind(this)
-            });
+            });*/
         },
 
         /**
