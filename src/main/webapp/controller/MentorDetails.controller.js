@@ -74,7 +74,7 @@ sap.ui.define([
         onSave: function (oEvent) {
             console.log(this.model);
             console.log(this.model.oData["Mentors('" + this.sMentorId + "')"]);
-           var mentor =this.model.getPendingChanges();
+           var mentor =this.model.getPendingChanges()["Mentors('" + this.sMentorId + "')"];
            console.log(mentor);
         console.log(mentor.FullName)
         console.log(mentor.Email1);
