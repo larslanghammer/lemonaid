@@ -78,7 +78,7 @@ sap.ui.define([
            console.log(mentor);
         console.log(mentor.FullName)
         console.log(mentor.Email1);
-           if((typeof mentor.FullName== undefined || mentor.FullName.trim().lentgh>0) && (typeof mentor.Email1== undefined || mentor.Email1.trim().lentgh>0)){
+           if((typeof mentor.FullName== 'undefined' || mentor.FullName.trim().lentgh>0) && (typeof mentor.Email1== 'undefined' || mentor.Email1.trim().lentgh>0)){
             this.model.submitChanges({
                 success: function (oData) {
                     sap.m.MessageToast.show(this.i18n.getText("profileSavedSuccesfully"));
