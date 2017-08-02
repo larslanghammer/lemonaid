@@ -77,7 +77,9 @@ sap.ui.define([
            var mentor =this.model.getPendingChanges()["Mentors('" + this.sMentorId + "')"];
         var name = mentor.FullName;
         var email =mentor.Email1;
-           if((name== undefined || name.trim().lentgh>0) && (email== 'undefined' || email.trim().lentgh>0)){
+        console.log(name== undefined || name.trim().lentgh>0);
+        console.log(email== undefined || email.trim().lentgh>0);
+           if((name== undefined || name.trim().lentgh>0) && (email== undefined || email.trim().lentgh>0)){
             this.model.submitChanges({
                 success: function (oData) {
                     sap.m.MessageToast.show(this.i18n.getText("profileSavedSuccesfully"));
