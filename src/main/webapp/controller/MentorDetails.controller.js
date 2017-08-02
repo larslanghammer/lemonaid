@@ -74,8 +74,9 @@ sap.ui.define([
         onSave: function (oEvent) {
             console.log(this.model);
             console.log(this.model.oData["Mentors('" + this.sMentorId + "')"]);
-            var mentor =this.model.oData["Mentors('" + this.sMentorId + "')"]
-            if(mentor.FullName.trim().length>0 && mentor.Email1.trim().length>0){
+            var name = this.getView().byId("input-fullName");
+            var email = this.getView().byId("input-email1");
+            if(name.trim().length>0 && email.trim().length>0){
             this.model.submitChanges({
                 success: function (oData) {
                     sap.m.MessageToast.show(this.i18n.getText("profileSavedSuccesfully"));
