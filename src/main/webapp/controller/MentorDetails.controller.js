@@ -74,9 +74,10 @@ sap.ui.define([
         onSave: function (oEvent) {
             console.log(this.model);
             console.log(this.model.oData["Mentors('" + this.sMentorId + "')"]);
-            console.log(this.model.getPendingChanges())
-            console.log(this.model.getChangeGroups())
-            /*this.model.submitChanges({
+           var mentor =this.model.getPendingChanges();
+
+           if((mentor.FullName== undefined || mentor.FullName.trim().lentgh>0) && (mentor.FullName== undefined || mentor.FullName.trim().lentgh>0)){
+            this.model.submitChanges({
                 success: function (oData) {
                     sap.m.MessageToast.show(this.i18n.getText("profileSavedSuccesfully"));
                     this.ui.setProperty("/isEditMode", false);
@@ -84,7 +85,10 @@ sap.ui.define([
                 error: function (oError) {
                     sap.m.MessageToast.show(this.i18n.getText("profileSavedError"));
                 }.bind(this)
-            });*/
+            });
+           }else {
+                sap.m.MessageToast.show(this.i18n.getText("requiredFieldError"));
+                }
         },
 
         /**
