@@ -93,7 +93,7 @@ sap.ui.define([
                 sap.m.MessageToast.show(this.i18n.getText("requiredFieldError"));
                 }
            }
-            this.bindView();
+            console.log(this.model.oData["Mentors('" + this.sMentorId + "')"]);
         },
 
         /**
