@@ -64,7 +64,12 @@ sap.ui.define([
 					afilters.push(new Filter("FullName", FilterOperator.Contains, searchTerms[k]));
 					afilters.push(new Filter("ShirtNumber", FilterOperator.Contains, searchTerms[k]));
 					afilters.push(new Filter("RelationshipToSap/Name", FilterOperator.Contains, searchTerms[k]));
-					afilters.push(new Filter("MentorStatus/Name", FilterOperator.Contains, searchTerms[k]));
+                    afilters.push(new Filter("MentorStatus/Name", FilterOperator.Contains, searchTerms[k]));
+
+                    //Expertise
+                    afilters.push(new Filter("SapExpertise1/Name", FilterOperator.Contains, searchTerms[k]));
+                    afilters.push(new Filter("SapExpertise2/Name", FilterOperator.Contains, searchTerms[k]));
+                    afilters.push(new Filter("SapExpertise3/Name", FilterOperator.Contains, searchTerms[k]));
 					outerFilters.push(new Filter(afilters));
 					afilters = [];
 				}
