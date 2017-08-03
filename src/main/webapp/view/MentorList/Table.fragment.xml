@@ -5,7 +5,7 @@
 		height="100%"
 		width="100%"
 		horizontal="true"
-		vertical="false"
+		vertical="true"
 		focusable="true">
 	<Table
 		id="mentorsTable"
