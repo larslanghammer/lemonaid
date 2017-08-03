@@ -84,16 +84,20 @@ sap.ui.define([
                 success: function (oData) {
                     sap.m.MessageToast.show(this.i18n.getText("profileSavedSuccesfully"));
                     this.ui.setProperty("/isEditMode", false);
+                    console.log(this.model.oData["Mentors('" + this.sMentorId + "')"]);
+                    this.binView();
                 }.bind(this),
                 error: function (oError) {
                     sap.m.MessageToast.show(this.i18n.getText("profileSavedError"));
+                    console.log(this.model.oData["Mentors('" + this.sMentorId + "')"]);
+                    this.binView();
                 }.bind(this)
             });
            }else {
                 sap.m.MessageToast.show(this.i18n.getText("requiredFieldError"));
                 }
            }
-            console.log(this.model.oData["Mentors('" + this.sMentorId + "')"]);
+
         },
 
         /**
