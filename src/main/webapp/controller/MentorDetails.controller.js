@@ -90,7 +90,7 @@ sap.ui.define([
                 error: function (oError) {
                     sap.m.MessageToast.show(this.i18n.getText("profileSavedError"));
                     console.log(this.model.oData["Mentors('" + this.sMentorId + "')"]);
-                    this.binView();
+                    this.bindView();
                 }.bind(this)
             });
            }else {
