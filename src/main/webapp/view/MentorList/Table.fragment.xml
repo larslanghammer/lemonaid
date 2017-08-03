@@ -13,8 +13,8 @@
 		items="{
 			path: '/Mentors',
 			parameters: {
-				select: 'Id,FullName,ShirtNumber,PhotoUrl,RelationshipToSap/Name,MentorStatus/Name,PublicProfile,JambandBarcelona,JambandLasVegas',
-				expand: 'MentorStatus,RelationshipToSap'
+				select: 'Id,FullName,ShirtNumber,PhotoUrl,RelationshipToSap/Name,MentorStatus/Name,PublicProfile,JambandBarcelona,JambandLasVegas,SapExpertise1/Name,SapExpertise2/Name,SapExpertise3/Name',
+				expand: 'MentorStatus,RelationshipToSap,SapExpertise1,SapExpertise2,SapExpertise3'
 			},
 			sorter: {path: 'FullName', descending: false}
 		}"
