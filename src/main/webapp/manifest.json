@@ -25,11 +25,7 @@
 			},
 			"user": {
 				"uri": "/userapi/currentUser",
-        //"type": "JSON"
-        				"type": "OData",
-				"settings": {
-					"odataVersion": "2.0"
-				}
+				"type": "JSON"
 			}
 		}
 	},
@@ -85,11 +81,10 @@
 				}
 			},
 			"user": {
-				"type":  "sap.ui.model.odata.v2.ODataModel",//"sap.ui.model.json.JSONModel",
+				"type": "sap.ui.model.json.JSONModel",
 				"dataSource": "user",
 				"settings": {
-          "defaultBindingMode": "TwoWay",
-          "json": true,
+          "defaultBindingMode": "OneWay",
           "headers":{
             "Expires": "-1",
             "Pragma": "no-cache",
