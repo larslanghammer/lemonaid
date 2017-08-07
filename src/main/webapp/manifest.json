@@ -84,7 +84,7 @@
         "dataSource": "user",
 				"type": "sap.ui.model.json.JSONModel",
 				"settings": {
-          "defaultBindingMode": "OneWay",
+          "defaultBindingMode": "TwoWay",
           "headers":{
             "Expires": "-1",
             "Pragma": "no-cache",
