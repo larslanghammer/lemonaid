@@ -85,6 +85,7 @@
 				"type": "sap.ui.model.odata.v2.ODataModel",
 				"settings": {
           "defaultBindingMode": "TwoWay",
+          "json": true,
           "headers":{
             "Expires": "-1",
             "Pragma": "no-cache",
