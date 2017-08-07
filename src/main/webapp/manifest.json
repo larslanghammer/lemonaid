@@ -100,8 +100,8 @@
 				"settings": {
           "defaultBindingMode": "OneWay",
           "headers":{
-           // "Expires": "-1",
-           // "Pragma": "no-cache",
+            "Expires": "-1",
+            "Pragma": "no-cache",
             "Cache-control": "max-age=0"
           }
 				}
