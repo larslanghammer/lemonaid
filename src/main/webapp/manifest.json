@@ -82,7 +82,7 @@
 			},
 			"user": {
         "dataSource": "user",
-				"type": "sap.ui.model.json.JSONModel",
+				"type": "sap.ui.model.odata.v2.ODataModel",
 				"settings": {
           "defaultBindingMode": "TwoWay",
           "headers":{
