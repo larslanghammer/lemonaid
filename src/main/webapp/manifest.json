@@ -80,18 +80,6 @@
 					"bundleName": "com.sap.mentors.lemonaid.i18n.i18n"
 				}
 			},
-			"user": {
-        "dataSource": "user",
-				"type": "sap.ui.model.json.JSONModel",
-				"settings": {
-          "defaultBindingMode": "OneWay",
-          "headers":{
-            "Expires": "-1",
-            "Pragma": "no-cache",
-            "Cache-control": "no-cache"
-          }
-				}
-			},
 			"": {
 				"dataSource": "odata",
                 "type": "com.sap.mentors.lemonaid.model.ODataModel",
@@ -100,6 +88,18 @@
           "json": true,
           "defaultOperationMode": "Client",
             "headers":{
+            "Expires": "-1",
+            "Pragma": "no-cache",
+            "Cache-control": "no-cache"
+          }
+				}
+      },
+      "user": {
+        "dataSource": "user",
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {
+          "defaultBindingMode": "OneWay",
+          "headers":{
             "Expires": "-1",
             "Pragma": "no-cache",
             "Cache-control": "no-cache"
