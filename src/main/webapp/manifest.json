@@ -89,7 +89,7 @@
           "defaultOperationMode": "Client",
             "headers":{
             "Expires": "-1",
-            "Pragma": "no-cache",
+            "Pragma":  "no-cache",
             "Cache-control": "no-cache"
           }
 				}
