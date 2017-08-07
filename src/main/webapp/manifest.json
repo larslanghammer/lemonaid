@@ -25,7 +25,10 @@
 			},
 			"user": {
 				"uri": "/userapi/currentUser",
-				"type": "JSON"
+        "type": "JSON",
+        "settings":{
+          "maxAge":"0"
+        }
 			}
 		}
 	},
