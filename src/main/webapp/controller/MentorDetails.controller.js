@@ -12,6 +12,8 @@ sap.ui.define([
 
     return BaseController.extend("com.sap.mentors.lemonaid.controller.MentorDetails", {
 
+        busyDialog: new BusyDialog(),
+
         /* =========================================================== */
         /* lifecycle methods                                           */
         /* =========================================================== */
@@ -74,6 +76,9 @@ sap.ui.define([
         onSave: function (oEvent) {
             console.log(this.model);
             console.log(this.model.oData["Mentors('" + this.sMentorId + "')"]);
+                        this.busyDialog.setTitle(this.i18n.getText("importScanningTitle"));
+            this.busyDialog.setText(this.i18n.getText("importScanningText"));
+            this.busyDialog.open();
            var mentor =this.model.getPendingChanges()["Mentors('" + this.sMentorId + "')"];
            if(mentor != undefined){
         var name = mentor.FullName;
@@ -83,18 +88,21 @@ sap.ui.define([
                console.log("Test")
             this.model.submitChanges({
                 success: function (oData) {
+                    this.busyDialog.close();
                     sap.m.MessageToast.show(this.i18n.getText("profileSavedSuccesfully"));
                     this.ui.setProperty("/isEditMode", false);
                     console.log(this.model.oData["Mentors('" + this.sMentorId + "')"]);
                     this.bindView();
                 }.bind(this),
                 error: function (oError) {
+                    this.busyDialog.close();
                     sap.m.MessageToast.show(this.i18n.getText("profileSavedError"));
                     console.log(this.model.oData["Mentors('" + this.sMentorId + "')"]);
                     this.bindView();
                 }.bind(this)
             });
            }else {
+               this.busyDialog.close();
                 sap.m.MessageToast.show(this.i18n.getText("requiredFieldError"));
                 }
            }

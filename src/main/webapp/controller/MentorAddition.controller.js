@@ -11,6 +11,7 @@ sap.ui.define([
 
     return BaseController.extend("com.sap.mentors.lemonaid.controller.MentorAddition", {
 
+        busyDialog: new BusyDialog(),
         guidGenerator: GuidGenerator,
 
         /* =========================================================== */
@@ -71,6 +72,9 @@ sap.ui.define([
          * @param {sap.ui.base.Event} oEvent - 'press' event of Save button
          */
         onSave: function (oEvent) {
+            this.busyDialog.setTitle(this.i18n.getText("importScanningTitle"));
+            this.busyDialog.setText(this.i18n.getText("importScanningText"));
+            this.busyDialog.open();
             var oEventBus = sap.ui.getCore().getEventBus();
             this.accessHandleCounter("zero");
             oEventBus.publish("BlockChannel", "readBlockContent");
@@ -241,6 +245,7 @@ sap.ui.define([
                                         "/Mentors",
                                         that.objectToUpload, {
                                             success: function (data) {
+                                                this.busyDialog.close();
                                                 MessageToast.show(that.i18n.getText("profileSavedSuccesfully"));
                                                 resolve();
                                                 var createdId = that.objectToUpload.Id;
@@ -261,6 +266,7 @@ sap.ui.define([
 
                                             },
                                             error: function (error) {
+                                                this.busyDialog.close();
                                                 MessageToast.show(that.i18n.getText("profileSavedError"));
                                                 that.objectToUpload = {};
                                                 that.accessHandleCounter("zero");
@@ -271,6 +277,7 @@ sap.ui.define([
                                 }));
                                 this.objectToUpload = {};
                             } else {
+                                this.busyDialog.close();
                                 MessageToast.show(this.i18n.getText("requiredFieldError"));
                                 this.objectToUpload = {};
                                 this.accessHandleCounter("zero");
