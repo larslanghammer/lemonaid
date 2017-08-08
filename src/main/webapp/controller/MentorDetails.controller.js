@@ -78,7 +78,7 @@ sap.ui.define([
             console.log(this.model);
             console.log(this.model.oData["Mentors('" + this.sMentorId + "')"]);
             this.busyDialog.setTitle(this.i18n.getText("processChangesTitle"));
-            if(Math.floor(Math.random() * (100 - 0 + 1)) +0 ==50){ this.busyDialog.setText(this.i18n.getText("processChanges")); }else{this.busyDialog.setText(this.i18n.getText("itIsEaster"));}
+            if(Math.floor(Math.random() * (100 - 0 + 1)) +0 !=50){ this.busyDialog.setText(this.i18n.getText("processChanges")); }else{this.busyDialog.setText(this.i18n.getText("itIsEaster"));}
             this.busyDialog.open();
            var mentor =this.model.getPendingChanges()["Mentors('" + this.sMentorId + "')"];
            if(mentor != undefined){
@@ -107,7 +107,7 @@ sap.ui.define([
                 sap.m.MessageToast.show(this.i18n.getText("requiredFieldError"));
                 }
            }
-
+           this.busyDialog.close();
         },
 
         /**
