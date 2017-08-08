@@ -13,7 +13,7 @@ sap.ui.define([
     return BaseController.extend("com.sap.mentors.lemonaid.controller.MentorAddition", {
 
         busyDialog: new sap.m.BusyDialog(),
-        guidGenerator: GuidGenerator,
+        guidGenerator: new com.sap.mentors.lemonaid.utils.GuidGenerator,
 
         /* =========================================================== */
         /* lifecycle methods                                           */
