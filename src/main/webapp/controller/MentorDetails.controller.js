@@ -106,8 +106,9 @@ sap.ui.define([
                this.busyDialog.close();
                 sap.m.MessageToast.show(this.i18n.getText("requiredFieldError"));
                 }
+           }else{
+            this.busyDialog.close();
            }
-           this.busyDialog.close();
         },
 
         /**
