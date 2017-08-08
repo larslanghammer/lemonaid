@@ -260,6 +260,7 @@ sap.ui.define([
                                                         that.busyDialog.close();
                                                     }.bind(this)
                                                 });
+                                                that.busyDialog.close();
                                                 that.getRouter().navTo("Mentor", {
                                                     Id: mentorId
                                                 });
