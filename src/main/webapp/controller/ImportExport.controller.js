@@ -311,6 +311,7 @@ sap.ui.define([
                     }
                     //Add Objects of JoinColum Entities
                     if(object.Language1Id){
+                        console.log("test");
                         object["Language1"] = that.model.oData["Languages('"+object.Language1Id+"')"];
                     }
                     if(object.Language2Id){
