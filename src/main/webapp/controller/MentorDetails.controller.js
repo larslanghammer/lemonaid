@@ -13,7 +13,7 @@ sap.ui.define([
 
     return BaseController.extend("com.sap.mentors.lemonaid.controller.MentorDetails", {
 
-        busyDialog: new BusyDialog(),
+        busyDialog: new sap.m.BusyDialog(),
 
         /* =========================================================== */
         /* lifecycle methods                                           */
