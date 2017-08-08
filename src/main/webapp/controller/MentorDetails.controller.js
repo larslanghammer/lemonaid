@@ -6,6 +6,7 @@ sap.ui.define([
     "sap/ui/model/Filter",
     'sap/m/Button',
     'sap/m/Dialog',
+    "sap/m/BusyDialog",
     "sap/m/MessageToast"
 ], function (BaseController, JSONModel, Filter, MessageToast, Dialog, Button) {
     "use strict";

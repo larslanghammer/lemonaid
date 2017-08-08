@@ -5,6 +5,7 @@ sap.ui.define([
     "sap/ui/model/json/JSONModel",
     "sap/ui/model/Filter",
     "sap/m/MessageToast",
+    "sap/m/BusyDialog",
     "com/sap/mentors/lemonaid/util/GuidGenerator",
 ], function (BaseController, JSONModel, Filter, MessageToast, GuidGenerator) {
     "use strict";
