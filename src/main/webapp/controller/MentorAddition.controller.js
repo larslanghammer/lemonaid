@@ -5,15 +5,13 @@ sap.ui.define([
     "sap/ui/model/json/JSONModel",
     "sap/ui/model/Filter",
     "sap/m/MessageToast",
-    "sap/m/BusyDialog",
     "com/sap/mentors/lemonaid/util/GuidGenerator",
 ], function (BaseController, JSONModel, Filter, MessageToast, GuidGenerator) {
     "use strict";
 
     return BaseController.extend("com.sap.mentors.lemonaid.controller.MentorAddition", {
 
-        busyDialog: new sap.m.BusyDialog(),
-        guidGenerator: new com.sap.mentors.lemonaid.utils.GuidGenerator,
+        guidGenerator: GuidGenerator,
 
         /* =========================================================== */
         /* lifecycle methods                                           */
@@ -218,14 +216,10 @@ sap.ui.define([
 
 
                         if (checkSum == true) {
-                            var that = this;
-                                        this.busyDialog.setTitle(this.i18n.getText("importScanningTitle"));
-            this.busyDialog.setText(this.i18n.getText("importScanningText"));
-            this.busyDialog.open();
                             console.log(this.objectToUpload);
                             console.log(this.objectToUpload.FullName)
-                            if (that.objectToUpload.FullName.length >0&&that.objectToUpload.Email1.length>0) {
-
+                            if (this.objectToUpload.FullName.length >0&&this.objectToUpload.Email1.length>0) {
+                                var that = this;
                                 //TEST UPLOAD
                                 var requests = [];
                                 requests.push(new Promise(function (resolve) {
@@ -247,7 +241,6 @@ sap.ui.define([
                                         "/Mentors",
                                         that.objectToUpload, {
                                             success: function (data) {
-                                                this.busyDialog.close();
                                                 MessageToast.show(that.i18n.getText("profileSavedSuccesfully"));
                                                 resolve();
                                                 var createdId = that.objectToUpload.Id;
@@ -268,7 +261,6 @@ sap.ui.define([
 
                                             },
                                             error: function (error) {
-                                                this.busyDialog.close();
                                                 MessageToast.show(that.i18n.getText("profileSavedError"));
                                                 that.objectToUpload = {};
                                                 that.accessHandleCounter("zero");
@@ -279,7 +271,6 @@ sap.ui.define([
                                 }));
                                 this.objectToUpload = {};
                             } else {
-                                this.busyDialog.close();
                                 MessageToast.show(this.i18n.getText("requiredFieldError"));
                                 this.objectToUpload = {};
                                 this.accessHandleCounter("zero");
