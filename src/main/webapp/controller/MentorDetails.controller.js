@@ -8,7 +8,7 @@ sap.ui.define([
     'sap/m/Dialog',
     "sap/m/BusyDialog",
     "sap/m/MessageToast"
-], function (BaseController, JSONModel, Filter, MessageToast, Dialog, Button) {
+], function (BaseController, JSONModel, Filter, MessageToast, Dialog, Button,BusyDialog) {
     "use strict";
 
     return BaseController.extend("com.sap.mentors.lemonaid.controller.MentorDetails", {

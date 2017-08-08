@@ -6,13 +6,14 @@ sap.ui.define([
     "sap/ui/model/Filter",
     "sap/m/MessageToast",
     "com/sap/mentors/lemonaid/util/GuidGenerator",
-], function (BaseController, JSONModel, Filter, MessageToast, GuidGenerator) {
+    "sap/m/BusyDialog",
+], function (BaseController, JSONModel, Filter, MessageToast, GuidGenerator,BusyDialog) {
     "use strict";
 
     return BaseController.extend("com.sap.mentors.lemonaid.controller.MentorAddition", {
 
         guidGenerator: GuidGenerator,
-
+        busyDialog: new sap.m.BusyDialog(),
         /* =========================================================== */
         /* lifecycle methods                                           */
         /* =========================================================== */
@@ -71,6 +72,10 @@ sap.ui.define([
          * @param {sap.ui.base.Event} oEvent - 'press' event of Save button
          */
         onSave: function (oEvent) {
+            this.busyDialog.setTitle(this.i18n.getText("importScanningTitle"));
+            this.busyDialog.setText(this.i18n.getText("importScanningText"));
+            this.busyDialog.open();
+
             var oEventBus = sap.ui.getCore().getEventBus();
             this.accessHandleCounter("zero");
             oEventBus.publish("BlockChannel", "readBlockContent");
@@ -248,9 +253,11 @@ sap.ui.define([
                                                 that.model.submitChanges({
                                                     success: function (oData) {
                                                         sap.m.MessageToast.show(this.i18n.getText("profileSavedSuccesfully"));
+                                                        that.busyDialog.close();
                                                     }.bind(this),
                                                     error: function (oError) {
                                                         sap.m.MessageToast.show(this.i18n.getText("profileSavedError"));
+                                                        that.busyDialog.close();
                                                     }.bind(this)
                                                 });
                                                 that.getRouter().navTo("Mentor", {
@@ -261,6 +268,7 @@ sap.ui.define([
 
                                             },
                                             error: function (error) {
+                                                that.busyDialog.close();
                                                 MessageToast.show(that.i18n.getText("profileSavedError"));
                                                 that.objectToUpload = {};
                                                 that.accessHandleCounter("zero");
@@ -271,6 +279,7 @@ sap.ui.define([
                                 }));
                                 this.objectToUpload = {};
                             } else {
+                                that.busyDialog.close();
                                 MessageToast.show(this.i18n.getText("requiredFieldError"));
                                 this.objectToUpload = {};
                                 this.accessHandleCounter("zero");
