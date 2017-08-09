@@ -78,7 +78,9 @@ sap.ui.define([
             console.log(this.model);
             console.log(this.model.oData["Mentors('" + this.sMentorId + "')"]);
             this.busyDialog.setTitle(this.i18n.getText("processChangesTitle"));
-            if(Math.floor(Math.random() * (100 - 0 + 1)) +0 !=50){ this.busyDialog.setText(this.i18n.getText("processChanges")); }else{this.busyDialog.setText(this.i18n.getText("itIsEaster"));}
+            this.busyDialog.setCustomIconRotationSpeed(1000);
+           this.busyDialog.setCustomIconWidth("48px");
+           this.busyDialog.setCustomIconHeight("48px");
             this.busyDialog.open();
            var mentor =this.model.getPendingChanges()["Mentors('" + this.sMentorId + "')"];
            if(mentor != undefined){
