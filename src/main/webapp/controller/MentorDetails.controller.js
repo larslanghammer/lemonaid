@@ -124,6 +124,7 @@ sap.ui.define([
         },
 
         bindView: function () {
+            console.log("BindView called");
             this.view.bindElement({
                 path: this.getModel().createKey("/Mentors", {
                     Id: this.sMentorId
