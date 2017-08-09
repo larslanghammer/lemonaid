@@ -97,6 +97,7 @@ sap.ui.define([
                     this.ui.setProperty("/isEditMode", false);
                     console.log(this.model.oData["Mentors('" + this.sMentorId + "')"]);
                     this.bindView();
+                    this.model.refreshMetadata();
                     this.model.refresh(true);
                 }.bind(this),
                 error: function (oError) {
@@ -104,6 +105,7 @@ sap.ui.define([
                     sap.m.MessageToast.show(this.i18n.getText("profileSavedError"));
                     console.log(this.model.oData["Mentors('" + this.sMentorId + "')"]);
                     this.bindView();
+                    this.model.refreshMetadata();
                     this.model.refresh(true);
                 }.bind(this)
             });
