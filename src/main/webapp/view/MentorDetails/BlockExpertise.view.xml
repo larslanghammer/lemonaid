@@ -40,7 +40,7 @@
 		</Select>
 
 		<Label text="{i18n>expertise} 2" visible="{= !!${SapExpertise2Id} &amp;&amp; !${ui>/isEditMode}}" />
-		<Text text="{SapExpertise2}" visible="{= !!${SapExpertise2Id} &amp;&amp; !${ui>/isEditMode}}" />
+		<Text text="{SapExpertise2/Name}" visible="{= !!${SapExpertise2Id} &amp;&amp; !${ui>/isEditMode}}" />
 		<Text text="{SapExpertise2Level/Name}" visible="{= !!${SapExpertise2Id} &amp;&amp; !${ui>/isEditMode}}" />
 		<Label text="{i18n>expertise} 2" visible="{ui>/isEditMode}" />
 		<Select	selectedKey="{SapExpertise2Id}"

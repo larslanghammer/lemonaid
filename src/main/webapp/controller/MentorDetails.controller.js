@@ -137,6 +137,7 @@ sap.ui.define([
             this.ui.setProperty("/UploadUrl", this.model.sServiceUrl + "/" + this.model.createKey("Mentors", {
                 Id: this.sMentorId
             }) + "/Attachments");
+            this.model.refresh(true,true);
         },
 
         onDelete: function () {
