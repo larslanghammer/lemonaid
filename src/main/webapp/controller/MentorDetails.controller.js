@@ -130,6 +130,7 @@ sap.ui.define([
                 }),
                 parameters: {
                     expand: this.component.metadata._getEntityTypeByName("Mentor").navigationProperty.map(function (navigationProperty) {
+                        console.log(navigationProperty.name);
                         return navigationProperty.name;
                     }).join() // Expand all navigation properties
                 }
