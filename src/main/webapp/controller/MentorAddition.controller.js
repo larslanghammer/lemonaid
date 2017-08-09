@@ -284,7 +284,7 @@ sap.ui.define([
                                 }));
                                 this.objectToUpload = {};
                             } else {
-                                that.busyDialog.close();
+                                this.busyDialog.close();
                                 MessageToast.show(this.i18n.getText("requiredFieldError"));
                                 this.objectToUpload = {};
                                 this.accessHandleCounter("zero");
