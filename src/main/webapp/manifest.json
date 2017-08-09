@@ -87,7 +87,7 @@
 				"dataSource": "odata",
                 "type": "com.sap.mentors.lemonaid.model.ODataModel",
 				"settings": {
-					"defaultBindingMode": "TwoWay",
+					"defaultBindingMode": "sap.ui.model.BindingMode.TwoWay",
           "json": true,
           "defaultOperationMode": "Client",
             "headers":{
