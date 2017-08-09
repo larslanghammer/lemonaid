@@ -104,7 +104,7 @@ sap.ui.define([
                     console.log(this.model.oData["Mentors('" + this.sMentorId + "')"]);
                     this.bindView();
                 }.bind(this)
-            }).refresh(true,true);
+            });
            }else {
                this.busyDialog.close();
                 sap.m.MessageToast.show(this.i18n.getText("requiredFieldError"));
@@ -124,7 +124,6 @@ sap.ui.define([
         },
 
         bindView: function () {
-            console.log("BindView called");
             this.view.bindElement({
                 path: this.getModel().createKey("/Mentors", {
                     Id: this.sMentorId
