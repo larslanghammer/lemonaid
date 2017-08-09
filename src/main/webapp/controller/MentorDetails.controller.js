@@ -97,12 +97,14 @@ sap.ui.define([
                     this.ui.setProperty("/isEditMode", false);
                     console.log(this.model.oData["Mentors('" + this.sMentorId + "')"]);
                     this.bindView();
+                    this.model.refresh(true);
                 }.bind(this),
                 error: function (oError) {
                     this.busyDialog.close();
                     sap.m.MessageToast.show(this.i18n.getText("profileSavedError"));
                     console.log(this.model.oData["Mentors('" + this.sMentorId + "')"]);
                     this.bindView();
+                    this.model.refresh(true);
                 }.bind(this)
             });
            }else {
