@@ -52,13 +52,15 @@
 				<ObjectIdentifier title="{FullName}" text="{ShirtNumber}" class="sapMTableContentMargin" />
 				<Text text="{RelationshipToSap/Name}" class="sapMTableContentMargin" />
 				<Text text="{MentorStatus/Name}" class="sapMTableContentMargin" />
-                <l:VerticalLayout class="sapUiSmallMargin" >
-                    <Text text="{SapExpertise1/Name}{= ${SapExpertise2} ? ',' : ''} " class="sapMTableContentMargin" />
-                    <Text text="{SapExpertise2/Name}{= ${SapExpertise3} ? ',' : ''} " class="sapMTableContentMargin" />
-                    <Text text="{SapExpertise3/Name}" class="sapMTableContentMargin" />
-            </l:VerticalLayout>
-            </cells>
+                <Text text="{SapExpertise1/Name}{= ${SapExpertise2} ? ',\\\rn : ''} {SapExpertise2/Name}{= ${SapExpertise3} ? ',\\\rn' : ''} {SapExpertise3/Name}" class="sapMTableContentMargin" />
+			</cells>
 		</ColumnListItem>
 	</Table>
     	</ScrollContainer>
 </core:FragmentDefinition>
+
+  <!--              <l:VerticalLayout class="sapUiSmallMargin" >
+                    <Text text="{SapExpertise1/Name}{= ${SapExpertise2} ? ',' : ''} " class="sapMTableContentMargin" />
+                    <Text text="{SapExpertise2/Name}{= ${SapExpertise3} ? ',' : ''} " class="sapMTableContentMargin" />
+                    <Text text="{SapExpertise3/Name}" class="sapMTableContentMargin" />
+            </l:VerticalLayout> -->
