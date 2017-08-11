@@ -79,9 +79,9 @@ sap.ui.define([
                                         case "ue":
                                             searchTerms[arrayLength] = searchTerms[arrayLength]+"ü";
                                             break;
-                                        case "ss":
+                                       /* case "ss":
                                             searchTerms[arrayLength] = searchTerms[arrayLength]+"ß";
-                                            break;
+                                            break;*/
                                     }
                                 }
                                 searchTerms[arrayLength] =  searchTerms[arrayLength]+searchTermHelper[j];
