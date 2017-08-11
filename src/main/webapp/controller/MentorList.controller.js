@@ -62,7 +62,7 @@ sap.ui.define([
 				var searchTerms = search.split(","); //words separated by ',' are considered as separate search terms.
                 var umlaute = ["oe","ae","ue","ss"]
                 for (var k = 0; k < searchTerms.length; k++) {
-                    for(var i = 0; i<umlate.length; i++){
+                    for(var i = 0; i<umlaute.length; i++){
                         if(searchTerms[k].includes(umlaute[i])){
                             console.log("Found one");
                         }
