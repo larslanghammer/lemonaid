@@ -84,7 +84,7 @@ sap.ui.define([
                                             break;
                                     }
                                 }
-                                searchTerms[arrayLength] =  searchTerms[searchTerms.length]+searchTermHelper[j];
+                                searchTerms[arrayLength] =  searchTerms[arrayLength]+searchTermHelper[j];
                                 console.log(searchTerms[arrayLength])
                             }
                         }
