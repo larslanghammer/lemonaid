@@ -70,16 +70,16 @@ sap.ui.define([
                             for(var j =0; j<searchTermHelper.length; j++){
                                 if(j>0){
                                     switch (umlaute[i]){
-                                        case oe:
+                                        case "oe":
                                             searchTerms[arrayLength] = searchTerms[arrayLength]+"ö";
                                             break;
-                                        case ae:
+                                        case "ae":
                                             searchTerms[arrayLength] = searchTerms[arrayLength]+"ä";
                                             break;
-                                        case ue:
+                                        case "ue":
                                             searchTerms[arrayLength] = searchTerms[arrayLength]+"ü";
                                             break;
-                                        case ss:
+                                        case "ss":
                                             searchTerms[arrayLength] = searchTerms[arrayLength]+"ss";
                                             break;
                                     }
