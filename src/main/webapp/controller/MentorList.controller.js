@@ -60,10 +60,12 @@ sap.ui.define([
 				var afilters = [];
 				var outerFilters = [];
 				var searchTerms = search.split(","); //words separated by ',' are considered as separate search terms.
-                var umlaute = "oe|ae|ue|ss|"
+                var umlaute = ["oe","ae","ue","ss"]
                 for (var k = 0; k < searchTerms.length; k++) {
-                    if(searchTerms[k].includes(umlaute)){
-                        console.log("Found one");
+                    for(umlaut in umlaute){
+                        if(searchTerms[k].includes(umlaut)){
+                            console.log("Found one");
+                        }
                     }
 					afilters.push(new Filter("FullName", FilterOperator.Contains, searchTerms[k]));
 					afilters.push(new Filter("ShirtNumber", FilterOperator.Contains, searchTerms[k]));
