@@ -65,6 +65,7 @@ sap.ui.define([
                     for(var i = 0; i<umlaute.length; i++){
                         if(searchTerms[k].includes(umlaute[i])){
                             var searchTermHelper = searchTerms[k].split(umlaute[i]);
+                            console.log(searchTermHelper);
                             var arrayLength = searchTerms.length;
                             searchTerms[arrayLength] = "";
                             for(var j =0; j<searchTermHelper.length; j++){
