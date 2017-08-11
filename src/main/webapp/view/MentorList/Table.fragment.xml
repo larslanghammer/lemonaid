@@ -59,8 +59,3 @@
     	</ScrollContainer>
 </core:FragmentDefinition>
 
-  <!--              <l:VerticalLayout class="sapUiSmallMargin" >
-                    <Text text="{SapExpertise1/Name}{= ${SapExpertise2} ? ',' : ''} " class="sapMTableContentMargin" />
-                    <Text text="{SapExpertise2/Name}{= ${SapExpertise3} ? ',' : ''} " class="sapMTableContentMargin" />
-                    <Text text="{SapExpertise3/Name}" class="sapMTableContentMargin" />
-            </l:VerticalLayout> -->

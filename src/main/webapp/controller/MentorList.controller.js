@@ -59,7 +59,7 @@ sap.ui.define([
 
 				var afilters = [];
 				var outerFilters = [];
-				var searchTerms = search.split(" "); //words separated by space are considered as separate search terms.
+				var searchTerms = search.split(","); //words separated by ',' are considered as separate search terms.
 				for (var k = 0; k < searchTerms.length; k++) {
 					afilters.push(new Filter("FullName", FilterOperator.Contains, searchTerms[k]));
 					afilters.push(new Filter("ShirtNumber", FilterOperator.Contains, searchTerms[k]));
