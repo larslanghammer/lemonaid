@@ -60,7 +60,7 @@ sap.ui.define([
 				var afilters = [];
 				var outerFilters = [];
 				var searchTerms = search.split(","); //words separated by ',' are considered as separate search terms.
-                var umlaute = ["oe","ae","ue","ss"]
+                var umlaute = ["oe","ae","ue"]
                 for (var k = 0; k < searchTerms.length; k++) {
                     for(var i = 0; i<umlaute.length; i++){
                         if(searchTerms[k].includes(umlaute[i])){
@@ -79,9 +79,6 @@ sap.ui.define([
                                         case "ue":
                                             searchTerms[arrayLength] = searchTerms[arrayLength]+"ü";
                                             break;
-                                       /* case "ss":
-                                            searchTerms[arrayLength] = searchTerms[arrayLength]+"ß";
-                                            break;*/
                                     }
                                 }
                                 searchTerms[arrayLength] =  searchTerms[arrayLength]+searchTermHelper[j];
