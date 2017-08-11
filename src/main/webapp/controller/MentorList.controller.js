@@ -64,7 +64,29 @@ sap.ui.define([
                 for (var k = 0; k < searchTerms.length; k++) {
                     for(var i = 0; i<umlaute.length; i++){
                         if(searchTerms[k].includes(umlaute[i])){
-                            console.log("Found one");
+                            var searchTermHelper = searchTerms[k].split(umlaute[i]);
+                            var arrayLength = searchTerms.length;
+                            searchTerms[arrayLength] = "";
+                            for(var j =0; j<searchTermHelper.length; j++){
+                                if(j>0){
+                                    switch (umlaute[i]){
+                                        case oe:
+                                            searchTerms[arrayLength] = searchTerms[arrayLength]+"ö";
+                                            break;
+                                        case ae:
+                                            searchTerms[arrayLength] = searchTerms[arrayLength]+"ä";
+                                            break;
+                                        case ue:
+                                            searchTerms[arrayLength] = searchTerms[arrayLength]+"ü";
+                                            break;
+                                        case ss:
+                                            searchTerms[arrayLength] = searchTerms[arrayLength]+"ss";
+                                            break;
+                                    }
+                                }
+                                searchTerms[arrayLength] =  searchTerms[searchTerms.length]+searchTermHelper[j];
+                                console.log(searchTerms[arrayLength])
+                            }
                         }
                     }
 					afilters.push(new Filter("FullName", FilterOperator.Contains, searchTerms[k]));
