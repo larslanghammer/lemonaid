@@ -80,7 +80,7 @@ sap.ui.define([
                                             searchTerms[arrayLength] = searchTerms[arrayLength]+"ü";
                                             break;
                                         case "ss":
-                                            searchTerms[arrayLength] = searchTerms[arrayLength]+"ss";
+                                            searchTerms[arrayLength] = searchTerms[arrayLength]+"ß";
                                             break;
                                     }
                                 }
