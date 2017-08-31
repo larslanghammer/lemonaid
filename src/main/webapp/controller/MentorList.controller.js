@@ -75,6 +75,7 @@ sap.ui.define([
                                             searchTerms[arrayLength] = searchTerms[arrayLength]+"ö";
                                             break;
                                         case "ae","AE":
+                                        console.log("äää")
                                             searchTerms[arrayLength] = searchTerms[arrayLength]+"ä";
                                             break;
                                         case "ue","UE":
