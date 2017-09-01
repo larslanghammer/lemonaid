@@ -125,7 +125,7 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 						throw new ODataNotFoundException(ODataNotFoundException.ENTITY);
                     }
                     //Set non public values to null!
-                    if ((!((Mentor) jpaEntity).getCompanyPublic())) {
+                   /* if ((!((Mentor) jpaEntity).getCompanyPublic())) {
 						((Mentor) jpaEntity).setCompany(null);
                     }
                     if (!((Mentor) jpaEntity).getJobTitlePublic()) {
@@ -168,7 +168,7 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
                     }
                     if(!((Mentor) jpaEntity).getAttachmentsPublic()) {
 						((Mentor) jpaEntity).setAttachments(null);
-                    }
+                    }*/
 				}else{
                         ((Mentor) jpaEntity).setPublicLongitude(((Mentor) jpaEntity).getLongitude());
                         ((Mentor) jpaEntity).setPublicLatitude(((Mentor) jpaEntity).getLatitude());
