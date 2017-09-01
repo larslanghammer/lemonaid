@@ -328,6 +328,7 @@ sap.ui.define([
                     }*/
                     if(object.RelationshipToSapId){
                         object["RelationshipToSap"] = that.model.oData["RelationshipsToSap('"+object.RelationshipToSapId+"')"];
+                        console.log(that.model.oData["RelationshipsToSap('"+object.RelationshipToSapId+"')"])
                     }
                     if(object.StatusId){
                          object["MentorStatus"] = that.model.oData["MentorStatuses('"+object.StatusId+"')"];
