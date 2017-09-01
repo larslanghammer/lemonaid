@@ -315,6 +315,7 @@ sap.ui.define([
                     if(object.Language1Id){
                         console.log("test");
                         object["Language1"] = that.model.oData["Languages('"+object.Language1Id+"')"];
+                        console.log(object.Language1);
                     }
                     if(object.Language2Id){
                         object["Language2"] = that.model.oData["Languages('"+object.Language2Id+"')"];
