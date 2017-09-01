@@ -236,11 +236,10 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 				createdJpaEntity = enrichEntity(uriParserResultView, createdJpaEntity);
 				oDataResponse = responseBuilder.build(uriParserResultView, createdJpaEntity, contentType);
 			} else {
-				/*oDataJPAContext.setODataContext(getContext());
+				oDataJPAContext.setODataContext(getContext());
 				Object createdJpaEntity = jpaProcessor.process(uriParserResultView, content, requestContentType);
-				createdJpaEntity = enrichEntity(uriParserResultView, createdJpaEntity);
-                oDataResponse = responseBuilder.build(uriParserResultView, createdJpaEntity, contentType);*/
-                oDataResponse = responseBuilder.build(uriParserResultView, content, contentType);
+				//createdJpaEntity = enrichEntity(uriParserResultView, createdJpaEntity);
+				oDataResponse = responseBuilder.build(uriParserResultView, createdJpaEntity, contentType);
 			}
 		} finally {
 			close();
