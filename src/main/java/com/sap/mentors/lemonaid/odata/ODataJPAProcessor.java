@@ -230,20 +230,21 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 			final String requestContentType, final String contentType) throws ODataException {
 		authorization.check(CREATE, uriParserResultView);
 		ODataResponse oDataResponse = null;
-		/*try {
+		try {
 			if (uriParserResultView.getTargetEntitySet().getEntityType().hasStream()) {
 				Object createdJpaEntity = mediaProcessor.process(uriParserResultView, content, requestContentType);
 				createdJpaEntity = enrichEntity(uriParserResultView, createdJpaEntity);
 				oDataResponse = responseBuilder.build(uriParserResultView, createdJpaEntity, contentType);
 			} else {
-				oDataJPAContext.setODataContext(getContext());
+				/*oDataJPAContext.setODataContext(getContext());
 				Object createdJpaEntity = jpaProcessor.process(uriParserResultView, content, requestContentType);
 				createdJpaEntity = enrichEntity(uriParserResultView, createdJpaEntity);
-				oDataResponse = responseBuilder.build(uriParserResultView, createdJpaEntity, contentType);
+                oDataResponse = responseBuilder.build(uriParserResultView, createdJpaEntity, contentType);*/
+                oDataResponse = responseBuilder.build(uriParserResultView, content, contentType);
 			}
 		} finally {
 			close();
-		}*/
+		}
 		return oDataResponse;
 	}
 
