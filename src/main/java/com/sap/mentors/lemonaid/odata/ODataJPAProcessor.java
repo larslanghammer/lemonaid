@@ -125,7 +125,7 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 						throw new ODataNotFoundException(ODataNotFoundException.ENTITY);
                     }
                     //Set non public values to null!
-                   /* if ((!((Mentor) jpaEntity).getCompanyPublic())) {
+                    if ((!((Mentor) jpaEntity).getCompanyPublic())) {
 						((Mentor) jpaEntity).setCompany(null);
                     }
                     if (!((Mentor) jpaEntity).getJobTitlePublic()) {
@@ -168,7 +168,7 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
                     }
                     if(!((Mentor) jpaEntity).getAttachmentsPublic()) {
 						((Mentor) jpaEntity).setAttachments(null);
-                    }*/
+                    }
 				}else{
                         ((Mentor) jpaEntity).setPublicLongitude(((Mentor) jpaEntity).getLongitude());
                         ((Mentor) jpaEntity).setPublicLatitude(((Mentor) jpaEntity).getLatitude());
@@ -230,7 +230,7 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 			final String requestContentType, final String contentType) throws ODataException {
 		authorization.check(CREATE, uriParserResultView);
 		ODataResponse oDataResponse = null;
-		try {
+		/*try {
 			if (uriParserResultView.getTargetEntitySet().getEntityType().hasStream()) {
 				Object createdJpaEntity = mediaProcessor.process(uriParserResultView, content, requestContentType);
 				createdJpaEntity = enrichEntity(uriParserResultView, createdJpaEntity);
@@ -243,7 +243,7 @@ public class ODataJPAProcessor extends ODataJPAProcessorDefault {
 			}
 		} finally {
 			close();
-		}
+		}*/
 		return oDataResponse;
 	}
 
