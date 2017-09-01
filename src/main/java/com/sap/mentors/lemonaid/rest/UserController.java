@@ -25,9 +25,9 @@ public class UserController {
     @RequestMapping(method = RequestMethod.GET)
     User getUser(HttpServletRequest request, HttpServletResponse response) {
         Principal userPrincipal = request.getUserPrincipal();
-   //     response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
-   //   response.setHeader("Pragma","no-cache");
-   //   response.setDateHeader("Expires", 0);
+        response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
+      response.setHeader("Pragma","no-cache");
+      response.setDateHeader("Expires", 0);
 		if (userPrincipal != null) {
             try {
 			    // UserProvider provides access to the user storage

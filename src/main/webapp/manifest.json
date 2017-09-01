@@ -89,24 +89,24 @@
 				"settings": {
 					"defaultBindingMode": "TwoWay",
           "json": true,
-          "defaultOperationMode": "Client",
-            "headers":{
+          "defaultOperationMode": "Client"//,
+        /*    "headers":{
             "Expires": "-1",
             "Pragma": "no-cache",
             "Cache-control": "no-cache"
-          }
+          }*/
 				}
       },
       "user": {
         "dataSource": "user",
 				"type": "sap.ui.model.json.JSONModel",
 				"settings": {
-          "defaultBindingMode": "OneWay",
-          "headers":{
+          "defaultBindingMode": "OneWay"//,
+        /*  "headers":{
             "Expires": "-1",
             "Pragma": "no-cache",
             "Cache-control": "max-age=0"
-          }
+          }*/
 				}
 			}
 		},
