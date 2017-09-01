@@ -312,7 +312,7 @@ sap.ui.define([
                         object.SoftSkillsPublic = that._parseBoolean(object.SoftSKILLSPublic);
                     }
                     //Add Objects of JoinColum Entities
-                    if(object.Language1Id){
+                 /*   if(object.Language1Id){
                         console.log("test");
                         object["Language1"] = that.model.oData["Languages('"+object.Language1Id+"')"];
                         console.log(object.Language1);
@@ -394,7 +394,7 @@ sap.ui.define([
                     }
                     if(object.SoftSkill6Id){
                         object["SoftSkill6"] = that.model.oData["SoftSkills('"+object.SoftSkill6Id+"')"];
-                    }
+                    }*/
                     requests.push(new Promise(function (resolve) {
                         if (row.__new) {
                             if (!object.Id) {
