@@ -325,14 +325,12 @@ sap.ui.define([
                     }
                     if(object.RegionId){
                         object["Region"] = that.model.oData["Regions('"+object.RegionId+"')"];
-                    }
+                    }*/
                     if(object.RelationshipToSapId){
                         object["RelationshipToSap"] = that.model.oData["RelationshipsToSap('"+object.RelationshipToSapId+"')"];
-                    }*/
+                    }
                     if(object.StatusId){
                          object["MentorStatus"] = that.model.oData["MentorStatuses('"+object.StatusId+"')"];
-                         console.log(that.model.oData["MentorStatuses('"+object.StatusId+"')"]);
-                         console.log(object);
                     }/*
                     if(object.CountryId){
                          object["Country"] = that.model.oData["Countries('"+object.CountryId+"')"];
