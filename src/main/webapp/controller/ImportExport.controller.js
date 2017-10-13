@@ -42,6 +42,7 @@ sap.ui.define([
                 that._buildFieldGroups("Model.Mentor");
                 that.ui.refresh();
             });
+            console.log(this.ui)
         },
 
         /* =========================================================== */
