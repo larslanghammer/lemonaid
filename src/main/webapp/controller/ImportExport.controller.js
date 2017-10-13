@@ -489,6 +489,7 @@ sap.ui.define([
             var fieldGroups = [];
             var fieldGroup;
             this.ui.setProperty("/FieldGroups", fieldGroups);
+            console.log(this.component.metadata.oMetadata.dataServices.schema);
             jQuery.each(this.component.metadata.oMetadata.dataServices.schema, function (schemaIdx, schema) {
                 jQuery.each(schema.annotations, function (annodationsIdx, annotations) {
                     if (annotations.target === "Model.Mentor") {
