@@ -74,10 +74,6 @@
                 <Property Name="XingUrl" Type="Edm.String" />
                 <Property Name="Zip" Type="Edm.String" />
                 <Property Name="ZipPublic" Type="Edm.Boolean" />
-                <!-- New Property-->
-                <Property Name="UpdatedBy" Type="Edm.String" />
-                <Property Name="UpdatedAt" Type="Edm.DateTime" />
-
                 <NavigationProperty Name="Country" Relationship="Model.Mentor_Country_Many_One0" FromRole="Mentor" ToRole="Country" />
                 <Property Name="CountryPublic" Type="Edm.Boolean" />
                 <NavigationProperty Name="Industry1" Relationship="Model.Mentor_Industry_Many_One0" FromRole="Mentor" ToRole="Industry" />
