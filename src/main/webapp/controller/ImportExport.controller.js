@@ -106,11 +106,13 @@ sap.ui.define([
                 reader.onload = function (evn) {
                     var strCSV = evn.target.result; //string in CSV
                     var lines = strCSV.split("\n");
+                    console.log(lines)
                     lines[0] = lines[0].replace(/ /g, "");
                     strCSV = lines.join("\n");
                     var imp = Papa.parse(strCSV, {
                         header: true
                     });
+                    console.log(imp)
                     jQuery.each(imp.errors, function (idx, row) {
                         row.title = that.i18n.getText("importReportTitle", [row.type.replace(/([A-Z0-9])/g, " $1").trim(), row.row + 2]);
                         row.priority = "High";
