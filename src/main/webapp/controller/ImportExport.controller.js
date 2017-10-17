@@ -105,6 +105,7 @@ sap.ui.define([
                 var reader = new FileReader();
                 reader.onload = function (evn) {
                     var strCSV = evn.target.result; //string in CSV
+                    console.log(strCSV)
                     var lines = strCSV.split("\n");
                     console.log(lines)
                     lines[0] = lines[0].replace(/ /g, "");
