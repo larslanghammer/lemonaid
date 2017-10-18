@@ -60,11 +60,11 @@ sap.ui.define([
 				var afilters = [];
 				var outerFilters = [];
 				var searchTerms = search.split(","); //words separated by ',' are considered as separate search terms.
-                var umlaute = [["oe","ö"],["ae","ä"],["ue","ü"],["OE","Ö"],["AE","Ä"],["UE","Ü"]]
+                var umlaute = [["oe","ö"],["ae","ä"],["ue","ü"],["OE","Ö"],["AE","Ä"],["UE","Ü"]] //Feel free to add more Umlauts and their replacements
                 for (var k = 0; k < searchTerms.length; k++) {
                     for(var i = 0; i<umlaute.length; i++){
                         if(searchTerms[k].includes(umlaute[i][0])){
-							searchTerms[searchTerms.length] = searchTerms[k].replace(umlaut[i][1])
+							searchTerms[searchTerms.length] = searchTerms[k].replace(umlaute[i][1])
                            /* var searchTermHelper = searchTerms[k].split(umlaute[i]);
                             var arrayLength = searchTerms.length;
                             searchTerms[arrayLength] = "";
