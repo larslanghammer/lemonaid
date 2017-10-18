@@ -64,7 +64,7 @@ sap.ui.define([
                 for (var k = 0; k < searchTerms.length; k++) {
                     for(var i = 0; i<umlaute.length; i++){
                         if(searchTerms[k].includes(umlaute[i][0])){
-							searchTerms[searchTerms.length] = searchTerms[k].replace(umlaute[i][1])
+							searchTerms[searchTerms.length] = searchTerms[k].replace(umlaute[i][0],umlaute[i][1])
                            /* var searchTermHelper = searchTerms[k].split(umlaute[i]);
                             var arrayLength = searchTerms.length;
                             searchTerms[arrayLength] = "";
