@@ -92,8 +92,8 @@ sap.ui.define([
                                     }
                                 }
                                 searchTerms[arrayLength] =  searchTerms[arrayLength]+searchTermHelper[j];
-                            }
-                        }*/
+                            }*/
+                        }
                     }
 					afilters.push(new Filter("FullName", FilterOperator.Contains, searchTerms[k]));
 					afilters.push(new Filter("ShirtNumber", FilterOperator.Contains, searchTerms[k]));
