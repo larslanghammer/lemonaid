@@ -355,7 +355,7 @@ sap.ui.define([
                     if(object.RelationshipToSapId){
                         object["RelationshipToSap"] = that.model.oData["RelationshipsToSap('"+object.RelationshipToSapId+"')"];
                     }
-                    if(object.StatusId){
+                    if(object.StatusId != undefined){
                          object["MentorStatus"] = that.model.oData["MentorStatuses('"+object.StatusId+"')"];
                     }
                     if(object.CountryId){
