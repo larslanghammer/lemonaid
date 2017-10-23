@@ -455,6 +455,7 @@ sap.ui.define([
                                     }
                                 }
                             );
+                            break;
                         } else {
                             that.model.update(
                                 that.model.createKey("/Mentors", {
