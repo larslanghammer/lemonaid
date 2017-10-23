@@ -409,6 +409,7 @@ sap.ui.define([
                                     delete object[i];
                                 }
                             }
+                            console.log(object);
                             that.model.create(
                                 "/Mentors",
                                 object, {
