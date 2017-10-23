@@ -280,39 +280,63 @@ sap.ui.define([
                     //Convert the publicity settings to boolean
                     if(object.PhonePublic){
                         object.PhonePublic = that._parseBoolean(object.PhonePublic);
+                    }else{
+                        object.PhonePublic = false;
                     }
                     if(object.ZipPublic){
                         object.ZipPublic = that._parseBoolean(object.ZipPublic);
+                    }else{
+                        object.ZipPublic = false;
                     }
                     if(object.CityPublic){
                         object.CityPublic = that._parseBoolean(object.CityPublic);
+                    }else{
+                        object.CityPublic = false;
                     }
                     if(object.CountryPublic){
                         object.CountryPublic = that._parseBoolean(object.CountryPublic);
+                    }else{
+                        object.CountryPublic = false;
                     }
                     if(object.StatePublic){
                         object.StatePublic = that._parseBoolean(object.StatePublic);
+                    }else{
+                        object.StatePublic = false;
                     }
                     if(object.Address1Public){
                         object.Address1Public = that._parseBoolean(object.Address1Public);
+                    }else{
+                        object.Address1Public = false;
                     }
                     if(object.Address2Public){
                         object.Address2Public = that._parseBoolean(object.Address2Public);
+                    }else{
+                        object.Address2Public = false;
                     }
                     if(object.CompanyPublic){
                         object.CompanyPublic = that._parseBoolean(object.CompanyPublic);
+                    }else{
+                        object.CompanyPublic = false;
                     }
                     if(object.JobTitlePublic){
                         object.JobTitlePublic = that._parseBoolean(object.JobTitlePublic);
+                    }else{
+                        object.JobTitlePublic = false;
                     }
                     if(object.Email1Public){
                         object.Email1Public = that._parseBoolean(object.Email1Public);
+                    }else{
+                        object.Email1Public = false;
                     }
                     if(object.Email2Public){
                         object.Email2Public = that._parseBoolean(object.Email2Public);
+                    }else{
+                        object.Email2Public = false;
                     }
                     if(object.SoftSkillsPublic){
                         object.SoftSkillsPublic = that._parseBoolean(object.SoftSKILLSPublic);
+                    }else{
+                        object.SoftSkillsPublic = false;
                     }
 
                     //Add Objects of JoinColum Entities
