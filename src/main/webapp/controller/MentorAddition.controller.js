@@ -241,6 +241,7 @@ sap.ui.define([
                                             delete that.objectToUpload[i];
                                         }
                                     }
+                                    console.log(that.objectToUpload);
                                     that.model.create(
                                         "/Mentors",
                                         that.objectToUpload, {
