@@ -356,7 +356,7 @@ sap.ui.define([
                     if(objects[rowIdx].RelationshipToSapId){
                         objects[rowIdx]["RelationshipToSap"] = that.model.oData["RelationshipsToSap('"+objects[rowIdx].RelationshipToSapId+"')"];
                     }
-                    if(objects[rowIdx].StatusId != undefined){
+                    if(objects[rowIdx].StatusId){
                          objects[rowIdx]["MentorStatus"] = that.model.oData["MentorStatuses('"+objects[rowIdx].StatusId+"')"];
                     }
                     if(objects[rowIdx].CountryId){
@@ -435,7 +435,7 @@ sap.ui.define([
                                 }
                             }
                             console.log(objects[rowIdx]);
-                            
+
                             that.model.create(
                                 "/Mentors",
                                 objects[rowIdx], {
