@@ -435,6 +435,7 @@ sap.ui.define([
                                 }
                             }
                             console.log(objects[rowIdx]);
+                            
                             that.model.create(
                                 "/Mentors",
                                 objects[rowIdx], {
