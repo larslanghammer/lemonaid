@@ -74,7 +74,7 @@ sap.ui.define([
 					for(var i = 0; i<splitTerm.length; i++){
 						camelCasedTerm = camelCasedTerm + splitTerm[i].charAt(0).toUpperCase() + splitTerm[i].substr(1).toLowerCase()+" "
 					}
-					camelCasedTerm.trim
+					camelCasedTerm = camelCasedTerm.trim
 
 					afilters.push(new Filter("FullName", FilterOperator.Contains, searchTerms[k]));
 					afilters.push(new Filter("ShirtNumber", FilterOperator.Contains, searchTerms[k]));
