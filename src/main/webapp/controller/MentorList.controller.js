@@ -66,14 +66,50 @@ sap.ui.define([
                         if(searchTerms[k].includes(umlaute[i][0])){
 							searchTerms[searchTerms.length] = searchTerms[k].replace(umlaute[i][0],umlaute[i][1])
                         }
-                    }
+					}
+					var splitTerm = searchTerms[k].split(" ")
+					var camelCasedTerm
+					var upperCasedTerm = searchTerms[k].toUpperCase()
+					var lowerCasedTerm = searchTerms[k].toLowerCase()
+					for(var i = 0; i<splitTerm.count; i++){
+						camelCasedTerm = splitTerm[i][0].toUpperCase() + splitTerm.substr(1).toLowerCase()+" "
+					}
+					camelCasedTerm.trim
+
 					afilters.push(new Filter("FullName", FilterOperator.Contains, searchTerms[k]));
 					afilters.push(new Filter("ShirtNumber", FilterOperator.Contains, searchTerms[k]));
 					afilters.push(new Filter("RelationshipToSap/Name", FilterOperator.Contains, searchTerms[k]));
 					afilters.push(new Filter("MentorStatus/Name", FilterOperator.Contains, searchTerms[k]));
                     afilters.push(new Filter("SapExpertise1/Name", FilterOperator.Contains, searchTerms[k]));
                     afilters.push(new Filter("SapExpertise2/Name", FilterOperator.Contains, searchTerms[k]));
-                    afilters.push(new Filter("SapExpertise3/Name", FilterOperator.Contains, searchTerms[k]));
+					afilters.push(new Filter("SapExpertise3/Name", FilterOperator.Contains, searchTerms[k]));
+					
+					//Add CamelCased search Term
+					afilters.push(new Filter("FullName", FilterOperator.Contains, camelCasedTerm));
+					afilters.push(new Filter("ShirtNumber", FilterOperator.Contains, camelCasedTerm));
+					afilters.push(new Filter("RelationshipToSap/Name", FilterOperator.Contains, camelCasedTerm));
+					afilters.push(new Filter("MentorStatus/Name", FilterOperator.Contains, camelCasedTerm));
+                    afilters.push(new Filter("SapExpertise1/Name", FilterOperator.Contains, camelCasedTerm));
+                    afilters.push(new Filter("SapExpertise2/Name", FilterOperator.Contains, camelCasedTerm));
+					afilters.push(new Filter("SapExpertise3/Name", FilterOperator.Contains, camelCasedTerm));
+					
+					//Add UpperCased search Term
+					afilters.push(new Filter("FullName", FilterOperator.Contains, upperCasedTerm));
+					afilters.push(new Filter("ShirtNumber", FilterOperator.Contains, upperCasedTerm));
+					afilters.push(new Filter("RelationshipToSap/Name", FilterOperator.Contains, upperCasedTerm));
+					afilters.push(new Filter("MentorStatus/Name", FilterOperator.Contains, upperCasedTerm));
+					afilters.push(new Filter("SapExpertise1/Name", FilterOperator.Contains, upperCasedTerm));
+					afilters.push(new Filter("SapExpertise2/Name", FilterOperator.Contains, upperCasedTerm));
+					afilters.push(new Filter("SapExpertise3/Name", FilterOperator.Contains, upperCasedTerm));
+
+					//Add LowerCased search Term
+					afilters.push(new Filter("FullName", FilterOperator.Contains, lowerCasedTerm));
+					afilters.push(new Filter("ShirtNumber", FilterOperator.Contains,lowerCasedTerm));
+					afilters.push(new Filter("RelationshipToSap/Name", FilterOperator.Contains, lowerCasedTerm));
+					afilters.push(new Filter("MentorStatus/Name", FilterOperator.Contains, lowerCasedTerm));
+                    afilters.push(new Filter("SapExpertise1/Name", FilterOperator.Contains, lowerCasedTerm));
+                    afilters.push(new Filter("SapExpertise2/Name", FilterOperator.Contains, lowerCasedTerm));
+                    afilters.push(new Filter("SapExpertise3/Name", FilterOperator.Contains, lowerCasedTerm));
                     outerFilters.push(new Filter(afilters));
 					afilters = [];
 				}
