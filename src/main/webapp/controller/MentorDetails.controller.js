@@ -46,8 +46,6 @@ sap.ui.define([
                 //    this.byId("PersonalInfo").removeBlock(this.view.getId() + "--BlockAddress");
                 }
             }.bind(this));
-            this.busyDialog.close();
-
         },
 
         /* =========================================================== */
@@ -57,7 +55,7 @@ sap.ui.define([
         onRouteMatched: function (oEvent) {
             this.sMentorId = oEvent.getParameter("arguments").Id;
             this.model.metadataLoaded().then(this.bindView.bind(this));
-            this.busyDialog.setTitle(this.i18n.getText("processChangesTitle"));
+            this.busyDialog.setTitle(this.i18n.getText("loadingInformation"));
             this.busyDialog.setCustomIcon("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20289.13333%20289.13333%27%20height%3D%27289.133%27%20width%3D%27289.133%27%3E%3Cpath%20d%3D%27M289.128%20144.57c0%2079.84-64.724%20144.563-144.564%20144.563C64.724%20289.133%200%20224.41%200%20144.57%200%2064.727%2064.723.004%20144.564.004c79.84%200%20144.564%2064.723%20144.564%20144.564%27%20fill%3D%27%23eda216%27%2F%3E%3Cpath%20d%3D%27M111.09%20164.93l49.723-130.914c2.222-5.88%209.016-8.613%2014.69-5.897l35.892%2017.04c5.824%202.77%208.045%209.92%204.834%2015.5l-69.675%20120.957c-2.186%203.77-6.907%205.246-10.846%203.38l-20.457-9.707c-3.883-1.867-5.693-6.346-4.162-10.36M126.9%20235.222c-.11%2014.298-11.796%2025.814-26.093%2025.702-14.278-.112-25.814-11.796-25.703-26.095.094-14.297%2011.797-25.813%2026.095-25.7%2014.295.092%2025.812%2011.795%2025.7%2026.092%27%20fill%3D%27%23fff%27%2F%3E%3C%2Fsvg%3E");
             this.busyDialog.setCustomIconRotationSpeed(1000);
             this.busyDialog.setCustomIconWidth("48px");
@@ -122,7 +120,6 @@ sap.ui.define([
         },
 
         bindView: function () {
-
             this.view.bindElement({
                 path: this.getModel().createKey("/Mentors", {
                     Id: this.sMentorId
@@ -136,6 +133,7 @@ sap.ui.define([
             this.ui.setProperty("/UploadUrl", this.model.sServiceUrl + "/" + this.model.createKey("Mentors", {
                 Id: this.sMentorId
             }) + "/Attachments");
+            this.busyDialog.close();
         },
 
         onDelete: function () {
