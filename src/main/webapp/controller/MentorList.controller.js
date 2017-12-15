@@ -68,6 +68,7 @@ sap.ui.define([
                         }
 					}
 					var splitTerm = searchTerms[k].split(" ")
+					var camelCasedTerm = ""
 					var upperCasedTerm = searchTerms[k].toUpperCase()
 					var lowerCasedTerm = searchTerms[k].toLowerCase()
 					for(var i = 0; i<splitTerm.length; i++){
